@@ -1,0 +1,30 @@
+﻿# CommonsBase_GNU
+## workspace
+
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_Std" }
+  'import'
+  'github-l2'
+  { {
+      'CommonsBase_Std', '2.5.202604270014', {
+        'blake2b-256:299f9a501ad83be41ef552a4359bc739ec95d3d32a8629b93366dcd7fd7678be',
+        'sha256:9a9d46d6a3ede562a586cd0df4a599413e3b353ade10556131c5bd8d1f100354',
+        'sha1:22520dda9a2de65eb1714f4c012c2b027be796c9'
+      } } }
+
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM" }
+  'import'
+  'github-l2'
+  { {
+      'CommonsBase_LLVM', '2.5.202604270020', {
+        'blake2b-256:3c31f9b96d71501e9513b219956fffcc6b89fffb4348bdaaa93a0753ae88df81',
+        'sha256:6a2dbc4fa30beb111caa17233f355be37dfb3ea0c5822aff65f2a50cbddce554',
+        'sha1:7cbd4fc4799924458b5297bc0bc873418bd37958'
+      } } }
+
+## Assets
+
+### CommonsBase_GNU.Apparatus@4.4.1
+
+  % unified.asset { name="BuildW32Bat", file="assets/make-build_w32.bat" }
+  nil
+  'This operation is only supported with directory-based unified scripts like `somedirectory.u/run.u`.'

@@ -1,0 +1,172 @@
+# Distribution for CommonsBase_GNU
+
+## Objects and Assets
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "osygt7kad2s2jhwywr6bhh5z23lwikn56ln5nuhlpzuririq5gnoa"
+  }
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Nettle-3.10.2.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-GMP-6.3.0.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-TLS-3.8.12.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Awk-5.3.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Bison-3.8.2.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Nettle.values.jsonc:83.39-83.90
+      │
+   83 │                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+      •                                      ┬──────────────────────────────────────────────────
+      •                                      ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Make-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.87
+      │
+   18 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.87
+      │
+   18 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.87
+      │
+   18 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.87
+      │
+   18 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
