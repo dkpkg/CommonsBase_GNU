@@ -5,26 +5,27 @@
   'import'
   'github-l2'
   { {
-      'CommonsBase_Std', '2.5.202604270014', {
-        'blake2b-256:299f9a501ad83be41ef552a4359bc739ec95d3d32a8629b93366dcd7fd7678be',
-        'sha256:9a9d46d6a3ede562a586cd0df4a599413e3b353ade10556131c5bd8d1f100354',
-        'sha1:22520dda9a2de65eb1714f4c012c2b027be796c9'
+      'CommonsBase_Std', '2.5.202604302022', {
+        'blake2b-256:676576d08ff0652135cd6306ebb7ee9ff857c311d1324b035f2d1e27e52ff737',
+        'sha256:454b7d01d0b4cb37089d30c6323af0fd46df994b541f139fc05292c10821c638',
+        'sha1:7d645c669412269e63e4b8950e08ac966968de3e'
       } } }
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM" }
   'import'
   'github-l2'
   { {
-      'CommonsBase_LLVM', '2.5.202604270020', {
-        'blake2b-256:3c31f9b96d71501e9513b219956fffcc6b89fffb4348bdaaa93a0753ae88df81',
-        'sha256:6a2dbc4fa30beb111caa17233f355be37dfb3ea0c5822aff65f2a50cbddce554',
-        'sha1:7cbd4fc4799924458b5297bc0bc873418bd37958'
+      'CommonsBase_LLVM', '2.5.202604302050', {
+        'blake2b-256:cd80bd078075e992a8fc35d11e4e9349104e1260da058bfe690df1f0b346e4d8',
+        'sha256:30e563688a8ad4a97366c69a872addcb7987b9e46b92bd5c73e6c1f16be760cd',
+        'sha1:4f0bb14544def28192a294c7159319b375573c10'
       } } }
 
 ## Assets
 
 ### CommonsBase_GNU.Apparatus@4.4.1
 
-  % unified.asset { name="BuildW32Bat", file="assets/make-build_w32.bat" }
-  nil
-  'This operation is only supported with directory-based unified scripts like `somedirectory.u/run.u`.'
+  % unified.asset { name="MakeBuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
+  'asset'
+  '12450'
+  'sha256:6985b19914a57129fd13b8cf0189af245df5aa96fce19726530523182dc54bb1'
