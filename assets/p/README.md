@@ -12,4 +12,4 @@ From <https://cgit.git.savannah.gnu.org/cgit/make.git/tree/build_w32.bat?h=4.4.1
 
 Modifications:
 
-1. `gcc` arguments take the basename of the compiler to support cross-compilers like `x86_64-w64-mingw32-gcc`.
+1. `build_win32.bat gcc` now requires the path to the LLVM toolchain in `LLVMTOOLCHAIN` and the name of cross-compiler like `x86_64-w64-mingw32-gcc.exe` in `CROSSGCC`. The full path to the GCC executable is `LLVMTOOLCHAIN \ bin \ CROSSGCC`.

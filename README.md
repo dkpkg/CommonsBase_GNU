@@ -4,7 +4,9 @@
 
 ```sh
 ./dk0 update
+# one of ...
 ./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-macos --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-macos.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-win32 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-win32.u
 ```
 
 > [!IMPORTANT]

@@ -80,10 +80,10 @@ shift
 goto ParseSW
 
 :SetCC
-set COMPILER=%1
-shift
+set COMPILER=gcc
+SET GCCEXE=%LLVMTOOLCHAIN%\bin\%CROSSGCC%
 set O=o
-echo - Building with GCC
+echo - Building with GCC at %GCCEXE%
 shift
 goto ParseSW
 
@@ -197,9 +197,9 @@ if "%DEBUG%" == "Y" set LNKOUT=./GccDebug
 if "%MAINT%" == "Y" set "OPTS=%OPTS% -DMAKE_MAINTAINER_MODE"
 :: Show the compiler version that we found
 echo.
-call %COMPILER% --version
+call %GCCEXE% --version
 if not ERRORLEVEL 1 goto Build
-echo No %COMPILER% found.
+echo No %GCCEXE% found.
 exit 1
 
 :FindTcc
@@ -321,7 +321,7 @@ goto CompileDone
 :GccCompile
 :: GCC Compile
 if "%VERBOSE%" == "Y" echo on
-call %COMPILER% -mthreads -Wall -std=gnu99 -gdwarf-2 -g3 %OPTS% -I%OUTDIR%/src -I./src -I%OUTDIR%/lib -I./lib -I./src/w32/include -DHAVE_CONFIG_H %EXTRAS% -o %OUTDIR%/%1.%O% -c %1.c
+call %GCCEXE% -mthreads -Wall -std=gnu99 -gdwarf-2 -g3 %OPTS% -I%OUTDIR%/src -I./src -I%OUTDIR%/lib -I./lib -I./src/w32/include -DHAVE_CONFIG_H %EXTRAS% -o %OUTDIR%/%1.%O% -c %1.c
 @echo off
 goto CompileDone
 
@@ -353,7 +353,7 @@ goto :EOF
 :: GCC Link
 if "%VERBOSE%" == "Y" echo on
 echo %GUILELIBS% -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 >>%OUTDIR%\link.sc
-call %COMPILER% -mthreads -gdwarf-2 -g3 %OPTS% -o %LNKOUT%/%MAKE%.exe @%LNKOUT%/link.sc -Wl,--out-implib=%LNKOUT%/libgnumake-1.dll.a
+call %GCCEXE% -mthreads -gdwarf-2 -g3 %OPTS% -o %LNKOUT%/%MAKE%.exe @%LNKOUT%/link.sc -Wl,--out-implib=%LNKOUT%/libgnumake-1.dll.a
 @echo off
 goto :EOF
 

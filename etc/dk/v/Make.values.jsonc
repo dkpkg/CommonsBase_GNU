@@ -14,7 +14,10 @@
                     "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
                     "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
                     "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}"
+                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
+                    "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}",
+                    "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_arm64 -d ${SLOT.Release.Windows_arm64}"
                 ]
             },
             "outputs": {
@@ -31,13 +34,17 @@
                             "Release.Windows_arm64"
                         ],
                         "paths": [
-                            "bin/make",
-                            "include/gnumake.h",
-                            "share/man/man1/make.1",
-                            "share/info/make.info",
-                            "share/info/make.info-3",
-                            "share/info/make.info-2",
-                            "share/info/make.info-1"
+                            "include/gnumake.h"
+                        ]
+                    },
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/make.exe"
                         ]
                     },
                     {
@@ -50,7 +57,6 @@
                         ],
                         "paths": [
                             "bin/make",
-                            "include/gnumake.h",
                             "share/man/man1/make.1",
                             "share/info/make.info",
                             "share/info/make.info-3",

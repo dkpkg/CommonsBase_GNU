@@ -1,0 +1,193 @@
+# Distribution for Windows CommonsBase_GNU
+
+## Objects and Assets
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "orgchee5fgq2bbdg3jqlhky7zfzabe3kv6gxmluvccgoqehwdppgq"
+  }
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Nettle-3.10.2.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
+      │
+   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
+      •                                        ┬───────────────────────────────────────────────────
+      •                                        ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-GMP-6.3.0.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
+      │
+   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
+      •                                        ┬───────────────────────────────────────────────────
+      •                                        ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-TLS-3.8.12.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
+      │
+   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
+      •                                        ┬───────────────────────────────────────────────────
+      •                                        ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Awk-5.3.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
+      │
+   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
+      •                                        ┬───────────────────────────────────────────────────
+      •                                        ╰╸ Could not get object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 956bc988]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
+      │
+   38 │╭┤         {
+   39 ││            "origin": "commonsbase-gnu-table",
+   40 ││            "path": "mingw-host-triplet",
+   41 ││            "checksum": {
+   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
+   43 ││            },
+   44 ││            "size": 2522
+   45 │├┤         }
+      • │
+      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 2]
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 956bc988]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
+      │
+   38 │╭┤         {
+   39 ││            "origin": "commonsbase-gnu-table",
+   40 ││            "path": "mingw-host-triplet",
+   41 ││            "checksum": {
+   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
+   43 ││            },
+   44 ││            "size": 2522
+   45 │├┤         }
+      • │
+      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 2]
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Awk.Win32.LLVM_MinGW-5.3.1.zip
+  [error 956bc988]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
+      │
+   38 │╭┤         {
+   39 ││            "origin": "commonsbase-gnu-table",
+   40 ││            "path": "mingw-host-triplet",
+   41 ││            "checksum": {
+   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
+   43 ││            },
+   44 ││            "size": 2522
+   45 │├┤         }
+      • │
+      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 2]
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Bison-3.8.2.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Bison.values.jsonc:17.37-17.88
+      │
+   17 │                    "install-object CommonsBase_GNU.Bison.Zip@3.8.2 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬──────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Make-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.92
+      │
+   18 │                    "install-object CommonsBase_GNU.Make.Unix.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+      •                                    ┬──────────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
+      │
+   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
+      │
+   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]
+  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Make.Win32.LLVM_MinGW-4.4.1.zip
+  [error 917b6e5f]: Could not run unified shell command.
+  
+      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
+      │
+   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
+      •                                    ┬─────────────────────────────────────────────────
+      •                                    ╰╸ Could not install object because it does not exist.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
+  ────╯
+  
+  [exit 1]

@@ -5,27 +5,33 @@
   'import'
   'github-l2'
   { {
-      'CommonsBase_Std', '2.5.202604302022', {
-        'blake2b-256:676576d08ff0652135cd6306ebb7ee9ff857c311d1324b035f2d1e27e52ff737',
-        'sha256:454b7d01d0b4cb37089d30c6323af0fd46df994b541f139fc05292c10821c638',
-        'sha1:7d645c669412269e63e4b8950e08ac966968de3e'
+      'CommonsBase_Std', '2.5.202605021845', {
+        'blake2b-256:9417adbc2fb909ce48b96d4cf20f3ca73cef2c94a350e2457a80f7ec0a2e3429',
+        'sha256:cc30bd8208a17b38be64c39894052bc34569a3b7ee3b5007e92d63ed27548b28',
+        'sha1:8dd04dd8048916412676ac8da526e8d31174e239'
       } } }
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM" }
   'import'
   'github-l2'
   { {
-      'CommonsBase_LLVM', '2.5.202604302050', {
-        'blake2b-256:cd80bd078075e992a8fc35d11e4e9349104e1260da058bfe690df1f0b346e4d8',
-        'sha256:30e563688a8ad4a97366c69a872addcb7987b9e46b92bd5c73e6c1f16be760cd',
-        'sha1:4f0bb14544def28192a294c7159319b375573c10'
+      'CommonsBase_LLVM', '2.5.202605021919', {
+        'blake2b-256:a2e5e114e7c36d21a967434816bc14f651b45ab9a49d604869ab58f836f75561',
+        'sha256:d65f98189be9d3ec16f660951f0d6ecc8554f8abc00b36edc5fd8cf29e620823',
+        'sha1:4744d526bdb78447f04487c35a98371524e74a50'
+      } },
+    {
+      'CommonsBase_Std', '2.5.202605021845', {
+        'blake2b-256:9417adbc2fb909ce48b96d4cf20f3ca73cef2c94a350e2457a80f7ec0a2e3429',
+        'sha256:cc30bd8208a17b38be64c39894052bc34569a3b7ee3b5007e92d63ed27548b28',
+        'sha1:8dd04dd8048916412676ac8da526e8d31174e239'
       } } }
 
 ## Assets
 
-### CommonsBase_GNU.Apparatus@4.4.1
+### CommonsBase_GNU.Make.Apparatus@4.4.1
 
-  % unified.asset { name="MakeBuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
+  % unified.asset { name="BuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
   'asset'
-  '12450'
-  'sha256:6985b19914a57129fd13b8cf0189af245df5aa96fce19726530523182dc54bb1'
+  '12491'
+  'sha256:61fff42dfe94743cb59ce6f9d16e5f57510386143d995c04d6974cc70bfcfa5f'

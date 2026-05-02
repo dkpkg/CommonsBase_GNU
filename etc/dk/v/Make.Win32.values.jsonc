@@ -1,0 +1,94 @@
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_x86_64 -d target/make
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Make.Win32@4.4.1",
+            "precommands": {
+                "sequential": true,
+                "private": [
+                    // convert the .tar.gz to .zip
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Make.Win32.Zip@4.4.1 tarmodver=CommonsBase_GNU.Make.Bundle@4.4.1 tarassetpath=make-4.4.1.tar.gz",
+                    // extract zip to current folder, stripping toplevel make-4.4.1/ folder
+                    "install-object CommonsBase_GNU.Make.Win32.Zip@4.4.1 -s Release.execution_abi -m ./output.zip -n 1 -d ."
+                ]
+            },
+            "function": {
+                // https://cgit.git.savannah.gnu.org/cgit/make.git/tree/README.W32 has instructions to build with MSVC
+                "execution": [
+                    // build_w32.bat only on Windows
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "envmods": [
+                    "+LLVMTOOLCHAIN=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d :)"
+                ],
+                "commands": [
+                    // overwrite with patched build_w32.bat
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp",
+                        "$(get-asset CommonsBase_GNU.Make.Apparatus.BuildW32Bat@4.4.1 -p assets/p/patched-make-build_w32.bat -f build_w32.bat)",
+                        "./build_w32.bat"
+                    ],
+
+                    // build with Windows ABI-specific cross-compiler (CROSSGCC).
+                    // use [env -u] to run for only one specific Windows slot
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}", "CROSSGCC=x86_64-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}", "CROSSGCC=i686-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}", "CROSSGCC=aarch64-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+                    ],
+
+                    // create bin and include
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/bin", "${SLOT.request}/include"
+                    ],
+                    // copy GccRel/gnumake.exe
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+                    ],
+                    // and gnumake.h
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "src/gnumake.h", "${SLOT.request}/include/gnumake.h"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/make.exe",
+                            "include/gnumake.h"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -74,12 +74,12 @@
 
                     // make
                     [
-                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)"
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}"
                     ],
 
                     // make install
                     [
-                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi  -m ./bin/make -e bin/make -f make)", "install"
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}", "install"
                     ]
                 ]
             },

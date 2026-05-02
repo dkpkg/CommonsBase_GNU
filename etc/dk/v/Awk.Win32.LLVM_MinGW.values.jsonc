@@ -181,7 +181,7 @@
 
                     // make mingw32
                     [
-                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -m ./bin/make -e bin/make -f make)",
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}",
                         // since `mingw32` target hardcodes CC=gcc, we expand the target here
                         // "mingw32",
                         "all",
@@ -195,7 +195,7 @@
 
                     // make install
                     [
-                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -m ./bin/make -e bin/make -f make)",
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}",
                         "install",
                         "prefix=${SLOT.request}"
                     ],
