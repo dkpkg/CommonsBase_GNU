@@ -10,11 +10,11 @@
             "id": "CommonsBase_GNU.Make@4.4.1",
             "precommands": {
                 "private": [
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
-                    "get-object CommonsBase_GNU.Make.Unix@4.4.1 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "get-object CommonsBase_GNU.Make.Autoconf@4.4.1 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
+                    "get-object CommonsBase_GNU.Make.Autoconf@4.4.1 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
+                    "get-object CommonsBase_GNU.Make.Autoconf@4.4.1 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
+                    "get-object CommonsBase_GNU.Make.Autoconf@4.4.1 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
+                    "get-object CommonsBase_GNU.Make.Autoconf@4.4.1 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
                     "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
                     "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}",
                     "get-object CommonsBase_GNU.Make.Win32@4.4.1 -s Release.Windows_arm64 -d ${SLOT.Release.Windows_arm64}"
