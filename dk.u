@@ -35,3 +35,22 @@
   'asset'
   '12491'
   'sha256:61fff42dfe94743cb59ce6f9d16e5f57510386143d995c04d6974cc70bfcfa5f'
+
+### CommonsBase_GNU.Awk.Apparatus@5.3.1
+
+  % unified.asset { name="LlvmMingwPatch", file="assets/p/gawk-llvm-mingw-5.3.1.patch" }
+  'asset'
+  '646'
+  'sha256:d9b16bd9b55f130109915daf31e7b10a8cfa52cadf95fbb94fc1cabd27946ce3'
+
+  % unified.asset { name="MingwHostTriplet", dir="assets/table/mingw-host-triplet" }
+  'asset'
+  '3050'
+  { 'sha256:b9c62daa77f9f33a14e83195f8d82b8e9ebd2f5dd38cd67c391ac9877ad97343' }
+
+### CommonsBase_GNU.Build.Apparatus@1.0.0
+
+  % unified.asset { name="LibtoolOldPostinstall", file="etc/scripts/libtool-old-postinstall.sed" }
+  'asset'
+  '114'
+  'sha256:2f8faeb9d0e255a779e660020372f601ca978616849dfef021d570b8bd67255e'
