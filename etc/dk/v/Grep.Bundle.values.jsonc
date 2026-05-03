@@ -1,0 +1,41 @@
+// Test: ./dk0 -d intermediate --trust-local-package CommonsBase_GNU --autofix get-bundle CommonsBase_GNU.Grep.Bundle@2.5.4+gnuwin32-20090213 -d target/grepsrc
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "bundles": [
+        {
+            "id": "CommonsBase_GNU.Grep.Bundle@2.5.4+gnuwin32-20090213",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "gnuwin32",
+                        "mirrors": [
+                            "https://downloads.sourceforge.net/project/gnuwin32/grep/2.5.4"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "gnuwin32",
+                    "path": "grep-2.5.4-bin.zip",
+                    "checksum": {
+                        "sha256": "3fd98201561b5af3f54a7dacc4f88068f5b5edf19ccdfc981c3c9fc60ff73519"
+                    },
+                    "size": 451824
+                },
+                {
+                    "origin": "gnuwin32",
+                    "path": "grep-2.5.4-dep.zip",
+                    "checksum": {
+                        "sha256": "2150e12da6631899842c28881a75889794d67b2bbc108341a26052f9bcb27584"
+                    },
+                    "size": 898241
+                }
+            ]
+        }
+    ]
+}
