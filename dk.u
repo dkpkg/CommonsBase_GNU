@@ -54,3 +54,18 @@
   'asset'
   '114'
   'sha256:2f8faeb9d0e255a779e660020372f601ca978616849dfef021d570b8bd67255e'
+
+  % unified.asset { name="FixConfigurePrefix", file="etc/scripts/fix-configure-prefix.sh" }
+  'asset'
+  '252'
+  'sha256:a08883a23e25cb7e90f94cf9a27695e6433609b588dcb9546652ecff1eda3f10'
+
+  % unified.asset { name="BisonDisablePerlDocs", file="etc/scripts/bison-disable-perl-docs.sed" }
+  'asset'
+  '64'
+  'sha256:fd8fcb0cd601d0a2b080c07df502804005c50afe7a3530e9e8c39fd64ac3ff5c'
+
+  % unified.asset { name="BisonYaccCmd", file="etc/scripts/bison-yacc.cmd" }
+  'asset'
+  '61'
+  'sha256:f5612e1dc738c6aebaaef45da9dea9e4c51a9fa3926ba4e3094866af42dc28be'

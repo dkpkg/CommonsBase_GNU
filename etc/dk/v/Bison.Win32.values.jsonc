@@ -1,0 +1,361 @@
+// Test: ./dk0 --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Bison.Win32@3.8.2 -s Release.Windows_x86_64 -d target/bison-win64
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Bison.Win32@3.8.2",
+            "function": {
+                "envmods": [
+                    // do not create/update <installdir>/share/info/dir if the `install-info` program is available. that is not reproducible.
+                    // confer https://www.gnu.org/software/automake/manual/html_node/Texinfo.html
+                    "+AM_UPDATE_INFO_DIR=no",
+                    // expose W64dev shell/build tools by name
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    // expose LLVM-MinGW compiler drivers by name
+                    "<PATH=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    // expose bootstrap GNU host tools by name
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Awk@5.3.1 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    // pin host tools by name so configure caches a portable value
+                    "+GREP=grep",
+                    "+EGREP_TRADITIONAL=grep",
+                    "+EGREP=egrep",
+                    "+FGREP=fgrep",
+                    "+SED=sed",
+                    "+AWK=awk",
+                    "+M4=m4"
+                ],
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "commands": [
+                    // unpack bison-3.8.2.tar.xz into the current working directory
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "$(get-asset CommonsBase_GNU.Bison.Bundle@3.8.2 -p bison-3.8.2.tar.xz -f bison-3.8.2.tar.xz)",
+                        "bison-3.8.2.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "bison-3.8.2.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-R", "bison-3.8.2/.", "."
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "bison-3.8.2", "bison-3.8.2.tar"
+                    ],
+
+                    // configure
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=x86_64-w64-mingw32",
+                        "CC=x86_64-w64-mingw32-gcc",
+                        "CXX=x86_64-w64-mingw32-g++",
+                        "LD=x86_64-w64-mingw32-ld",
+                        "AR=x86_64-w64-mingw32-ar.exe",
+                        "RANLIB=x86_64-w64-mingw32-ranlib.exe",
+                        "WINDRES=x86_64-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "M4=m4",
+                        "--prefix=${SLOTABS.Release.Windows_x86_64}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_x86_64}",
+                        "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "--in-place", "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=i686-w64-mingw32",
+                        "CC=i686-w64-mingw32-gcc",
+                        "CXX=i686-w64-mingw32-g++",
+                        "LD=i686-w64-mingw32-ld",
+                        "AR=i686-w64-mingw32-ar.exe",
+                        "RANLIB=i686-w64-mingw32-ranlib.exe",
+                        "WINDRES=i686-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "M4=m4",
+                        "--prefix=${SLOTABS.Release.Windows_x86}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_x86}",
+                        "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "--in-place", "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=aarch64-w64-mingw32",
+                        "CC=aarch64-w64-mingw32-gcc",
+                        "CXX=aarch64-w64-mingw32-g++",
+                        "LD=aarch64-w64-mingw32-ld",
+                        "AR=aarch64-w64-mingw32-ar.exe",
+                        "RANLIB=aarch64-w64-mingw32-ranlib.exe",
+                        "WINDRES=aarch64-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "M4=m4",
+                        "--prefix=${SLOTABS.Release.Windows_arm64}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_arm64}",
+                        "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "--in-place", "Makefile"
+                    ],
+
+                    // make
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+
+                    // make install
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/share/info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "doc/bison.info", "${SLOT.request}/share/info/bison.info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-f", "${SLOT.request}/bin/yacc"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/share/info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "doc/bison.info", "${SLOT.request}/share/info/bison.info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-f", "${SLOT.request}/bin/yacc"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/share/info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "doc/bison.info", "${SLOT.request}/share/info/bison.info"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-f", "${SLOT.request}/bin/yacc"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                    ],
+
+                    // remove documentation
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "${SLOT.request}/share/doc/bison"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "${SLOT.request}/share/doc/bison"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "${SLOT.request}/share/doc/bison"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/bison.exe",
+                            "bin/yacc.cmd",
+                            "lib/liby.a",
+                            "share/man/man1/yacc.1",
+                            "share/man/man1/bison.1",
+                            "share/aclocal/bison-i18n.m4",
+                            "share/info/bison.info",
+                            "share/bison/m4sugar/foreach.m4",
+                            "share/bison/m4sugar/m4sugar.m4",
+                            "share/bison/skeletons/traceon.m4",
+                            "share/bison/skeletons/stack.hh",
+                            "share/bison/skeletons/glr.cc",
+                            "share/bison/skeletons/c.m4",
+                            "share/bison/skeletons/glr.c",
+                            "share/bison/skeletons/java-skel.m4",
+                            "share/bison/skeletons/location.cc",
+                            "share/bison/skeletons/variant.hh",
+                            "share/bison/skeletons/c++-skel.m4",
+                            "share/bison/skeletons/bison.m4",
+                            "share/bison/skeletons/lalr1.d",
+                            "share/bison/skeletons/glr2.cc",
+                            "share/bison/skeletons/c-skel.m4",
+                            "share/bison/skeletons/java.m4",
+                            "share/bison/skeletons/c++.m4",
+                            "share/bison/skeletons/yacc.c",
+                            "share/bison/skeletons/lalr1.java",
+                            "share/bison/skeletons/c-like.m4",
+                            "share/bison/skeletons/d.m4",
+                            "share/bison/skeletons/d-skel.m4",
+                            "share/bison/skeletons/lalr1.cc",
+                            "share/bison/README.md",
+                            "share/bison/bison-default.css",
+                            "share/bison/xslt/bison.xsl",
+                            "share/bison/xslt/xml2text.xsl",
+                            "share/bison/xslt/xml2dot.xsl",
+                            "share/bison/xslt/xml2xhtml.xsl"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
