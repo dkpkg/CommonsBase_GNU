@@ -1,0 +1,41 @@
+// Test: ./dk0 -d intermediate --trust-local-package CommonsBase_GNU --autofix get-bundle CommonsBase_GNU.Sed.Bundle@4.2.1+gnuwin32-20101228 -d target/sedsrc
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "bundles": [
+        {
+            "id": "CommonsBase_GNU.Sed.Bundle@4.2.1+gnuwin32-20101228",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "gnuwin32",
+                        "mirrors": [
+                            "https://downloads.sourceforge.net/project/gnuwin32/sed/4.2.1"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "gnuwin32",
+                    "path": "sed-4.2.1-bin.zip",
+                    "checksum": {
+                        "sha256": "ae1651ffb461d69a7c51c76867a859d8addf802b85678834c0ebb402ef79b3cd"
+                    },
+                    "size": 317930
+                },
+                {
+                    "origin": "gnuwin32",
+                    "path": "sed-4.2.1-dep.zip",
+                    "checksum": {
+                        "sha256": "53e2e84db3e6c5855fd8013e1b79ccbd53b6bae7e7e4d59c0d18bb1dd5d18961"
+                    },
+                    "size": 833739
+                }
+            ]
+        }
+    ]
+}
