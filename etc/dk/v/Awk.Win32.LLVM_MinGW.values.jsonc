@@ -36,7 +36,7 @@
                         "/usr/bin/patch",
                         "-p1",
                         "-i",
-                        "$(get-asset CommonsBase_GNU.Lookup@1.0.0 -p p -m ./gawk-llvm-mingw-5.3.1.patch -f gawk-llvm-mingw-5.3.1.patch)"
+                        "$(get-asset CommonsBase_GNU.Awk.Apparatus.LlvmMingwPatch@5.3.1 -p assets/p/gawk-llvm-mingw-5.3.1.patch -f gawk-llvm-mingw-5.3.1.patch)"
                     ],
 
                     // ./configure
@@ -186,7 +186,7 @@
                         // "mingw32",
                         "all",
                         //      ex. "CC=x86_64-w64-mingw32-gcc",
-                        "CC=$(get-asset CommonsBase_GNU.Lookup@1.0.0 -p mingw-host-triplet -m ./${SLOTNAME.request})-gcc",
+                        "CC=$(get-asset CommonsBase_GNU.Awk.Apparatus.MingwHostTriplet@5.3.1 -p assets/table/mingw-host-triplet -m ./${SLOTNAME.request})-gcc",
                         "O=.o", "\"CF=-D__USE_MINGW_ANSI_STDIO -gdwarf-2 -g3 -Wno-deprecated-declarations\"",
                         "OPT=-O2", "OBJ=popen.o", "LNK=LMINGW32", "\"LF=-gdwarf-2 -g3\"", "LF2=-lws2_32", "RSP=",
                         // and add the prefix for installation
