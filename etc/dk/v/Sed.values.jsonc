@@ -1,0 +1,58 @@
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d target/sed-win64
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228",
+            "precommands": {
+                // The binaries are 32-bit GnuWin32 tools, so they can be reused on
+                // Windows x86, x86_64, and arm64 execution ABIs.
+                "private": [
+                    "get-asset CommonsBase_GNU.Sed.Bundle@4.2.1+gnuwin32-20101228 -p sed-4.2.1-bin.zip -d sedbin",
+                    "get-asset CommonsBase_GNU.Sed.Bundle@4.2.1+gnuwin32-20101228 -p sed-4.2.1-dep.zip -d seddep"
+                ]
+            },
+            "function": {
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "commands": [
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "mkdir", "-p", "${SLOT.request}/bin"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "cp", "-t", "${SLOT.request}/bin",
+                        "sedbin/bin/sed.exe",
+                        "seddep/bin/libiconv2.dll",
+                        "seddep/bin/libintl3.dll"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/sed.exe",
+                            "bin/libiconv2.dll",
+                            "bin/libintl3.dll"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
