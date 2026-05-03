@@ -1,0 +1,66 @@
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.Windows_x86_64 -d target/grep-win64
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213",
+            "precommands": {
+                // The binaries are 32-bit: PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows
+                // So they should work on all Windows 10 + 11 platforms (https://learn.microsoft.com/en-us/windows/arm/apps-on-arm-x86-emulation).
+                "private": [
+                    "get-asset CommonsBase_GNU.Grep.Bundle@2.5.4+gnuwin32-20090213 -p grep-2.5.4-bin.zip -d grepbin",
+                    "get-asset CommonsBase_GNU.Grep.Bundle@2.5.4+gnuwin32-20090213 -p grep-2.5.4-dep.zip -d grepdep"
+                ]
+            },
+            "function": {
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "commands": [
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "mkdir", "-p", "${SLOT.request}/bin"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "cp", "-t", "${SLOT.request}/bin",
+                        "grepbin/bin/grep.exe",
+                        "grepbin/bin/egrep.exe",
+                        "grepbin/bin/fgrep.exe",
+                        "grepdep/bin/libiconv2.dll",
+                        "grepdep/bin/libintl3.dll",
+                        "grepdep/bin/pcre3.dll",
+                        "grepdep/bin/regex2.dll"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/grep.exe",
+                            "bin/egrep.exe",
+                            "bin/fgrep.exe",
+                            "bin/libiconv2.dll",
+                            "bin/libintl3.dll",
+                            "bin/pcre3.dll",
+                            "bin/regex2.dll"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
