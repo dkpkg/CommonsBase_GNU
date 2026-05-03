@@ -1,0 +1,179 @@
+// Test: ./dk0 --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86_64 -d target/m4-win64
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.M4@1.4.20",
+            "function": {
+                "envmods": [
+                    "+AM_UPDATE_INFO_DIR=no",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Awk@5.3.1 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "+GREP=grep",
+                    "+EGREP_TRADITIONAL=grep",
+                    "+EGREP=egrep",
+                    "+FGREP=fgrep",
+                    "+SED=sed",
+                    "+AWK=awk"
+                ],
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "commands": [
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "$(get-asset CommonsBase_GNU.M4.Bundle@1.4.20 -p m4-1.4.20.tar.xz -f m4-1.4.20.tar.xz)",
+                        "m4-1.4.20.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "m4-1.4.20.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-R", "m4-1.4.20/.", "."
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-f", "m4-1.4.20.tar"
+                    ],
+
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=x86_64-w64-mingw32",
+                        "CC=x86_64-w64-mingw32-gcc",
+                        "LD=x86_64-w64-mingw32-ld",
+                        "AR=x86_64-w64-mingw32-ar.exe",
+                        "RANLIB=x86_64-w64-mingw32-ranlib.exe",
+                        "WINDRES=x86_64-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "--prefix=${SLOTABS.Release.Windows_x86_64}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=i686-w64-mingw32",
+                        "CC=i686-w64-mingw32-gcc",
+                        "LD=i686-w64-mingw32-ld",
+                        "AR=i686-w64-mingw32-ar.exe",
+                        "RANLIB=i686-w64-mingw32-ranlib.exe",
+                        "WINDRES=i686-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "--prefix=${SLOTABS.Release.Windows_x86}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=aarch64-w64-mingw32",
+                        "CC=aarch64-w64-mingw32-gcc",
+                        "LD=aarch64-w64-mingw32-ld",
+                        "AR=aarch64-w64-mingw32-ar.exe",
+                        "RANLIB=aarch64-w64-mingw32-ranlib.exe",
+                        "WINDRES=aarch64-w64-mingw32-windres",
+                        "GREP=grep",
+                        "EGREP_TRADITIONAL=grep",
+                        "EGREP=egrep",
+                        "FGREP=fgrep",
+                        "SED=sed",
+                        "AWK=awk",
+                        "--prefix=${SLOTABS.Release.Windows_arm64}"
+                    ],
+
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install"
+                    ],
+
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf",
+                        "${SLOT.request}/share/doc/m4",
+                        "${SLOT.request}/share/info",
+                        "${SLOT.request}/share/man"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/m4.exe"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
