@@ -106,7 +106,7 @@ if not ERRORLEVEL 1 goto FoundMSVC
 
 :: Visual Studio 17 and above provides the "vswhere" tool
 call :FindVswhere
-if ERRORLEVEL 1 goto LegacyVS
+if ERRORLEVEL 1 goto NoMSVCCompiler
 
 for /f "tokens=* usebackq" %%i in (`"%VSWHERE%" -latest -property installationPath`) do (
     set InstallPath=%%i
@@ -115,59 +115,9 @@ set "VSVARS=%InstallPath%\VC\Auxiliary\Build\vcvarsall.bat"
 call :CheckMSVC
 if not ERRORLEVEL 1 goto FoundMSVC
 
-:: No "vswhere" or it can't find a compiler.  Go old-school.
-:LegacyVS
-set "VSVARS=%VS150COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS120COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS110COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS100COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS90COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS80COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS71COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%VS70COMNTOOLS%\..\..\VC\vcvarsall.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%V6TOOLS%\VC98\Bin\vcvars32.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%V6TOOLS%\VC97\Bin\vcvars32.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-set "VSVARS=%V5TOOLS%\VC\Bin\vcvars32.bat"
-call :CheckMSVC
-if not ERRORLEVEL 1 goto FoundMSVC
-
-:: We did not find anything--fail
+:NoMSVCCompiler
 echo No MSVC compiler available.
-echo Please run vcvarsall.bat and/or configure your Path.
+echo The build requires VSWHERE to point to the packaged vswhere.exe.
 exit 1
 
 :FoundMSVC
@@ -406,10 +356,7 @@ set "GUILECFLAGS=%GUILECFLAGS% -DHAVE_GUILE"
 goto :EOF
 
 :FindVswhere
-set VSWHERE=vswhere
-call "%VSWHERE%" -help >nul 2>&1
-if not ERRORLEVEL 1 exit /b 0
-set "VSWHERE=C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere"
+if "%VSWHERE%" == "" exit /b 1
 call "%VSWHERE%" -help >nul 2>&1
 if ERRORLEVEL 1 exit /b 1
 goto :EOF

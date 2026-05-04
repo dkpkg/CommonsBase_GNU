@@ -33,8 +33,8 @@
 
   % unified.asset { name="BuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
   'asset'
-  '12491'
-  'sha256:61fff42dfe94743cb59ce6f9d16e5f57510386143d995c04d6974cc70bfcfa5f'
+  '11006'
+  'sha256:6c996fe3f58d016f0c8d1373eb6f42e7c83ff39fa6837cffcd55615cfdef779b'
 
 ### CommonsBase_GNU.Awk.Apparatus@5.3.1
 
