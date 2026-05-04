@@ -27,7 +27,8 @@
                     }
                 ],
                 "envmods": [
-                    "+LLVMTOOLCHAIN=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d :)"
+                    "+LLVMTOOLCHAIN=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d :)",
+                    "+VSWHERE=$(--path=absnative get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.execution_abi -e bin/vswhere.exe -d :)${/}bin${/}vswhere.exe"
                 ],
                 "commands": [
                     // overwrite with patched build_w32.bat
