@@ -1,0 +1,96 @@
+// GNU Grep is a command-line text search tool that provides grep, egrep and fgrep entrypoints.
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Darwin_arm64 -d target/grep-unix
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Grep.Unix@3.12.0",
+            "precommands": {
+                "sequential": true,
+                "private": [
+                    // convert the .tar.xz to .zip
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Grep.Zip@3.12.0 tarmodver=CommonsBase_GNU.Grep.Bundle@3.12.0 tarassetpath=grep-3.12.tar.xz",
+                    // extract zip to current folder, stripping toplevel grep-3.12/ folder
+                    "install-object CommonsBase_GNU.Grep.Zip@3.12.0 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
+                ]
+            },
+            "function": {
+                "envmods": [
+                    // do not create/update <installdir>/share/info/dir if the `install-info` program is available. that is not reproducible.
+                    // confer https://www.gnu.org/software/automake/manual/html_node/Texinfo.html
+                    "+AM_UPDATE_INFO_DIR=no"
+                ],
+                "commands": [
+                    [
+                        "/bin/sh", "./configure",
+                        "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
+                        "--host=aarch64-apple-darwin",
+                        "\"CC=clang -arch arm64\"",
+                        "--prefix=${SLOTABS.Release.Darwin_arm64}"
+                    ],
+                    [
+                        "/bin/sh", "./configure",
+                        "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
+                        "--host=x86_64-apple-darwin",
+                        "\"CC=clang -arch x86_64\"",
+                        "--prefix=${SLOTABS.Release.Darwin_x86_64}"
+                    ],
+                    [
+                        "/bin/sh", "./configure",
+                        "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
+                        "--host=x86_64-linux-gnu",
+                        "\"CC=gcc -m64\"",
+                        "--prefix=${SLOTABS.Release.Linux_x86_64}"
+                    ],
+                    [
+                        "/bin/sh", "./configure",
+                        "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
+                        "--host=i686-linux-gnu",
+                        "\"CC=gcc -m32\"",
+                        "--prefix=${SLOTABS.Release.Linux_x86}"
+                    ],
+                    [
+                        "/bin/sh", "./configure",
+                        "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
+                        "--host=aarch64-linux-gnu",
+                        "\"CC=gcc -march=armv8-a\"",
+                        "--prefix=${SLOTABS.Release.Linux_arm64}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}",
+                        "install"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "rm", "-rf", "${SLOT.request}/share/info", "${SLOT.request}/share/man"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Darwin_arm64",
+                            "Release.Darwin_x86_64",
+                            "Release.Linux_x86_64",
+                            "Release.Linux_x86",
+                            "Release.Linux_arm64"
+                        ],
+                        "paths": [
+                            "bin/grep",
+                            "bin/egrep",
+                            "bin/fgrep"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 // Test: ./dk0 -d intermediate --trust-local-package CommonsBase_GNU --autofix get-bundle CommonsBase_GNU.Grep.Bundle@2.5.4+gnuwin32-20090213 -d target/grepsrc
+// Test: ./dk0 -d intermediate --trust-local-package CommonsBase_GNU --autofix get-bundle CommonsBase_GNU.Grep.Bundle@3.12.0 -d target/grepsrc-3.12
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -34,6 +35,38 @@
                         "sha256": "2150e12da6631899842c28881a75889794d67b2bbc108341a26052f9bcb27584"
                     },
                     "size": 898241
+                }
+            ]
+        },
+        {
+            "id": "CommonsBase_GNU.Grep.Bundle@3.12.0",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "gnu-grep",
+                        "mirrors": [
+                            "https://mirrors.kernel.org/gnu/grep",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/grep",
+                            "https://mirrors.ocf.berkeley.edu/gnu/grep",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/grep",
+                            "https://ftp.jaist.ac.jp/pub/GNU/grep",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/grep",
+                            "https://mirror.netcologne.de/gnu/grep",
+                            "https://mirror.team-cymru.com/gnu/grep",
+                            "https://ftp.gnu.org/gnu/grep",
+                            "https://ftpmirror.gnu.org/grep"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "gnu-grep",
+                    "path": "grep-3.12.tar.xz",
+                    "checksum": {
+                        "sha256": "2649b27c0e90e632eadcd757be06c6e9a4f48d941de51e7c0f83ff76408a07b9"
+                    },
+                    "size": 1918448
                 }
             ]
         }
