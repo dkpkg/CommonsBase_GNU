@@ -13,6 +13,14 @@
                     {
                         "name": "gnu-make",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/make",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/make",
+                            "https://mirrors.ocf.berkeley.edu/gnu/make",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/make",
+                            "https://ftp.jaist.ac.jp/pub/GNU/make",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/make",
+                            "https://mirror.netcologne.de/gnu/make",
+                            "https://mirror.team-cymru.com/gnu/make",
                             "https://ftp.gnu.org/gnu/make",
                             "https://ftpmirror.gnu.org/make"
                         ]

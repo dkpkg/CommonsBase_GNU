@@ -16,6 +16,14 @@
                     {
                         "name": "gnu-nettle",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/nettle",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/nettle",
+                            "https://mirrors.ocf.berkeley.edu/gnu/nettle",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/nettle",
+                            "https://ftp.jaist.ac.jp/pub/GNU/nettle",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/nettle",
+                            "https://mirror.netcologne.de/gnu/nettle",
+                            "https://mirror.team-cymru.com/gnu/nettle",
                             "https://ftp.gnu.org/gnu/nettle",
                             "https://ftpmirror.gnu.org/nettle"
                         ]
@@ -40,6 +48,14 @@
                     {
                         "name": "gnu-nettle",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/nettle",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/nettle",
+                            "https://mirrors.ocf.berkeley.edu/gnu/nettle",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/nettle",
+                            "https://ftp.jaist.ac.jp/pub/GNU/nettle",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/nettle",
+                            "https://mirror.netcologne.de/gnu/nettle",
+                            "https://mirror.team-cymru.com/gnu/nettle",
                             "https://ftp.gnu.org/gnu/nettle",
                             "https://ftpmirror.gnu.org/nettle"
                         ]

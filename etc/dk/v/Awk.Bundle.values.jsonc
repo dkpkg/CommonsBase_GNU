@@ -13,6 +13,14 @@
                     {
                         "name": "gnu-awk",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/gawk",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/gawk",
+                            "https://mirrors.ocf.berkeley.edu/gnu/gawk",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/gawk",
+                            "https://ftp.jaist.ac.jp/pub/GNU/gawk",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/gawk",
+                            "https://mirror.netcologne.de/gnu/gawk",
+                            "https://mirror.team-cymru.com/gnu/gawk",
                             "https://ftp.gnu.org/gnu/gawk",
                             "https://ftpmirror.gnu.org/gawk"
                         ]

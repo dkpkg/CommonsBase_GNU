@@ -14,6 +14,14 @@
                     {
                         "name": "gnu-gmp",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/gmp",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/gmp",
+                            "https://mirrors.ocf.berkeley.edu/gnu/gmp",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/gmp",
+                            "https://ftp.jaist.ac.jp/pub/GNU/gmp",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/gmp",
+                            "https://mirror.netcologne.de/gnu/gmp",
+                            "https://mirror.team-cymru.com/gnu/gmp",
                             "https://ftp.gnu.org/gnu/gmp",
                             "https://ftpmirror.gnu.org/gmp"
                         ]
