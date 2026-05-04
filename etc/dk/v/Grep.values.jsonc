@@ -1,4 +1,5 @@
 // Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.Windows_x86_64 -d target/grep-win64
+// Test: ./dk0 --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Windows_x86_64 -d target/grep-win64-source
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -57,6 +58,51 @@
                             "bin/libintl3.dll",
                             "bin/pcre3.dll",
                             "bin/regex2.dll"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CommonsBase_GNU.Grep@3.12.0",
+            "precommands": {
+                "private": [
+                    "get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
+                    "get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
+                    "get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
+                    "get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
+                    "get-object CommonsBase_GNU.Grep.Unix@3.12.0 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
+                    "get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}",
+                    "get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${SLOT.Release.Windows_arm64}"
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Darwin_arm64",
+                            "Release.Darwin_x86_64",
+                            "Release.Linux_x86_64",
+                            "Release.Linux_x86",
+                            "Release.Linux_arm64"
+                        ],
+                        "paths": [
+                            "bin/grep",
+                            "bin/egrep",
+                            "bin/fgrep"
+                        ]
+                    },
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/grep.exe",
+                            "bin/egrep.exe",
+                            "bin/fgrep.exe"
                         ]
                     }
                 ]

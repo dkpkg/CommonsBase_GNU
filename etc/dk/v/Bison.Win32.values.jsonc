@@ -17,10 +17,9 @@
                     "<PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
                     // expose LLVM-MinGW compiler drivers by name
                     "<PATH=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                    // expose bootstrap GNU host tools by name
-                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    // expose GNU host tools by name
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
                     "<PATH=$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Awk@5.3.1 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
                     "<PATH=$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
                     // pin host tools by name so configure caches a portable value
                     "+GREP=grep",
