@@ -13,6 +13,14 @@
                     {
                         "name": "gnu-m4",
                         "mirrors": [
+                            "https://mirrors.kernel.org/gnu/m4",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/m4",
+                            "https://mirrors.ocf.berkeley.edu/gnu/m4",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/m4",
+                            "https://ftp.jaist.ac.jp/pub/GNU/m4",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/m4",
+                            "https://mirror.netcologne.de/gnu/m4",
+                            "https://mirror.team-cymru.com/gnu/m4",
                             "https://ftp.gnu.org/gnu/m4",
                             "https://ftpmirror.gnu.org/m4"
                         ]
