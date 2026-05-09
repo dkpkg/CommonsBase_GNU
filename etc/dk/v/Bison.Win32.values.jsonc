@@ -64,7 +64,7 @@
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls",
                         "--build=x86_64-w64-mingw32",
@@ -87,8 +87,8 @@
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
-                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(get-asset CommonsBase_GNU.Build.Apparatus.FixConfigurePrefix@1.0.0 -p etc/scripts/fix-configure-prefix.sh -f fix-configure-prefix.sh)",
                         "${SLOTABS.Release.Windows_x86_64}",
                         "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
                     ],
@@ -96,13 +96,13 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
                         "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
-                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "-f", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonDisablePerlDocs@1.0.0 -p etc/scripts/bison-disable-perl-docs.sed -f bison-disable-perl-docs.sed)",
                         "--in-place", "Makefile"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls",
                         "--build=x86_64-w64-mingw32",
@@ -125,8 +125,8 @@
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
-                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(get-asset CommonsBase_GNU.Build.Apparatus.FixConfigurePrefix@1.0.0 -p etc/scripts/fix-configure-prefix.sh -f fix-configure-prefix.sh)",
                         "${SLOTABS.Release.Windows_x86}",
                         "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
                     ],
@@ -134,13 +134,13 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
                         "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
-                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "-f", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonDisablePerlDocs@1.0.0 -p etc/scripts/bison-disable-perl-docs.sed -f bison-disable-perl-docs.sed)",
                         "--in-place", "Makefile"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls",
                         "--build=x86_64-w64-mingw32",
@@ -163,8 +163,8 @@
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
-                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(get-asset CommonsBase_GNU.Build.Apparatus.FixConfigurePrefix@1.0.0 -p etc/scripts/fix-configure-prefix.sh -f fix-configure-prefix.sh)",
                         "${SLOTABS.Release.Windows_arm64}",
                         "Makefile", "po/Makefile", "runtime-po/Makefile", "gnulib-po/Makefile"
                     ],
@@ -172,7 +172,7 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
                         "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
-                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-disable-perl-docs.sed",
+                        "-f", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonDisablePerlDocs@1.0.0 -p etc/scripts/bison-disable-perl-docs.sed -f bison-disable-perl-docs.sed)",
                         "--in-place", "Makefile"
                     ],
 
@@ -222,7 +222,7 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                        "cp", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonYaccCmd@1.0.0 -p etc/scripts/bison-yacc.cmd -f bison-yacc.cmd)", "${SLOT.request}/bin/yacc.cmd"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
@@ -252,7 +252,7 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                        "cp", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonYaccCmd@1.0.0 -p etc/scripts/bison-yacc.cmd -f bison-yacc.cmd)", "${SLOT.request}/bin/yacc.cmd"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
@@ -282,7 +282,7 @@
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "cp", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\bison-yacc.cmd", "${SLOT.request}/bin/yacc.cmd"
+                        "cp", "$(get-asset CommonsBase_GNU.Build.Apparatus.BisonYaccCmd@1.0.0 -p etc/scripts/bison-yacc.cmd -f bison-yacc.cmd)", "${SLOT.request}/bin/yacc.cmd"
                     ],
 
                     // remove documentation

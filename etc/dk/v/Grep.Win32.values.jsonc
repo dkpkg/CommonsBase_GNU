@@ -1,5 +1,6 @@
 // GNU Grep is a command-line text search tool that provides native Windows grep, egrep and fgrep entrypoints.
-// Test: Shell.exe -C Y:\source\CommonsBase_GNU --cell dk0=Y:\source\dksdk-coder\ext\dk -I etc\dk\i --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d target\grep-win64
+// Test from the CommonsBase_GNU repo root:
+//   Shell.exe -I etc\dk\i --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d target\grep-win64
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -62,7 +63,7 @@
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
                         "EGREP_TRADITIONAL=egrep",
                         "ac_cv_path_GREP=grep",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
                         "--build=x86_64-w64-mingw32",
@@ -82,7 +83,7 @@
                         "env", "-u", "${SLOT.Release.Windows_x86}",
                         "EGREP_TRADITIONAL=egrep",
                         "ac_cv_path_GREP=grep",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
                         "--build=x86_64-w64-mingw32",
@@ -102,7 +103,7 @@
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
                         "EGREP_TRADITIONAL=egrep",
                         "ac_cv_path_GREP=grep",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
                         "--build=x86_64-w64-mingw32",
@@ -120,34 +121,34 @@
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
                         "install"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
                         "install"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
                         "install"
                     ],
                     [

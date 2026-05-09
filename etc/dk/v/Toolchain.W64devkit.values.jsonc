@@ -21,7 +21,7 @@
             // [env -u] to force dk0 to restrict this command to Release.Windows_x86 slot
             "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
             "env", "-u", "${SLOT.Release.Windows_x86}", "--",
-            "$(get-object CommonsBase_Std.S7z@25.1.0 -s Release.execution_abi -e '*' -d :)/7zz.exe",
+            "$(--path=absnative get-object CommonsBase_Std.S7z@25.1.0 -s Release.execution_abi -e '*' -d :)/7zz.exe",
             "x",
             "$(get-asset CommonsBase_GNU.Toolchain.W64devkit.Bundle@2.5.0 -p w64devkit-x86-2.5.0.7z.exe -f w64devkit-x86.7z.exe)"
           ],
@@ -30,7 +30,7 @@
             // [env -u] to force dk0 to restrict this command to Release.Windows_x86_64 slot
             "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
             "env", "-u", "${SLOT.Release.Windows_x86_64}", "--",
-            "$(get-object CommonsBase_Std.S7z@25.1.0 -s Release.execution_abi -e '*' -d :)/7zz.exe",
+            "$(--path=absnative get-object CommonsBase_Std.S7z@25.1.0 -s Release.execution_abi -e '*' -d :)/7zz.exe",
             "x",
             "$(get-asset CommonsBase_GNU.Toolchain.W64devkit.Bundle@2.5.0 -p w64devkit-x64-2.5.0.7z.exe -f w64devkit-x64.7z.exe)"
           ],
