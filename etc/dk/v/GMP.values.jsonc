@@ -75,7 +75,9 @@
                             "lib/pkgconfig/gmp.pc",
                             "lib/pkgconfig/gmpxx.pc",
                             "lib/libgmp.a",
+                            "lib/libgmp.la",
                             "lib/libgmpxx.a",
+                            "lib/libgmpxx.la",
                             "share/info/gmp.info",
                             "share/info/gmp.info-1",
                             "share/info/gmp.info-2"
@@ -215,31 +217,36 @@
                 ],
                 "commands": [
                     [
-                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "$(--path=absnative get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
                         "x",
                         "-o.",
                         "$(get-asset CommonsBase_GNU.GMP.Bundle@6.3.0 -p gmp-6.3.0.tar.xz -f gmp-6.3.0.tar.xz)",
                         "gmp-6.3.0.tar"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "$(--path=absnative get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
                         "x",
                         "-o.",
                         "gmp-6.3.0.tar"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "cp", "-R", "gmp-6.3.0/.", "."
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "rm", "-rf", "gmp-6.3.0", "gmp-6.3.0.tar"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86_64}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "ac_cv_sizeof_unsigned=4",
+                        "ac_cv_sizeof_unsigned_long=4",
+                        "ac_cv_sizeof_unsigned_short=2",
+                        "ac_cv_sizeof_void_p=8",
+                        "ac_cv_sizeof_mp_limb_t=8",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--build=x86_64-w64-mingw32", "--host=x86_64-w64-mingw32",
                         "CC=x86_64-w64-mingw32-gcc",
@@ -247,6 +254,7 @@
                         "CFLAGS=-std=gnu11",
                         "LD=x86_64-w64-mingw32-ld",
                         "AR=x86_64-w64-mingw32-ar.exe",
+                        "NM=x86_64-w64-mingw32-nm.exe",
                         "RANLIB=x86_64-w64-mingw32-ranlib.exe",
                         "GREP=grep",
                         "EGREP_TRADITIONAL=grep",
@@ -260,10 +268,15 @@
                         "--disable-dependency-tracking", "--disable-nls"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_x86}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "ac_cv_sizeof_unsigned=4",
+                        "ac_cv_sizeof_unsigned_long=4",
+                        "ac_cv_sizeof_unsigned_short=2",
+                        "ac_cv_sizeof_void_p=4",
+                        "ac_cv_sizeof_mp_limb_t=4",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--build=x86_64-w64-mingw32", "--host=i686-w64-mingw32",
                         "CC=i686-w64-mingw32-gcc",
@@ -271,6 +284,7 @@
                         "CFLAGS=-std=gnu11",
                         "LD=i686-w64-mingw32-ld",
                         "AR=i686-w64-mingw32-ar.exe",
+                        "NM=i686-w64-mingw32-nm.exe",
                         "RANLIB=i686-w64-mingw32-ranlib.exe",
                         "GREP=grep",
                         "EGREP_TRADITIONAL=grep",
@@ -284,10 +298,15 @@
                         "--disable-dependency-tracking", "--disable-nls"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.Release.Windows_arm64}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "ac_cv_sizeof_unsigned=4",
+                        "ac_cv_sizeof_unsigned_long=4",
+                        "ac_cv_sizeof_unsigned_short=2",
+                        "ac_cv_sizeof_void_p=8",
+                        "ac_cv_sizeof_mp_limb_t=8",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "./configure",
                         "--build=x86_64-w64-mingw32", "--host=aarch64-w64-mingw32",
                         "CC=aarch64-w64-mingw32-gcc",
@@ -295,6 +314,7 @@
                         "CFLAGS=-std=gnu11",
                         "LD=aarch64-w64-mingw32-ld",
                         "AR=aarch64-w64-mingw32-ar.exe",
+                        "NM=aarch64-w64-mingw32-nm.exe",
                         "RANLIB=aarch64-w64-mingw32-ranlib.exe",
                         "GREP=grep",
                         "EGREP_TRADITIONAL=grep",
@@ -308,39 +328,72 @@
                         "--disable-dependency-tracking", "--disable-nls"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "env", "-u", "${SLOT.request}",
-                        "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/find.exe -d :)/bin/find.exe",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/find.exe -d :)/bin/find.exe",
                         ".", "-name", "Makefile",
                         "-exec",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_x86_64}",
+                        "{}", "+"
+                    ],
+                    [
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/find.exe -d :)/bin/find.exe",
+                        ".", "-name", "Makefile",
+                        "-exec",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_x86}",
+                        "{}", "+"
+                    ],
+                    [
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/find.exe -d :)/bin/find.exe",
+                        ".", "-name", "Makefile",
+                        "-exec",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\fix-configure-prefix.sh",
+                        "${SLOTABS.Release.Windows_arm64}",
+                        "{}", "+"
+                    ],
+                    [
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.request}",
+                        "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/find.exe -d :)/bin/find.exe",
+                        ".", "-name", "Makefile",
+                        "-exec",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
                         "-i", "s|/bin/sh$|sh.exe|",
                         "{}", ";"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.request}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
-                        "-i",
-                        "'s|^old_postinstall_cmds=.*$|old_postinstall_cmds=\"chmod 644 \\\\\\\\\\\\\\\"\\\\$oldlib\\\\\\\\\\\\\\\"~\\\\$RANLIB \\\\\\\\\\\\\\\"\\\\$tool_oldlib\\\\\\\\\\\\\\\"\"|'",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-f", "Y:\\source\\CommonsBase_GNU\\etc\\scripts\\libtool-old-postinstall.sed",
+                        "--in-place",
                         "./libtool"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.request}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "SHELL=$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
-                        "MAKESHELL=$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "SHELL=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "MAKESHELL=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "$(--path=absnative get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.request}",
                         "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
-                        "SHELL=$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
-                        "MAKESHELL=$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "SHELL=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "MAKESHELL=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
                         "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}", "install"
                     ]
                 ]
@@ -357,7 +410,9 @@
                             "lib/pkgconfig/gmp.pc",
                             "lib/pkgconfig/gmpxx.pc",
                             "lib/libgmp.a",
+                            "lib/libgmp.la",
                             "lib/libgmpxx.a",
+                            "lib/libgmpxx.la",
                             "share/info/gmp.info",
                             "share/info/gmp.info-1",
                             "share/info/gmp.info-2"
