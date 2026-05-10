@@ -258,6 +258,7 @@ if "%VERBOSE%" == "N" echo - Compiling %1.c
 echo %LNKOUT%/%1.%O% >>%OUTDIR%\link.sc
 set EXTRAS=
 if "%2" == "GUILE" set "EXTRAS=%GUILECFLAGS%"
+if "%COMPILER%" == "gcc" if /I "%CROSSGCC%" == "i686-w64-mingw32-gcc.exe" set "EXTRAS=%EXTRAS% -UHAVE_STRUCT_DIRENT_D_TYPE"
 if exist "%OUTDIR%\%1.%O%" del "%OUTDIR%\%1.%O%"
 if "%COMPILER%" == "gcc" goto GccCompile
 if "%COMPILER%" == "tcc" goto TccCompile

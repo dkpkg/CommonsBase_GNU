@@ -1,6 +1,12 @@
 #!/bin/sh
 set -eu
 
+if [ "${1:-}" = "--prune-m4-subdirs" ]; then
+  shift
+  sed -i 's/^SUBDIRS = \. examples lib src doc checks po tests$/SUBDIRS = . examples lib src doc checks po/' "$1"
+  exit 0
+fi
+
 prefix=$1
 shift
 

@@ -4,190 +4,267 @@
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "orgchee5fgq2bbdg3jqlhky7zfzabe3kv6gxmluvccgoqehwdppgq"
+    "Release.Windows_x86": "o64gbxfsm7x4ufyqzfo7eyyxvnxpg575re46vcoqgbyy6knnhnskq"
   }
 
-  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Nettle-3.10.2.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
-      │
-   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
-      •                                        ┬───────────────────────────────────────────────────
-      •                                        ╰╸ Could not get object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+## GNU Awk
 
-  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-GMP-6.3.0.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
-      │
-   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
-      •                                        ┬───────────────────────────────────────────────────
-      •                                        ╰╸ Could not get object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+`CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1` builds native Windows `awk.exe`
+and `gawk.exe` entrypoints, plus the `gawkapi.h` header, for Windows target
+slots. The Windows build is cross-compiled with LLVM-MinGW and targets the
+Windows `Release.*.Windows_x86_64`, `Release.*.Windows_x86`, and
+`Release.*.Windows_arm64` slots.
 
-  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-TLS-3.8.12.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
-      │
-   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
-      •                                        ┬───────────────────────────────────────────────────
-      •                                        ╰╸ Could not get object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+The following example extracts the x64 Windows package from a macOS x86_64
+build host to a runtime directory so the executables are available under
+`${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1/bin/`.
 
-  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Awk-5.3.1.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/GMP.values.jsonc:29.41-29.93
-      │
-   29 │                    "+YACC=$(get-object CommonsBase_GNU.Bison@3.8.2 -s Release.execution_abi -m ./bin/yacc -e bin/yacc -f yacc)"
-      •                                        ┬───────────────────────────────────────────────────
-      •                                        ╰╸ Could not get object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_x86_64 -d ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1
+  	est(pass)\dkobjects\;{
+    "Release.Darwin_x86_64.Windows_x86_64": "?awk-win32-x64-id"
+  }
 
-  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1.zip
-  [error 956bc988]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
-      │
-   38 │╭┤         {
-   39 ││            "origin": "commonsbase-gnu-table",
-   40 ││            "path": "mingw-host-triplet",
-   41 ││            "checksum": {
-   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
-   43 ││            },
-   44 ││            "size": 2522
-   45 │├┤         }
-      • │
-      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 2]
-  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Awk.Win32.LLVM_MinGW-5.3.1.zip
-  [error 956bc988]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
-      │
-   38 │╭┤         {
-   39 ││            "origin": "commonsbase-gnu-table",
-   40 ││            "path": "mingw-host-triplet",
-   41 ││            "checksum": {
-   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
-   43 ││            },
-   44 ││            "size": 2522
-   45 │├┤         }
-      • │
-      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 2]
-  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Awk.Win32.LLVM_MinGW-5.3.1.zip
-  [error 956bc988]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Lookup.values.jsonc:38.9-45.10
-      │
-   38 │╭┤         {
-   39 ││            "origin": "commonsbase-gnu-table",
-   40 ││            "path": "mingw-host-triplet",
-   41 ││            "checksum": {
-   42 ││              "sha256": "3670c87163328642b6a789cea5f5a15cafa71bfcbe4d1234ca6ee5a27377b33a"
-   43 ││            },
-   44 ││            "size": 2522
-   45 │├┤         }
-      • │
-      • ╰╸ Could not find asset `CommonsBase_GNU.Lookup@1.0.0+bn-20250101000000 -p mingw-host-triplet` because `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet: No such file or directory` while opening `Y:/source/CommonsBase_GNU/etc/dk/v/CommonsBase_GNU/table/mingw-host-triplet` for reading.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 2]
+Swap the target slot to `Release.Darwin_x86_64.Windows_x86` or
+`Release.Darwin_x86_64.Windows_arm64` to extract the other Windows variants.
 
-  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Bison-3.8.2.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Bison.values.jsonc:17.37-17.88
-      │
-   17 │                    "install-object CommonsBase_GNU.Bison.Zip@3.8.2 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
-      •                                    ┬──────────────────────────────────────────────────
-      •                                    ╰╸ Could not install object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+## Bison
 
-  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_arm64 -f ${RUNTIME}/Darwin_arm64-Make-4.4.1.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Make.Unix.values.jsonc:18.37-18.92
-      │
-   18 │                    "install-object CommonsBase_GNU.Make.Unix.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d . -e 'build-aux/*'"
-      •                                    ┬──────────────────────────────────────────────────────
-      •                                    ╰╸ Could not install object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+`CommonsBase_GNU.Bison@3.8.2` now native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+installs `bison.exe`, the `yacc.cmd` compatibility shim, the `liby.a` import
+library, and the Bison support files under `share/`.
 
-  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_x86_64 -f ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Make.Win32.LLVM_MinGW-4.4.1.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
-      │
-   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
-      •                                    ┬─────────────────────────────────────────────────
-      •                                    ╰╸ Could not install object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
-  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_x86_64.Windows_arm64 -f ${RUNTIME}/Darwin_x86_64.Windows_arm64-Make.Win32.LLVM_MinGW-4.4.1.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
-      │
-   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
-      •                                    ┬─────────────────────────────────────────────────
-      •                                    ╰╸ Could not install object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
-  $ get-object CommonsBase_GNU.Make.Win32.LLVM_MinGW@4.4.1 -s Release.Darwin_arm64.Windows_x86 -f ${RUNTIME}/Darwin_arm64.Windows_x86-Make.Win32.LLVM_MinGW-4.4.1.zip
-  [error 917b6e5f]: Could not run unified shell command.
-  
-      ╭──▶ etc/dk/v/Make.Win32.LLVM_MinGW.values.jsonc:22.37-22.87
-      │
-   22 │                    "install-object CommonsBase_GNU.Make.Zip@4.4.1 -s Release.Agnostic -m ./output.zip -n 1 -d ."
-      •                                    ┬─────────────────────────────────────────────────
-      •                                    ╰╸ Could not install object because it does not exist.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GN...`
-  ────╯
-  
-  [exit 1]
+The following example extracts the x64 Windows package to a runtime directory
+so the executables and support files are available under
+`${RUNTIME}/Windows_x86_64-Bison-3.8.2/`.
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bison-3.8.2
+  	est(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "?bison-win64-id"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
+the other Windows variants.
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
+  	est(pass)\dkobjects\;{
+    "Release.Windows_x86": "?bison-win32-id"
+  }
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Bison-3.8.2
+  	est(pass)\dkobjects\;{
+    "Release.Windows_arm64": "?bison-arm64-id"
+  }
+
+## GNU M4
+
+`CommonsBase_GNU.M4@1.4.20` targets native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+installs the `m4.exe` command-line tool.
+
+The following example extracts the x64 Windows package to a runtime directory
+so the executable is available under `${RUNTIME}/Windows_x86_64-M4-1.4.20/bin/`.
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-M4-1.4.20
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o6ofaf5jjuozf77dkhzbivh52lum3bp2fdiylwyhs5ogh7c4yzsia"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
+the other Windows variants.
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-M4-1.4.20
+  	est(pass)\dkobjects\;{
+    "Release.Windows_x86": "?m4-win32-id"
+  }
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-M4-1.4.20
+  	est(pass)\dkobjects\;{
+    "Release.Windows_arm64": "?m4-arm64-id"
+  }
+
+## GNU Make
+
+`CommonsBase_GNU.Make@4.4.1` now native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+uses the patched `build_w32.bat` flow and installs `make.exe` together with
+`include/gnumake.h`.
+
+The following example extracts the x64 Windows package to a runtime directory
+so the executable is available under `${RUNTIME}/Windows_x86_64-Make-4.4.1/bin/`.
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oeosxhc6daru76k3rj65dvalat6duvp3htyxavfvj5j6due3ov5da"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
+the other Windows variants.
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
+  	est(pass)\dkobjects\;{
+    "Release.Windows_x86": "?make-win32-id"
+  }
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "oykoxvwbtq3uwwsatlplkokramemy2qvln53m43tjti4tvffuzkaa"
+  }
+
+## GNU Sed
+
+`CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228` targets native Windows
+`Release.Windows_x86_64`, `Release.Windows_x86`, and `Release.Windows_arm64`
+slots. The Windows build reuses the 32-bit GnuWin32 binaries and installs
+`sed.exe` together with the runtime DLLs.
+
+The following example extracts the x64 Windows package to a runtime directory
+so the executable and DLLs are available under
+`${RUNTIME}/Windows_x86_64-Sed-4.2.1/bin/`.
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "ou4xcbyjyqxmrd6bcrpxaoncts7swwq3bvat4am7kl2xgmnevbrjq"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
+the other Windows variants.
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "owllfnroljip7lnwxvtlddy6n4vzlklrq3y4m2glfl7um4g5fmrla"
+  }
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "owd42pagkn7r3s6m3req5bav4ssnljis5o4fx3c4lkpkqwipkoxfq"
+  }
+
+## vswhere
+
+`CommonsBase_GNU.VSWhere@3.1.7` installs the `vswhere.exe` helper used by the
+Windows `make` build. It targets native Windows `Release.Windows_x86_64`,
+`Release.Windows_x86`, and `Release.Windows_arm64` slots.
+
+The following example extracts the x64 Windows package to a runtime directory
+so the executable is available under `${RUNTIME}/Windows_x86_64-VSWhere-3.1.7/bin/`.
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o4xima6qqbma42ewbkb5f63k3apze7oke6rhn2xbibodxil7e7z5a"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
+the other Windows variants.
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "o4sfbnazuiufr2ievqvxclwr47sbl6rbuqbufxuevhw6mf5dafzya"
+  }
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "ovld72qn3tdqu2dj3poa7djzv275scicmyrhuybfytsioqycbzobq"
+  }
+
+## GNU Grep
+
+`CommonsBase_GNU.Grep.Win32@3.12.0` installs native Windows `grep.exe`,
+`egrep.exe`, and `fgrep.exe` command-line search tools in `bin/`. The Windows
+package is source-built with the LLVM-MinGW cross-toolchain while using the
+bootstrap GnuWin32 Grep package only as the host-side `grep`/`egrep`/`fgrep`
+provider during the build.
+
+The following example extracts the x64 Windows package to a runtime directory so
+the three executables are available under `${RUNTIME}/Windows_x86_64-Grep-3.12.0/bin/`.
+
+  $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o6lggfilj7kzuvvproxpnn2zgun2ylei4y5pthyam73nuix3onemq"
+  }
+
+## Nettle
+
+`CommonsBase_GNU.Nettle@3.10.2` targets native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+links against the matching Windows GMP package and installs the `hogweed` and
+`nettle` libraries together with the command-line tools.
+
+The following example extracts the x64 Windows package to a runtime directory so
+the executables are available under `${RUNTIME}/Windows_x86_64-Nettle-3.10.2/bin/`.
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "obrkvgixqsvfmnpfa3bkf7vplu7s7lvykllmt654ojch2yfvdqfpq"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract the
+other Windows variants.
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "oyst55ob5wn57ouca4bopg3z7j2frat6h7rtqareqsg3t5uyzdxiq"
+  }
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "ooobb2vot2tt7peuzhu5xsdz6cjnydyr4ttufclbwuk5xngswrl7q"
+  }
+
+## GMP
+
+`CommonsBase_GNU.GMP@6.3.0` now native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+installs the GMP headers, import/static libraries, and runtime DLLs that are
+consumed by downstream packages such as Nettle and GnuTLS.
+
+The following example extracts the x64 Windows package to a runtime directory so
+the headers are under `${RUNTIME}/Windows_x86_64-GMP-6.3.0/include/` and the
+runtime DLLs are under `${RUNTIME}/Windows_x86_64-GMP-6.3.0/bin/`.
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o4xcq2g4okhekvpladpesra7npzxo6vx2dnafpq2o2cg4lwpentga"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract the
+other Windows variants.
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "og7jlodyykmed6sa2obmpygvotv6prezns47moorrw4p6dxyc53bq"
+  }
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "omlhsnpvw253fowmh7afcffzk3kpxsk5j7jd37nmys75ag7ttdvga"
+  }
+
+## GnuTLS
+
+`CommonsBase_GNU.TLS@3.8.12` targets native Windows `Release.Windows_x86`,
+`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
+links against the matching Windows GMP and Nettle packages and installs the
+Windows `gnutls-*` tools together with the GnuTLS runtime DLLs.
+
+The following example extracts the x64 Windows package to a runtime directory so
+`gnutls-cli.exe`, `gnutls-serv.exe`, and the renamed `gnutls-certtool.exe` are
+available under `${RUNTIME}/Windows_x86_64-TLS-3.8.12/bin/`.
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oggzl4keyeb66mnpwxd4lgwspt6eixwz7u5zniewpc4ne6zipcrfq"
+  }
+
+Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract the
+other Windows variants.
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "onb7konljgc5tfvfh644mlfgfliwoqo32bvbrliorevvhvz5jw67q"
+  }
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "osargfhmpda66dhp3lntgtrgnqp2zgfypdakw6ctkjv65lr6kb75a"
+  }
