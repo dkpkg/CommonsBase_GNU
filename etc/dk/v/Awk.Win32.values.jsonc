@@ -1,0 +1,130 @@
+// Test: Y:\source\dksdk-coder\_build\default\ext\MlFront\src\DkZero_Exec\Shell.exe -C Y:\source\CommonsBase_GNU --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Awk.Win32@5.3.1 -s Release.Windows_x86_64 -d target/gawk-win32
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Awk.Win32@5.3.1",
+            "precommands": {
+                "sequential": true,
+                "private": [
+                    // convert the .tar.gz to .zip
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Awk.Zip@5.3.1 tarmodver=CommonsBase_GNU.Awk.Bundle@5.3.1 tarassetpath=gawk-5.3.1.tar.gz",
+                    // extract zip to current folder, stripping toplevel gawk-5.3.1/ folder
+                    "install-object CommonsBase_GNU.Awk.Zip@5.3.1 -s Release.execution_abi -m ./output.zip -n 1 -d ."
+                ]
+            },
+            "function": {
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "envmods": [
+                    "<PATH=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin"
+                ],
+                "commands": [
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-t", ".",
+                        "pc/config.h", "pc/config.sed", "pc/configpk.sed",
+                        "pc/dlfcn.h", "pc/gawk.def", "pc/gawkmisc.pc", "pc/GenMakefileTst.awk",
+                        "pc/getid.c", "pc/in.h", "pc/install.awk", "pc/langinfo.h",
+                        "pc/make-config.bat", "pc/make-config.sh", "pc/Makefile", "pc/Makefile.tst", "pc/Makefile.tst.prologue", "pc/mkinstal.sh",
+                        "pc/popen.c", "pc/popen.h", "pc/socket.h", "pc/testoutcmp.awk",
+                        "support/regex.h", "support/dfa.h", "support/getopt.h", "support/getopt_int.h",
+                        "support/random.h", "support/xalloc.h", "support/localeinfo.h",
+                        "support/dynarray.h", "support/libc-config.h",
+                        "support/regex_internal.c", "support/regex_internal.h",
+                        "support/getopt1.c", "support/localeinfo.c", "support/regexec.c", "support/random.c",
+                        "support/regcomp.c", "support/regex_internal.c", "support/pma.c", "support/getopt.c",
+                        "support/dfa.c", "support/regex.c",
+                        "support/malloc/dynarray_finalize.c", "support/malloc/dynarray_resize_clear.c",
+                        "support/malloc/dynarray_emplace_enlarge.c", "support/malloc/dynarray_resize.c", "support/malloc/dynarray_at_failure.c"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "malloc"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-t", "malloc",
+                        "support/malloc/dynarray.h",
+                        "support/malloc/dynarray-skeleton.c"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/patch.exe -d :)/bin/patch.exe",
+                        "-p1",
+                        "-i",
+                        "$(get-asset CommonsBase_GNU.Awk.Apparatus.LlvmMingwPatch@5.3.1 -p assets/p/gawk-llvm-mingw-5.3.1.patch -f gawk-llvm-mingw-5.3.1.patch)"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s|^prefix = .*|prefix = ../../o/${SLOTNAME.request}|\"",
+                        "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s|current = popen(command, mode);|current = _popen(command, mode);|\"",
+                        "popen.c"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s|rval = pclose(current);|rval = _pclose(current);|\"",
+                        "popen.c"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "truncate", "--size=0", "missing_d/strncasecmp.c"
+                    ],
+                    [
+                        "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "all",
+                        "CC=$(get-asset CommonsBase_GNU.Awk.Apparatus.MingwHostTriplet@5.3.1 -p assets/table/mingw-host-triplet -m ./${SLOTNAME.request})-gcc",
+                        "O=.o", "\"CF=-D__USE_MINGW_ANSI_STDIO -gdwarf-2 -g3 -Wno-deprecated-declarations\"",
+                        "OPT=-O2", "OBJ=popen.o", "LNK=LMINGW32", "\"LF=-gdwarf-2 -g3\"", "LF2=-lws2_32", "RSP="
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/bin", "${SLOT.request}/include"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "gawk.exe", "${SLOT.request}/bin/awk.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "gawk.exe", "${SLOT.request}/bin/gawk.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "gawkapi.h", "${SLOT.request}/include/gawkapi.h"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/awk.exe",
+                            "bin/gawk.exe",
+                            "include/gawkapi.h"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
