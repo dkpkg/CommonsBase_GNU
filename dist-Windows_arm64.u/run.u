@@ -1,0 +1,71 @@
+# Distribution for Windows arm64 CommonsBase_GNU
+
+## GNU Awk
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a"
+  }
+
+## Bison
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Bison-3.8.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "oia5djcqffty3qvbxsck3vrqbxlw5upcejnhcgq5ml3p7rvr27eja"
+  }
+
+## GNU M4
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-M4-1.4.20
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "otxj5uemkr2jwzxcggrsus24cgfxiphcy5644na2f4dj2rse37vrq"
+  }
+
+## GNU Make
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "oykoxvwbtq3uwwsatlplkokramemy2qvln53m43tjti4tvffuzkaa"
+  }
+
+## GNU Sed
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "owd42pagkn7r3s6m3req5bav4ssnljis5o4fx3c4lkpkqwipkoxfq"
+  }
+
+## vswhere
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "ovld72qn3tdqu2dj3poa7djzv275scicmyrhuybfytsioqycbzobq"
+  }
+
+## GNU Grep
+
+  $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Grep-3.12.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "?"
+  }
+
+## Nettle
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "ooobb2vot2tt7peuzhu5xsdz6cjnydyr4ttufclbwuk5xngswrl7q"
+  }
+
+## GMP
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "omlhsnpvw253fowmh7afcffzk3kpxsk5j7jd37nmys75ag7ttdvga"
+  }
+
+## GnuTLS
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "osargfhmpda66dhp3lntgtrgnqp2zgfypdakw6ctkjv65lr6kb75a"
+  }

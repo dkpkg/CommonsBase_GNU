@@ -1,0 +1,78 @@
+# Distribution for Windows x86 CommonsBase_GNU
+
+## Objects and Assets
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "o64gbxfsm7x4ufyqzfo7eyyxvnxpg575re46vcoqgbyy6knnhnskq"
+  }
+
+## GNU Awk
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "?"
+  }
+
+## Bison
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "?"
+  }
+
+## GNU M4
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-M4-1.4.20
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "?"
+  }
+
+## GNU Make
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa"
+  }
+
+## GNU Sed
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "owllfnroljip7lnwxvtlddy6n4vzlklrq3y4m2glfl7um4g5fmrla"
+  }
+
+## vswhere
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "o4sfbnazuiufr2ievqvxclwr47sbl6rbuqbufxuevhw6mf5dafzya"
+  }
+
+## GNU Grep
+
+  $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "?"
+  }
+
+## Nettle
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "oyst55ob5wn57ouca4bopg3z7j2frat6h7rtqareqsg3t5uyzdxiq"
+  }
+
+## GMP
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "og7jlodyykmed6sa2obmpygvotv6prezns47moorrw4p6dxyc53bq"
+  }
+
+## GnuTLS
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "onb7konljgc5tfvfh644mlfgfliwoqo32bvbrliorevvhvz5jw67q"
+  }

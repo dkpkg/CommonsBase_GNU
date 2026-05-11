@@ -1,0 +1,50 @@
+# Distribution for Linux arm64 CommonsBase_GNU
+
+## GNU Awk
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## Bison
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-Bison-3.8.2
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## GNU Grep
+
+  $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-Grep-3.12.0
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## GNU Make
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## GMP
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## Nettle
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }
+
+## GnuTLS
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Linux_arm64": "?"
+  }

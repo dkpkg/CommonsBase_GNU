@@ -4,20 +4,28 @@
 
 ```sh
 ./dk0 update
-# one of ...
-./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-macos --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-macos.u
-./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-win32 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-win32.u
-```
+# Darwin
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Darwin_arm64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Darwin_arm64.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Darwin_x86_64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Darwin_x86_64.u
 
-> [!IMPORTANT]
-> Each operating system will update its own slot's object id in the response to `$ post-object CommonsBase_GNU.CMake0.F_Build@...` in [dist-macos.u/run.u](dist-macos.u/run.u).
-> The CI in [.github/workflows/distribute-2.5.yml](.github/workflows/distribute-2.5.yml) will need an object id for **Linux x86_64**. Run the CI job to find the object id, or run the above commands in a [Docker container](#using-docker-to-update-distribution-scripts).
+# Linux
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Linux_x86 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Linux_x86.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Linux_x86_64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Linux_x86_64.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Linux_arm64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Linux_arm64.u
+
+# Windows
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Windows_x86 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Windows_x86.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Windows_x86_64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Windows_x86_64.u
+./dk0 -nosysinc --verbose distribute CommonsBase_GNU-dist-Windows_arm64 --library 'CommonsBase_GNU@2.5.999911122233' --actual-in-place dist-Windows_arm64.u
+```
 
 ## Using docker to update distribution scripts
 
 ```sh
-rm -rf t # or in PowerShelll: del -Force -Recurse .\t\
-docker run -v .:/work --workdir /work -it quay.io/pypa/manylinux_2_28_x86_64:2026.04.08-5 sh ./dk0 -nosysinc -v -v distribute CommonsBase_GNU-dist-macos --library CommonsBase_GNU@2.5.999911122233 --actual-in-place dist-macos.u
+rm -rf t # or in PowerShell: del -Force -Recurse .\t\
+
+docker run -v .:/work -v MlFrontXBuildLinux:/work/t --workdir /work -it quay.io/pypa/manylinux_2_28_x86_64:latest sh ./dk0 -nosysinc -v -v distribute CommonsBase_GNU-dist-Linux_x86_64 --library CommonsBase_GNU@2.5.999911122233 --actual-in-place dist-Linux_x86_64.u
+docker run -v .:/work -v MlFrontXBuildLinux:/work/t --workdir /work -it quay.io/pypa/manylinux_2_28_i686:latest sh ./dk0 -nosysinc -v -v distribute CommonsBase_GNU-dist-Linux_x86 --library CommonsBase_GNU@2.5.999911122233 --actual-in-place dist-Linux_x86.u
 ```
 
 ## Updating dk0 and dk0.cmd scripts

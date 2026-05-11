@@ -1,0 +1,78 @@
+# Distribution for Windows x86_64 CommonsBase_GNU
+
+## Objects and Assets
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "?"
+  }
+
+## GNU Awk
+
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oaxv73eglv5t6rkbrqc7j5g6p7mrzzdeixxjuwj4ikzk32rfzm3ra"
+  }
+
+## Bison
+
+  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bison-3.8.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "ocrc4rbhngmi7hepcowmkf6xeznmvvdehorqsvm4w3hhhbwluzeja"
+  }
+
+## GNU M4
+
+  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-M4-1.4.20
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oq33k7prqmm3dfbxcym5vipvfco7d2fqavavldj554m4xqhhosdoa"
+  }
+
+## GNU Make
+
+  $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Make-4.4.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oeosxhc6daru76k3rj65dvalat6duvp3htyxavfvj5j6due3ov5da"
+  }
+
+## GNU Sed
+
+  $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.2.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "ou4xcbyjyqxmrd6bcrpxaoncts7swwq3bvat4am7kl2xgmnevbrjq"
+  }
+
+## vswhere
+
+  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-VSWhere-3.1.7
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o4xima6qqbma42ewbkb5f63k3apze7oke6rhn2xbibodxil7e7z5a"
+  }
+
+## GNU Grep
+
+  $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "ovgzqooevp7v3jbnrgnpjq2wl4isjko4egztrj43syrmldey4dzcq"
+  }
+
+## Nettle
+
+  $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Nettle-3.10.2
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "obrkvgixqsvfmnpfa3bkf7vplu7s7lvykllmt654ojch2yfvdqfpq"
+  }
+
+## GMP
+
+  $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-GMP-6.3.0
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "o4xcq2g4okhekvpladpesra7npzxo6vx2dnafpq2o2cg4lwpentga"
+  }
+
+## GnuTLS
+
+  $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-TLS-3.8.12
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oggzl4keyeb66mnpwxd4lgwspt6eixwz7u5zniewpc4ne6zipcrfq"
+  }
