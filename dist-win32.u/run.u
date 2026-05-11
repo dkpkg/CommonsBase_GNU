@@ -9,78 +9,55 @@
 
 ## GNU Awk
 
-`CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1` builds native Windows `awk.exe`
-and `gawk.exe` entrypoints, plus the `gawkapi.h` header, for Windows target
-slots. The Windows build is cross-compiled with LLVM-MinGW and targets the
-Windows `Release.*.Windows_x86_64`, `Release.*.Windows_x86`, and
-`Release.*.Windows_arm64` slots.
+Use the wrapper package `CommonsBase_GNU.Awk@5.3.1` for native
+Windows `Release.Windows_x86_64`, `Release.Windows_x86`, and
+`Release.Windows_arm64` slots. The Windows package installs `bin/awk.exe`,
+`bin/gawk.exe`, and `include/gawkapi.h`.
 
-The following example extracts the x64 Windows package from a macOS x86_64
-build host to a runtime directory so the executables are available under
-`${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1/bin/`.
+Validated extraction commands:
 
-  $ get-object CommonsBase_GNU.Awk.Win32.LLVM_MinGW@5.3.1 -s Release.Darwin_x86_64.Windows_x86_64 -d ${RUNTIME}/Darwin_x86_64.Windows_x86_64-Awk.Win32.LLVM_MinGW-5.3.1
-  	est(pass)\dkobjects\;{
-    "Release.Darwin_x86_64.Windows_x86_64": "?awk-win32-x64-id"
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "oaxv73eglv5t6rkbrqc7j5g6p7mrzzdeixxjuwj4ikzk32rfzm3ra"
   }
-
-Swap the target slot to `Release.Darwin_x86_64.Windows_x86` or
-`Release.Darwin_x86_64.Windows_arm64` to extract the other Windows variants.
+  $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Awk-5.3.1
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a"
+  }
 
 ## Bison
 
-`CommonsBase_GNU.Bison@3.8.2` now native Windows `Release.Windows_x86`,
-`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
-installs `bison.exe`, the `yacc.cmd` compatibility shim, the `liby.a` import
-library, and the Bison support files under `share/`.
+`CommonsBase_GNU.Bison@3.8.2` provides native Windows
+`Release.Windows_x86_64`, `Release.Windows_x86`, and
+`Release.Windows_arm64` slots. The repaired package installs `bison.exe`,
+`yacc.cmd`, `liby.a`, and the support files under `share/`.
 
-The following example extracts the x64 Windows package to a runtime directory
-so the executables and support files are available under
-`${RUNTIME}/Windows_x86_64-Bison-3.8.2/`.
+Validated extraction commands:
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bison-3.8.2
-  	est(pass)\dkobjects\;{
-    "Release.Windows_x86_64": "?bison-win64-id"
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86_64": "ocrc4rbhngmi7hepcowmkf6xeznmvvdehorqsvm4w3hhhbwluzeja"
   }
-
-Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
-the other Windows variants.
-
-  $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
-  	est(pass)\dkobjects\;{
-    "Release.Windows_x86": "?bison-win32-id"
-  }
-
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Bison-3.8.2
-  	est(pass)\dkobjects\;{
-    "Release.Windows_arm64": "?bison-arm64-id"
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "oia5djcqffty3qvbxsck3vrqbxlw5upcejnhcgq5ml3p7rvr27eja"
   }
 
 ## GNU M4
 
-`CommonsBase_GNU.M4@1.4.20` targets native Windows `Release.Windows_x86`,
-`Release.Windows_x86_64`, and `Release.Windows_arm64` slots. The Windows build
-installs the `m4.exe` command-line tool.
+`CommonsBase_GNU.M4@1.4.20` provides native Windows
+`Release.Windows_x86_64`, `Release.Windows_x86`, and
+`Release.Windows_arm64` slots. The repaired package installs `bin/m4.exe`.
 
-The following example extracts the x64 Windows package to a runtime directory
-so the executable is available under `${RUNTIME}/Windows_x86_64-M4-1.4.20/bin/`.
+Validated extraction commands:
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-M4-1.4.20
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86_64": "o6ofaf5jjuozf77dkhzbivh52lum3bp2fdiylwyhs5ogh7c4yzsia"
+    "Release.Windows_x86_64": "oq33k7prqmm3dfbxcym5vipvfco7d2fqavavldj554m4xqhhosdoa"
   }
-
-Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
-the other Windows variants.
-
-  $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-M4-1.4.20
-  	est(pass)\dkobjects\;{
-    "Release.Windows_x86": "?m4-win32-id"
-  }
-
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-M4-1.4.20
-  	est(pass)\dkobjects\;{
-    "Release.Windows_arm64": "?m4-arm64-id"
+  \test(pass)\dkobjects\;{
+    "Release.Windows_arm64": "otxj5uemkr2jwzxcggrsus24cgfxiphcy5644na2f4dj2rse37vrq"
   }
 
 ## GNU Make
@@ -102,8 +79,8 @@ Swap the slot to `Release.Windows_x86` or `Release.Windows_arm64` to extract
 the other Windows variants.
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
-  	est(pass)\dkobjects\;{
-    "Release.Windows_x86": "?make-win32-id"
+  \test(pass)\dkobjects\;{
+    "Release.Windows_x86": "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa"
   }
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Make-4.4.1
@@ -180,7 +157,7 @@ the three executables are available under `${RUNTIME}/Windows_x86_64-Grep-3.12.0
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86_64": "o6lggfilj7kzuvvproxpnn2zgun2ylei4y5pthyam73nuix3onemq"
+    "Release.Windows_x86_64": "ovgzqooevp7v3jbnrgnpjq2wl4isjko4egztrj43syrmldey4dzcq"
   }
 
 ## Nettle
