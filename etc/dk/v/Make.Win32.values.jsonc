@@ -38,6 +38,13 @@
                         "$(get-asset CommonsBase_GNU.Make.Apparatus.BuildW32Bat@4.4.1 -p assets/p/patched-make-build_w32.bat -f build_w32.bat)",
                         "./build_w32.bat"
                     ],
+                    [
+                        "$(get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "-f",
+                        "$(get-asset CommonsBase_GNU.Make.Apparatus.ConfigHW32Sed@4.4.1 -p etc/scripts/make-config-h-w32.sed -f config_h_w32.sed)",
+                        "src/config.h.W32"
+                    ],
 
                     // build with Windows ABI-specific cross-compiler (CROSSGCC).
                     // use [env -u] to run for only one specific Windows slot

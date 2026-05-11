@@ -36,6 +36,11 @@
   '11131'
   'sha256:3f9825744b486bc5413806cccbae36a4d354e944765fba68c26d37884369a06d'
 
+  % unified.asset { name="ConfigHW32Sed", file="etc/scripts/make-config-h-w32.sed" }
+  'asset'
+  '52'
+  'sha256:f3243a2769a61d92d5f14fb345ea201c16af8f9f66a13e8198f6a96ad6a37cc8'
+
 ### CommonsBase_GNU.Awk.Apparatus@5.3.1
 
   % unified.asset { name="LlvmMingwPatch", file="assets/p/gawk-llvm-mingw-5.3.1.patch" }
