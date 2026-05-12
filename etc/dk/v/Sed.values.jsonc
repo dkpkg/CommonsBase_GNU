@@ -25,11 +25,11 @@
                 ],
                 "commands": [
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
                         "mkdir", "-p", "${SLOT.request}/bin"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
                         "cp", "-t", "${SLOT.request}/bin",
                         "sedbin/bin/sed.exe",
                         "seddep/bin/libiconv2.dll",

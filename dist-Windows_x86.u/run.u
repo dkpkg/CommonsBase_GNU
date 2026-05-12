@@ -11,21 +11,21 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "?"
+    "Release.Windows_x86": "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a"
   }
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "?"
+    "Release.Windows_x86": "ouyjh6q2pmccn5s7g3yifizb4ccrq374ayqfadpa5u5aysecforla"
   }
 
 ## GNU M4
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-M4-1.4.20
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "?"
+    "Release.Windows_x86": "o5ze7gxz47tcnm53hu2aoe55ajmlmqcvol2r72y3374isfjabgn2q"
   }
 
 ## GNU Make
@@ -53,7 +53,7 @@
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "?"
+    "Release.Windows_x86": "ohsdrjrylbj27kmerpux5birqhxrdfd4fxzbfwfc5amma6snruyoq"
   }
 
 ## Nettle

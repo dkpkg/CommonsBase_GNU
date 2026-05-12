@@ -12,11 +12,11 @@
             "function": {
                 "commands": [
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
                         "mkdir", "-p", "${SLOT.request}/bin"
                     ],
                     [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
                         "cp",
                         "$(get-asset CommonsBase_GNU.VSWhere.Bundle@3.1.7 -p vswhere.exe -f vswhere.exe)",
                         "${SLOT.request}/bin/vswhere.exe"

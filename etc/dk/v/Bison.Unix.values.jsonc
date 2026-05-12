@@ -21,7 +21,8 @@
                 "envmods": [
                     // do not create/update <installdir>/share/info/dir if the `install-info` program is available. that is not reproducible.
                     // confer https://www.gnu.org/software/automake/manual/html_node/Texinfo.html
-                    "+AM_UPDATE_INFO_DIR=no"
+                    "+AM_UPDATE_INFO_DIR=no",
+                    "+M4=m4"
                 ],
                 "commands": [
                     // configure
@@ -42,7 +43,7 @@
                         "--disable-dependency-tracking", "--disable-nls"
                     ],
                     [
-                        "/bin/sh", "./configure", "\"CC=gcc -march=armv8-a\"", "\"CXX=g++ -march=armv8-a\"", "--prefix=${SLOTABS.Release.Linux_arm64}",
+                        "/bin/sh", "./configure", "\"CC=gcc -march=armv8-a\"", "\"CXX=g++ -march=armv8-a\"", "--host=aarch64-linux-gnu", "--prefix=${SLOTABS.Release.Linux_arm64}",
                         "--disable-dependency-tracking", "--disable-nls"
                     ],
 

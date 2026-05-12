@@ -60,9 +60,11 @@
                         "paths": [
                             // Untested; may require tweaking
                             "lib/libgmp.so",
-                            "lib/libgmp.10.so",
-                            "lib/libgmpxx.4.so",
-                            "lib/libgmpxx.so"
+                            "lib/libgmp.so.10",
+                            "lib/libgmp.so.10.5.0",
+                            "lib/libgmpxx.so",
+                            "lib/libgmpxx.so.4",
+                            "lib/libgmpxx.so.4.7.0"
                         ]
                     },
                     {
@@ -94,7 +96,7 @@
                     // convert the .tar.xz to .zip
                     "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.GMP.Zip@6.3.0 tarmodver=CommonsBase_GNU.GMP.Bundle@6.3.0 tarassetpath=gmp-6.3.0.tar.xz",
                     // extract zip to current folder, stripping toplevel gmp-6.3.0/ folder
-                    "install-object CommonsBase_GNU.GMP.Zip@6.3.0 -s Release.execution_abi -m ./output.zip -n 1 -d ."
+                    "install-object CommonsBase_GNU.GMP.Zip@6.3.0 -s Release.execution_abi -m ./output.zip -n 1 -d . -e 'mpn/m4-ccas'"
                 ]
             },
             "function": {
@@ -102,7 +104,8 @@
                     // do not create/update <installdir>/share/info/dir if the `install-info` program is available. that is not reproducible.
                     // confer https://www.gnu.org/software/automake/manual/html_node/Texinfo.html
                     "+AM_UPDATE_INFO_DIR=no",
-                    "+YACC=:"
+                    "+YACC=:",
+                    "+M4=m4"
                 ],
                 "commands": [
                     // configure
@@ -194,9 +197,11 @@
                         "paths": [
                             // Untested; may require tweaking
                             "lib/libgmp.so",
-                            "lib/libgmp.10.so",
-                            "lib/libgmpxx.4.so",
-                            "lib/libgmpxx.so"
+                            "lib/libgmp.so.10",
+                            "lib/libgmp.so.10.5.0",
+                            "lib/libgmpxx.so",
+                            "lib/libgmpxx.so.4",
+                            "lib/libgmpxx.so.4.7.0"
                         ]
                     }
                 ]

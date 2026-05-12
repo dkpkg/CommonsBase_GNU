@@ -4,7 +4,7 @@
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86_64": "?"
+    "Release.Windows_x86_64": "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq"
   }
 
 ## GNU Awk

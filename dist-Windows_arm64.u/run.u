@@ -46,7 +46,7 @@
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Grep-3.12.0
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "?"
+    "Release.Windows_arm64": "o63o5ywci4nerkdlwk5d7bxvndrfvyfcgyxuearesdldmz3yyhbva"
   }
 
 ## Nettle
