@@ -4,47 +4,47 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Awk-5.3.1
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "owb7hj6b2c3pkmxc3aqd2fazvkmzdug7sq7zi5cdg5nxwxwy7tj7q"
   }
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Bison-3.8.2
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "obsnjoq5smwafky5bftty4qhevwhtjz2abl3h7wsqnknkbzzh45qq"
   }
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Grep-3.12.0
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "o74t52pa6wt27fes35vie36edoisewv5do3b5phrxkcd2nk243zna"
   }
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Make-4.4.1
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "oei2aqzzshgcnjinm4uf4eby3biue3xklnc3nfojcd5vcdxi76hsq"
   }
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-GMP-6.3.0
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "ochif23ehbpwcddvwg6bgx4p2e7zboqfr4i4fowqsgydlqfwgs65q"
   }
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "ohpb6i3a56762zsizt7qlytim6fi66hg7ckykecmf5oy5lx4fpcoq"
   }
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "?"
+    "Release.Darwin_arm64": "o7ojztlz6r3whxjuttejsjm5yd3atnusq3bxm4f5onpusnllqbgnq"
   }
