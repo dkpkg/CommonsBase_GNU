@@ -53,11 +53,13 @@ jobs:
       image: ${{ matrix.image }}
 
     steps:
-      - name: Harden Runner # Optional but recommended
-        uses: step-security/harden-runner@f808768d1510423e83855289c910610ca9b43176 # v2.17.0
-        with: { egress-policy: audit }
-        # Skip Linux_x86: manylinux_2_28_i686 gives `/__e/node24/bin/node: no such file or directory`
-        if: matrix.distscript != 'dist-Linux_x86.u'
+      # Even with an "if" `matrix.distscript != 'dist-Linux_x86.u'` condition, the Pre Harden Runner step 
+      # will fail with `/__e/node24/bin/node: no such file or directory`. node24 is not available in
+      # manylinux_2_28_i686. So disable Harden Runner entirely; sigh. 
+      # Confer: https://github.com/step-security/harden-runner/issues/644
+      # - name: Harden Runner # Optional but recommended
+      #   uses: step-security/harden-runner@f808768d1510423e83855289c910610ca9b43176 # v2.17.0
+      #   with: { egress-policy: audit }
       - name: Checkout repository
         uses: actions/checkout@v6
 
