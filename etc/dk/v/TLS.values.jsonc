@@ -535,6 +535,35 @@
                         "'s|^am__append_5 = aarch64$|am__append_5 =|; s|^am__append_6 = -DASM_AARCH64$|am__append_6 =|; s|^am__append_7 = aarch64/libaarch64[.]la$|am__append_7 =|'",
                         "./lib/accelerated/Makefile"
                     ],
+
+                    // append static dependency archives for final Windows executable links
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "'s|^LIBS = \(.*\)$|LIBS = \1 $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d :)/lib/libhogweed.a $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d :)/lib/libnettle.a $(--path=absunix get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86_64 -d :)/lib/libgmp.a|'",
+                        "./src/Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "'s|^LIBS = \(.*\)$|LIBS = \1 $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d :)/lib/libhogweed.a $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d :)/lib/libnettle.a $(--path=absunix get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d :)/lib/libgmp.a|'",
+                        "./src/Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Grep@3.12.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin;$(--path=absnative get-object CommonsBase_GNU.M4@1.4.20 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "'s|^LIBS = \(.*\)$|LIBS = \1 $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d :)/lib/libhogweed.a $(--path=absunix get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d :)/lib/libnettle.a $(--path=absunix get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d :)/lib/libgmp.a|'",
+                        "./src/Makefile"
+                    ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "env", "-u", "${SLOT.request}",

@@ -51,6 +51,7 @@
                         "--disable-dependency-tracking", "--disable-nls", "--disable-perl-regexp",
                         "--host=i686-linux-gnu",
                         "\"CC=gcc -m32\"",
+                        "--disable-year2038",
                         "--prefix=${SLOTABS.Release.Linux_x86}"
                     ],
                     [
