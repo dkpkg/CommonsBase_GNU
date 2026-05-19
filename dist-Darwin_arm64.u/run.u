@@ -39,12 +39,12 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "ohpb6i3a56762zsizt7qlytim6fi66hg7ckykecmf5oy5lx4fpcoq"
+    "Release.Darwin_arm64": "onm2pd7wwcmder35exmjfgiow7drsh7ckyfopothbfz52arask3yq"
   }
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Darwin_arm64": "o7ojztlz6r3whxjuttejsjm5yd3atnusq3bxm4f5onpusnllqbgnq"
+    "Release.Darwin_arm64": "oj5373bunhit4hqnjn6qti5ranutmjjwck7qal7vzap3w3nmhbzkq"
   }
