@@ -4,7 +4,7 @@
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "o64gbxfsm7x4ufyqzfo7eyyxvnxpg575re46vcoqgbyy6knnhnskq"
+    "Release.Windows_x86": "odiengg4r3fjt4uao3l3tftiy7xxcx4v4y32td3eldv7cl75xcw4q"
   }
 
 ## GNU Awk
@@ -39,14 +39,14 @@
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.2.1
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "owllfnroljip7lnwxvtlddy6n4vzlklrq3y4m2glfl7um4g5fmrla"
+    "Release.Windows_x86": "olzr26l4wr2lejp3wa5c6ksoyyk2ovcwnveycuw7bvdkatsdp5wfq"
   }
 
 ## vswhere
 
   $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-VSWhere-3.1.7
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "o4sfbnazuiufr2ievqvxclwr47sbl6rbuqbufxuevhw6mf5dafzya"
+    "Release.Windows_x86": "oyqotzj54mt3mmllqybe2q33fok5m5wd7etoz7mak4npguuao3lva"
   }
 
 ## GNU Grep
@@ -60,14 +60,14 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "oyst55ob5wn57ouca4bopg3z7j2frat6h7rtqareqsg3t5uyzdxiq"
+    "Release.Windows_x86": "ohkfj5surtc6spi3icwtmturbg22liefwaypqq4odskv24bpo233q"
   }
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "og7jlodyykmed6sa2obmpygvotv6prezns47moorrw4p6dxyc53bq"
+    "Release.Windows_x86": "okqvbc5qthtelcu6pj6a6lzrwdrgrkp25zepgsakaz5xgjfll5f2q"
   }
 
 ## GnuTLS

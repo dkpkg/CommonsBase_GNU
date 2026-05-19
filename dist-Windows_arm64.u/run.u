@@ -32,14 +32,14 @@
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.2.1
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "owd42pagkn7r3s6m3req5bav4ssnljis5o4fx3c4lkpkqwipkoxfq"
+    "Release.Windows_arm64": "oie4ud6jybol7bqlkvwzkwouv73jt75s6c2dxggfethty46r3wv7q"
   }
 
 ## vswhere
 
   $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-VSWhere-3.1.7
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "ovld72qn3tdqu2dj3poa7djzv275scicmyrhuybfytsioqycbzobq"
+    "Release.Windows_arm64": "obopwlv6gvwzcrgez4ko4m7wwocshvgni3reiksogp5mlfee46uja"
   }
 
 ## GNU Grep
@@ -53,14 +53,14 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "ooobb2vot2tt7peuzhu5xsdz6cjnydyr4ttufclbwuk5xngswrl7q"
+    "Release.Windows_arm64": "oqnixmubtfzkkedifbybognm45meesavxjzmp7zjpxtctzyvzkxna"
   }
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-GMP-6.3.0
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "omlhsnpvw253fowmh7afcffzk3kpxsk5j7jd37nmys75ag7ttdvga"
+    "Release.Windows_arm64": "otc7o5tzdxrs3gvuwtpsfucklarwfvi4vjm4zdlf75x2rrsh5dq3q"
   }
 
 ## GnuTLS
