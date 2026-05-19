@@ -60,7 +60,7 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "ohkfj5surtc6spi3icwtmturbg22liefwaypqq4odskv24bpo233q"
+    "Release.Windows_x86": "oiivnxqkmjmgjenf6j3wc4y23iui6b2x245z3rns7jvtctxq5pu5q"
   }
 
 ## GMP

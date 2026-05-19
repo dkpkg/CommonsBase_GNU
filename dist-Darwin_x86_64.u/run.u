@@ -39,7 +39,7 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "oruljhuvwgiza2kwyqo66yqydmdhk5agqdkks5x7ofadxycn3bxwa"
+    "Release.Darwin_x86_64": "o6esf4oxvosbh7wawney72rqda5pvryuvogqi2q36tzq7olety54a"
   }
 
 ## GnuTLS

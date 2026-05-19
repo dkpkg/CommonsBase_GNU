@@ -39,12 +39,12 @@
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Nettle-3.10.2
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "o7krlacfl3yr2zbaqou7kfetxrgyy4poraxadg4vy37ihr7dhmbxra"
+    "Release.Linux_x86": "o6ajxp25l5lwrtcawcnixifempb7hi3yqrxeirnbwc745zabukrea"
   }
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "ounz3vv27ztwcu32umg5dqhcr6gnwh776q4qjq75bgsjcr4ea4greq"
+    "Release.Linux_x86": "ootcz3doyati75lwnsbsucxwnwj6o7veri2xgudin2tkgulxjigpq"
   }
