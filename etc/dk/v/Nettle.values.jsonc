@@ -293,6 +293,7 @@
                         "CFLAGS=-I$(--path=absnative get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d :)/include",
                         "CPPFLAGS=-I$(--path=absnative get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d :)/include",
                         "LDFLAGS=-L$(--path=absnative get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d :)/lib",
+                        "LD_LIBRARY_PATH=$(--path=absnative get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d :)/lib",
                         "--host=i686-linux-gnu", "--prefix=${SLOTABS.Release.Linux_x86}",
                         "--libdir=${SLOTABS.Release.Linux_x86}${/}lib",
                         "--enable-public-key",

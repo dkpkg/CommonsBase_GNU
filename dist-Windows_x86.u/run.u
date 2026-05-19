@@ -74,5 +74,5 @@
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Windows_x86": "onb7konljgc5tfvfh644mlfgfliwoqo32bvbrliorevvhvz5jw67q"
+    "Release.Windows_x86": "o6opg3dit7mdzmzn5spiwofjqwuzlweesm6ogkwvh6cghfiae7k5a"
   }

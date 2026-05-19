@@ -4,35 +4,35 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Awk-5.3.1
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "o43h4b5pg4tw7ki5idvkbfgjjlb4x4tssytnh2dw6utivxy5bzycxa"
+    "Release.Linux_x86": "o43h4b5pg4tw7ki5idvkbfgjjlb4x4tsytnh2dw6utivxy5bzycxa"
   }
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Bison-3.8.2
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "ojrviajh4mdhlnntuptadx54w4wkqllkkc2fggcw46n6zkhrdlcyea"
+    "Release.Linux_x86": "ojrviajh4mdhlnntuptadx54w4wkqlkkc2fggcw46n6zkhrdlcyea"
   }
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Grep-3.12.0
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "oqknbdle73zfrnalkrldfgmoeg45h2256tzyyfs5jqirpu5o63fjta"
+    "Release.Linux_x86": "oqknbdle73zfrnalkrldfgmoeg45h256tzyyfs5jqirpu5o63fjta"
   }
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Make-4.4.1
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "oud4lg3u4wmuexf4vtg5vbne3eu3qprr4mjdav7ofdh6v5zuu6st6q"
+    "Release.Linux_x86": "oud4lg3u4wmuexf4vtg5vbne3eu3qpr4mjdav7ofdh6v5zuu6st6q"
   }
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-GMP-6.3.0
   \test(pass)\dkobjects\;{
-    "Release.Linux_x86": "o4xnihcjv3sa334wbwuvfoxskciejwlggjzuiipw47sin2ah5p2hfq"
+    "Release.Linux_x86": "ojhxza456ejfijlxlj2yfhos5uiahrvkhikvtrtieuxvlbxoqbqva"
   }
 
 ## Nettle

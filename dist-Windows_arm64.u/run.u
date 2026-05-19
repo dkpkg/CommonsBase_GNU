@@ -67,5 +67,5 @@
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Windows_arm64": "osargfhmpda66dhp3lntgtrgnqp2zgfypdakw6ctkjv65lr6kb75a"
+    "Release.Windows_arm64": "ohfcjklswwqsjsymwfvelddzacbh3ctrxiflvo5escez6o4rjjn4a"
   }

@@ -46,5 +46,5 @@
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-TLS-3.8.12
   \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "osqrtmyqh6uoaszgrkafb2tzhriysmdq6yesnwgetbik56kkn4g5a"
+    "Release.Darwin_x86_64": "ooenxgh2tyt2wrnxqi3ns5ngb4lghcllg55rgu3j234a7mfvcqa4q"
   }
