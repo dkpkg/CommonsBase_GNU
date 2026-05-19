@@ -1,3 +1,4 @@
 dk0 text eol=lf
 *.sed text eol=lf
 *.sh text eol=lf
+*.u text eol=lf
