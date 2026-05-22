@@ -3,48 +3,41 @@
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Awk-5.3.1
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "ogpewb6bcxaqrb3hai4ryj5b3klcn3hgz6gwcpejbc7rxzn23jhaq"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "ogpewb6bcxaqrb3hai4ryj5b3klcn3hgz6gwcpejbc7rxzn23jhaq")\;
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Bison-3.8.2
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "ogac4jrd654zgxmivdn27adaekquuvb7gpuw2kt54qm563uvdsvua"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "ogac4jrd654zgxmivdn27adaekquuvb7gpuw2kt54qm563uvdsvua")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Grep-3.12.0
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "oujzwevx3ax4xkuhieh2pv7w6smsljtnb7dg2myqbs7e5yjpycxnq"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "oujzwevx3ax4xkuhieh2pv7w6smsljtnb7dg2myqbs7e5yjpycxnq")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Make-4.4.1
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "oeszwxgvcxw7qb5cw2jftg5uqfsadnz7lxosvcf7uzlryxirrxwma"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "oeszwxgvcxw7qb5cw2jftg5uqfsadnz7lxosvcf7uzlryxirrxwma")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-GMP-6.3.0
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "opqewq2l7oj3larb24eht5lshq6zraf552uyynhayvemkliprr57a"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "opqewq2l7oj3larb24eht5lshq6zraf552uyynhayvemkliprr57a")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-Nettle-3.10.2
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "o6esf4oxvosbh7wawney72rqda5pvryuvogqi2q36tzq7olety54a"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "o6esf4oxvosbh7wawney72rqda5pvryuvogqi2q36tzq7olety54a")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-TLS-3.8.12
-  \test(pass)\dkobjects\;{
-    "Release.Darwin_x86_64": "ooenxgh2tyt2wrnxqi3ns5ngb4lghcllg55rgu3j234a7mfvcqa4q"
-  }
+  \test(pass)
+  \dkobject(abi: "Release.Darwin_x86_64", value_id: "ooenxgh2tyt2wrnxqi3ns5ngb4lghcllg55rgu3j234a7mfvcqa4q")\;
