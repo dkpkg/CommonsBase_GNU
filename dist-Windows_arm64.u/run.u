@@ -4,58 +4,58 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Awk-5.3.1
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a")\;
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Bison-3.8.2
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "oia5djcqffty3qvbxsck3vrqbxlw5upcejnhcgq5ml3p7rvr27eja")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "oia5djcqffty3qvbxsck3vrqbxlw5upcejnhcgq5ml3p7rvr27eja")\;
 
 ## GNU M4
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-M4-1.4.20
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "otxj5uemkr2jwzxcggrsus24cgfxiphcy5644na2f4dj2rse37vrq")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "otxj5uemkr2jwzxcggrsus24cgfxiphcy5644na2f4dj2rse37vrq")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Make-4.4.1
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "oykoxvwbtq3uwwsatlplkokramemy2qvln53m43tjti4tvffuzkaa")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "oykoxvwbtq3uwwsatlplkokramemy2qvln53m43tjti4tvffuzkaa")\;
 
 ## GNU Sed
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.2.1
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "oie4ud6jybol7bqlkvwzkwouv73jt75s6c2dxggfethty46r3wv7q")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "oie4ud6jybol7bqlkvwzkwouv73jt75s6c2dxggfethty46r3wv7q")\;
 
 ## vswhere
 
   $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-VSWhere-3.1.7
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "obopwlv6gvwzcrgez4ko4m7wwocshvgni3reiksogp5mlfee46uja")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "obopwlv6gvwzcrgez4ko4m7wwocshvgni3reiksogp5mlfee46uja")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Grep-3.12.0
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "o63o5ywci4nerkdlwk5d7bxvndrfvyfcgyxuearesdldmz3yyhbva")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "o63o5ywci4nerkdlwk5d7bxvndrfvyfcgyxuearesdldmz3yyhbva")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Nettle-3.10.2
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "oxjaoudj6h53yc2ktxs56u6uidnsiegpj57ogveb6ufqde3wz6e5q")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "oxjaoudj6h53yc2ktxs56u6uidnsiegpj57ogveb6ufqde3wz6e5q")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-GMP-6.3.0
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "otc7o5tzdxrs3gvuwtpsfucklarwfvi4vjm4zdlf75x2rrsh5dq3q")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "otc7o5tzdxrs3gvuwtpsfucklarwfvi4vjm4zdlf75x2rrsh5dq3q")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-TLS-3.8.12
   \test(pass)
-  \dkobject(abi: "Release.Windows_arm64", value_id: "ohfcjklswwqsjsymwfvelddzacbh3ctrxiflvo5escez6o4rjjn4a")\;
+  \dkobject(abi: "Release.Windows_arm64", value-id: "ohfcjklswwqsjsymwfvelddzacbh3ctrxiflvo5escez6o4rjjn4a")\;
