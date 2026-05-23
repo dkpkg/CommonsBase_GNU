@@ -6,14 +6,23 @@
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "odiengg4r3fjt4uao3l3tftiy7xxcx4v4y32td3eldv7cl75xcw4q")\;
 
+Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) build + CI machines.
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a")\;
 
-  $ run-object CommonsBase_FileMagic.File@7.8.0+db-5.4.7 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]\;
 
 ## Bison
 
