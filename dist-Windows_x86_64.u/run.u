@@ -1,6 +1,6 @@
 # Distribution for Windows x86_64 CommonsBase_GNU
 
-## Objects and Assets
+## W64dev
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)
@@ -11,6 +11,9 @@
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Awk-5.3.1
   \test(pass)
   \dk.object(abi: "Release.Windows_x86_64", value-id: "oaxv73eglv5t6rkbrqc7j5g6p7mrzzdeixxjuwj4ikzk32rfzm3ra")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.0+db-5.4.7 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
 
 ## Bison
 

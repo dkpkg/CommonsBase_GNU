@@ -6,6 +6,9 @@
   \test(pass)
   \dk.object(abi: "Release.Darwin_arm64", value-id: "owb7hj6b2c3pkmxc3aqd2fazvkmzdug7sq7zi5cdg5nxwxwy7tj7q")\;
 
+  $ run-object CommonsBase_FileMagic.File@7.8.0+db-5.4.7 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
+
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Bison-3.8.2
