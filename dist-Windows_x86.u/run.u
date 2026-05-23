@@ -6,6 +6,12 @@
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "odiengg4r3fjt4uao3l3tftiy7xxcx4v4y32td3eldv7cl75xcw4q")\;
 
+Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) build + CI machines.
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
