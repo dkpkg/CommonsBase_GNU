@@ -1,13 +1,24 @@
 # Distribution for Windows arm64 CommonsBase_GNU
 
+## W64dev
+
+Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) build + CI machines.
+
+  $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Awk-5.3.1
   \test(pass)
   \dk.object(abi: "Release.Windows_arm64", value-id: "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a")\;
 
-  $ run-object CommonsBase_FileMagic.File@7.8.0+db-5.4.7 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
+  \test(pass)
+  \dk.target(abi: "Windows_arm64")[PE32+ executable for MS Windows 6.00 (console),, 13 sections
+  ]\;
 
 ## Bison
 
