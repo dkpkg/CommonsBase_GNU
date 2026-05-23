@@ -4,40 +4,40 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Awk-5.3.1
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "oyn55jxzuygxauhhbjkkfah2ootblg2pg66xs4vqdh5c4vqilhdzq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oyn55jxzuygxauhhbjkkfah2ootblg2pg66xs4vqdh5c4vqilhdzq")\;
 
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bison-3.8.2
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "onox6xj3y4ihsqvgs23s5vlvzhc5tx57ptmf4o6kj7zvvy52uzaca")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "onox6xj3y4ihsqvgs23s5vlvzhc5tx57ptmf4o6kj7zvvy52uzaca")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Grep-3.12.0
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "otgukjxujvysigq3mdz33vsle4flpnewhgmzvmoaoa2aofcpwv7hq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "otgukjxujvysigq3mdz33vsle4flpnewhgmzvmoaoa2aofcpwv7hq")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Make-4.4.1
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "ojcv4iv6njmvowclwssczga6gjr7wqkuab6kxnr3f7tj7vpjt4nta")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ojcv4iv6njmvowclwssczga6gjr7wqkuab6kxnr3f7tj7vpjt4nta")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-GMP-6.3.0
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "ok7fxj73ux35lbxbyrjjjjhmtvbjdyemyhqcmuxi2rw5q63s7ryaq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ok7fxj73ux35lbxbyrjjjjhmtvbjdyemyhqcmuxi2rw5q63s7ryaq")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Nettle-3.10.2
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "oarl2mo4uyqcrubypmhkspiecaovt5kld6epcwc7eyk3iz66dioqq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oarl2mo4uyqcrubypmhkspiecaovt5kld6epcwc7eyk3iz66dioqq")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-TLS-3.8.12
   \test(pass)
-  \dkobject(abi: "Release.Linux_x86_64", value-id: "ov5tryju5z7cdc5mf4ry3iwemuqwjeekn7srg3gtu3k52e45be5sq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ov5tryju5z7cdc5mf4ry3iwemuqwjeekn7srg3gtu3k52e45be5sq")\;
