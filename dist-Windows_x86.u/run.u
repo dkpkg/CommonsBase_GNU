@@ -18,7 +18,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a")\;
 
-  $ run-object CommonsBase_FileMagic.File@7.8.0+db-5.4.7 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
 
 ## Bison
