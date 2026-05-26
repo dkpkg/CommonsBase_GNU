@@ -48,12 +48,6 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "olzr26l4wr2lejp3wa5c6ksoyyk2ovcwnveycuw7bvdkatsdp5wfq")\;
 
-## vswhere
-
-  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-VSWhere-3.1.7
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "oyqotzj54mt3mmllqybe2q33fok5m5wd7etoz7mak4npguuao3lva")\;
-
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0

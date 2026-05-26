@@ -42,12 +42,6 @@
   \test(pass)
   \dk.object(abi: "Release.Windows_x86_64", value-id: "ojpc76znsvzatjgezchu6v7wq7kzpydy2apkbaozssgplmguzbfta")\;
 
-## vswhere
-
-  $ get-object CommonsBase_GNU.VSWhere@3.1.7 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-VSWhere-3.1.7
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oragcofsmyyibmjz23yu6b67q3ksb4ceskydqcsim57rbqomrcouq")\;
-
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
