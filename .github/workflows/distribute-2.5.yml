@@ -68,7 +68,11 @@ jobs:
       image: ${{ matrix.image }}
 
     steps:
+      # Harden Runner stays advisory because the windows-latest x86_64 job
+      # in run 26537033621 failed only in "Post Harden Runner", and the job
+      # log could not be downloaded cleanly enough to measure the event volume.
       - name: Harden Runner # Optional but recommended
+        continue-on-error: true
         uses: step-security/harden-runner@f808768d1510423e83855289c910610ca9b43176 # v2.17.0
         with: { egress-policy: audit }
       - name: Checkout repository
@@ -105,7 +109,12 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
+      # Keep Harden Runner non-fatal for the same reason as the distribute
+      # jobs: large event volumes can make its post step fail independently of
+      # the package work, and the failing x64 job log could not be downloaded
+      # cleanly enough to measure the event volume.
       - name: Harden Runner # Optional but recommended
+        continue-on-error: true
         uses: step-security/harden-runner@f808768d1510423e83855289c910610ca9b43176 # v2.17.0
         with: { egress-policy: audit }
       - name: Checkout repository
