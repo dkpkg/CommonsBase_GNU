@@ -30,7 +30,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ounkqv42j7wrgi2pagqjdyrd3umlxykntzxndyna6e7px4pjasfaa")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ochntbfh7ehnpjq3ohswv7nezbjyxygy7a6erhceyddsuwk5b72ra")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash.exe
@@ -56,7 +56,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ojfjcz6kfc7tzdkqpfsmdgxjgdvfak6mgvcwnqmjhxxeleohayvcq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa")\;
 
 ## GNU Sed
 

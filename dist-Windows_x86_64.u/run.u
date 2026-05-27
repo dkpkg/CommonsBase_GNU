@@ -22,7 +22,7 @@
 
   $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "okup62sob6geoaytvfd25pw4z22s33mue7bhyqd7mqrizwthdtvtq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oedsxahzd3e3peyd5mthesiiyanj73qirvlfeczdua4a36miw35gq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash.exe
@@ -46,7 +46,7 @@
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oiyphzdr7nirhm6zjvyzvj76rvwh22srejn4rrselpt7oh4ccwena")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oeosxhc6daru76k3rj65dvalat6duvp3htyxavfvj5j6due3ov5da")\;
 
 ## GNU Sed
 
