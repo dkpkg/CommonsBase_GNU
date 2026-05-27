@@ -10,6 +10,22 @@
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk
   \test(pass)
   \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
+  ]
+  \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
+  ]\;
+
+## GNU Bash
+
+  $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Bash-5.2.37
+  \test(pass)
+  \dk.object(abi: "Release.Linux_x86", value-id: "owz2laiujktzmqqpgxjql6iqp7iheackuoxnzy4qbqg7hax235p6q")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash
+  \test(pass)
+  \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
+  ]
+  \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
   ]\;
 
 ## Bison

@@ -22,6 +22,22 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
   \test(pass)
   \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
+  ]\;
+
+## GNU Bash
+
+  $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bash-5.2.37
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "ounkqv42j7wrgi2pagqjdyrd3umlxykntzxndyna6e7px4pjasfaa")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash.exe
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 4.00 (console), (stripped to external PDB), 10 sections
+  ]
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 5.02 (console), (stripped to external PDB), 11 sections
   ]\;
 
 ## Bison
@@ -40,7 +56,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ojfjcz6kfc7tzdkqpfsmdgxjgdvfak6mgvcwnqmjhxxeleohayvcq")\;
 
 ## GNU Sed
 

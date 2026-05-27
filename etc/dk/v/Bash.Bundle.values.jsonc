@@ -1,0 +1,84 @@
+// Test: ./dk0 -d intermediate --trust-local-package CommonsBase_GNU --autofix get-bundle CommonsBase_GNU.Bash.Bundle@5.2.37 -d target/bashsrc
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "bundles": [
+        {
+            "id": "CommonsBase_GNU.Bash.Bundle@5.2.37",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "gnu-bash",
+                        "mirrors": [
+                            "https://mirrors.kernel.org/gnu/bash",
+                            "https://www.mirrorservice.org/sites/ftp.gnu.org/gnu/bash",
+                            "https://mirrors.ocf.berkeley.edu/gnu/bash",
+                            "https://mirror.csclub.uwaterloo.ca/gnu/bash",
+                            "https://ftp.jaist.ac.jp/pub/GNU/bash",
+                            "https://ftp.yz.yamagata-u.ac.jp/pub/GNU/bash",
+                            "https://mirror.netcologne.de/gnu/bash",
+                            "https://mirror.team-cymru.com/gnu/bash"
+                        ]
+                    },
+                    {
+                        "name": "msys2-x64",
+                        "mirrors": [
+                            "https://repo.msys2.org/msys/x86_64"
+                        ]
+                    },
+                    {
+                        "name": "msys2-x86",
+                        "mirrors": [
+                            "https://repo.msys2.org/msys/i686"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "gnu-bash",
+                    "path": "bash-5.2.37.tar.gz",
+                    "checksum": {
+                        "sha256": "9599b22ecd1d5787ad7d3b7bf0c59f312b3396d1e281175dd1f8a4014da621ff"
+                    },
+                    "size": 11128314
+                },
+                {
+                    "origin": "msys2-x64",
+                    "path": "bash-5.2.037-2-x86_64.pkg.tar.zst",
+                    "checksum": {
+                        "sha256": "5ad290cb4d730d37d6b1644defa09dffa040f34adf75d21d0e3dd8595b94c883"
+                    },
+                    "size": 2502488
+                },
+                {
+                    "origin": "msys2-x64",
+                    "path": "msys2-runtime-3.6.9-1-x86_64.pkg.tar.zst",
+                    "checksum": {
+                        "sha256": "b7cf3a7a423b78c2fb6752859075381b7fa52ffad2d8d66778f49c04dcf50312"
+                    },
+                    "size": 2007158
+                },
+                {
+                    "origin": "msys2-x86",
+                    "path": "bash-5.2.037-2-i686.pkg.tar.zst",
+                    "checksum": {
+                        "sha256": "88a37a3f1c7956e01c25cb2827415fb0f11b768c98c8011058ab76d0db4d2d6a"
+                    },
+                    "size": 2516548
+                },
+                {
+                    "origin": "msys2-x86",
+                    "path": "msys2-runtime-3.3.6-16-i686.pkg.tar.zst",
+                    "checksum": {
+                        "sha256": "791ddec4587146ab2e5ae7f0b081551a9d9f76364ca565b84115ce8d68b7a108"
+                    },
+                    "size": 2698359
+                }
+            ]
+        }
+    ]
+}

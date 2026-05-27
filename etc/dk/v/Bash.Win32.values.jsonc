@@ -1,0 +1,91 @@
+// GNU Bash cannot be built as a native MinGW PE executable, so the Windows package vendors the current MSYS2 Bash runtime.
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Bash.Win32@5.2.37 -s Release.Windows_x86_64 -d target/bash-win64
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Bash.Win32@5.2.37 -s Release.Windows_x86 -d target/bash-win32
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Bash.Win32@5.2.37",
+            "precommands": {
+                "sequential": true,
+                "private": [
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored-x64.zip modver=CommonsBase_GNU.Bash.Win32.X64.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=bash-5.2.037-2-x86_64.pkg.tar.zst",
+                    "install-object CommonsBase_GNU.Bash.Win32.X64.Zip@5.2.37 -s Release.execution_abi -m ./output.zip -d ./pkg/Release.Windows_x86_64/bash",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored-runtime-x64.zip modver=CommonsBase_GNU.Bash.Runtime.X64.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=msys2-runtime-3.6.9-1-x86_64.pkg.tar.zst",
+                    "install-object CommonsBase_GNU.Bash.Runtime.X64.Zip@5.2.37 -s Release.execution_abi -m ./output.zip -d ./pkg/Release.Windows_x86_64/runtime",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored-x86.zip modver=CommonsBase_GNU.Bash.Win32.X86.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=bash-5.2.037-2-i686.pkg.tar.zst",
+                    "install-object CommonsBase_GNU.Bash.Win32.X86.Zip@5.2.37 -s Release.execution_abi -m ./output.zip -d ./pkg/Release.Windows_x86/bash",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored-runtime-x86.zip modver=CommonsBase_GNU.Bash.Runtime.X86.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=msys2-runtime-3.3.6-16-i686.pkg.tar.zst",
+                    "install-object CommonsBase_GNU.Bash.Runtime.X86.Zip@5.2.37 -s Release.execution_abi -m ./output.zip -d ./pkg/Release.Windows_x86/runtime"
+                ]
+            },
+            "function": {
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "commands": [
+                    [
+                        "C:\\Windows\\System32\\tar.exe", "-xf", "pkg/Release.Windows_x86_64/bash/bash-5.2.037-2-x86_64.pkg.tar", "-C", "pkg/Release.Windows_x86_64/bash"
+                    ],
+                    [
+                        "C:\\Windows\\System32\\tar.exe", "-xf", "pkg/Release.Windows_x86_64/runtime/msys2-runtime-3.6.9-1-x86_64.pkg.tar", "-C", "pkg/Release.Windows_x86_64/runtime"
+                    ],
+                    [
+                        "C:\\Windows\\System32\\tar.exe", "-xf", "pkg/Release.Windows_x86/bash/bash-5.2.037-2-i686.pkg.tar", "-C", "pkg/Release.Windows_x86/bash"
+                    ],
+                    [
+                        "C:\\Windows\\System32\\tar.exe", "-xf", "pkg/Release.Windows_x86/runtime/msys2-runtime-3.3.6-16-i686.pkg.tar", "-C", "pkg/Release.Windows_x86/runtime"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "mkdir", "-p", "${SLOT.request}/bin"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg/${SLOTNAME.request}/bash/usr/bin/bash.exe", "${SLOT.request}/bin/bash.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg/${SLOTNAME.request}/bash/usr/bin/bash.exe", "${SLOT.request}/bin/rbash.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg/${SLOTNAME.request}/bash/usr/bin/sh.exe", "${SLOT.request}/bin/sh.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg/${SLOTNAME.request}/bash/usr/bin/bashbug", "${SLOT.request}/bin/bashbug"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg/${SLOTNAME.request}/runtime/usr/bin/msys-2.0.dll", "${SLOT.request}/bin/msys-2.0.dll"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86"
+                        ],
+                        "paths": [
+                            "bin/bash.exe",
+                            "bin/bashbug",
+                            "bin/msys-2.0.dll",
+                            "bin/rbash.exe",
+                            "bin/sh.exe"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -12,6 +12,18 @@
   \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
   ]\;
 
+## GNU Bash
+
+  $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bash-5.2.37
+  \test(pass)
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "o45n4poh3g7wnwfdgfllzrodwxpc26mywprcjgecm5zt4fdl2st3a")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash
+  \test(pass)
+  \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
+  ]\;
+
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bison-3.8.2

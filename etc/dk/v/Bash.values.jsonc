@@ -1,0 +1,60 @@
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Darwin_arm64 -d target/bash
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Windows_x86_64 -d target/bash-win64
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Bash@5.2.37",
+            "precommands": {
+                "private": [
+                    "get-object CommonsBase_GNU.Bash.Unix@5.2.37 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
+                    "get-object CommonsBase_GNU.Bash.Unix@5.2.37 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
+                    "get-object CommonsBase_GNU.Bash.Unix@5.2.37 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
+                    "get-object CommonsBase_GNU.Bash.Unix@5.2.37 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
+                    "get-object CommonsBase_GNU.Bash.Unix@5.2.37 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "get-object CommonsBase_GNU.Bash.Win32@5.2.37 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
+                    "get-object CommonsBase_GNU.Bash.Win32@5.2.37 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}"
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Darwin_arm64",
+                            "Release.Darwin_x86_64",
+                            "Release.Linux_x86_64",
+                            "Release.Linux_x86",
+                            "Release.Linux_arm64"
+                        ],
+                        "paths": [
+                            "bin/bash",
+                            "bin/bashbug",
+                            "bin/rbash",
+                            "bin/sh",
+                            "share/info/bash.info",
+                            "share/man/man1/bash.1",
+                            "share/man/man1/bashbug.1"
+                        ]
+                    },
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86"
+                        ],
+                        "paths": [
+                            "bin/bash.exe",
+                            "bin/bashbug",
+                            "bin/msys-2.0.dll",
+                            "bin/rbash.exe",
+                            "bin/sh.exe"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
