@@ -85,7 +85,7 @@
                     ],
                     [
                         "$(get-object CommonsBase_GNU.Make@4.4.1 -s Release.execution_abi -e bin/make -d :)/bin/make${.exe.execution}",
-                        "install"
+                        "install-exec"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -e coreutils.exe -f coreutils.exe)",
