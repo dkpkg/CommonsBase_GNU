@@ -52,7 +52,12 @@
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.2.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ojpc76znsvzatjgezchu6v7wq7kzpydy2apkbaozssgplmguzbfta")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "obhydbc2bz2h6ff7z7agpd27mprkgarda54zmlhkk6l6xtx6625tq")\;
+
+## GNU Sed 4.9.0
+
+  $ get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.9.0
+  \test(pass)
 
 ## GNU Grep
 
