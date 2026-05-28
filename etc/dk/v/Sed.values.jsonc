@@ -1,4 +1,5 @@
 // Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d target/sed-win64
+// Test: ./dk0 --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86_64 -d target/sed-win64-source
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -49,6 +50,47 @@
                             "bin/sed.exe",
                             "bin/libiconv2.dll",
                             "bin/libintl3.dll"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "CommonsBase_GNU.Sed@4.9.0",
+            "precommands": {
+                "private": [
+                    "get-object CommonsBase_GNU.Sed.Unix@4.9.0 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
+                    "get-object CommonsBase_GNU.Sed.Unix@4.9.0 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
+                    "get-object CommonsBase_GNU.Sed.Unix@4.9.0 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
+                    "get-object CommonsBase_GNU.Sed.Unix@4.9.0 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
+                    "get-object CommonsBase_GNU.Sed.Unix@4.9.0 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "get-object CommonsBase_GNU.Sed.Win32@4.9.0 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
+                    "get-object CommonsBase_GNU.Sed.Win32@4.9.0 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}",
+                    "get-object CommonsBase_GNU.Sed.Win32@4.9.0 -s Release.Windows_arm64 -d ${SLOT.Release.Windows_arm64}"
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Darwin_arm64",
+                            "Release.Darwin_x86_64",
+                            "Release.Linux_x86_64",
+                            "Release.Linux_x86",
+                            "Release.Linux_arm64"
+                        ],
+                        "paths": [
+                            "bin/sed"
+                        ]
+                    },
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/sed.exe"
                         ]
                     }
                 ]
