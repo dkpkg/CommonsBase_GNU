@@ -1,0 +1,196 @@
+// GNU sed is a stream editor that provides the standard sed entrypoint.
+// Initial validation target is Release.Windows_x86_64; the x86 and arm64
+// slots follow the same recipe but are unvalidated until later.
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Sed.Win32@4.9.0",
+            "function": {
+                "execution": [
+                    {
+                        "name": "OSFamily",
+                        "value": "windows"
+                    }
+                ],
+                "envmods": [
+                    "+AM_UPDATE_INFO_DIR=no",
+                    "+HELP2MAN=:",
+                    "<PATH=$(--path=absnative get-object CommonsBase_LLVM.Toolchain.MinGW@21.1.8+rev-20251216 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Grep@2.5.4+gnuwin32-20090213 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "<PATH=$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -d : -e 'bin/*')${/}bin",
+                    "+MAKEINFO=:",
+                    "+PERL=:",
+                    "+gl_cv_prog_perl=no",
+                    "+GREP=grep",
+                    "+EGREP_TRADITIONAL=egrep",
+                    "+EGREP=egrep",
+                    "+FGREP=fgrep",
+                    "+SED=sed",
+                    "+AWK=awk"
+                ],
+                "commands": [
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "$(get-asset CommonsBase_GNU.Sed.Bundle@4.9.0 -p sed-4.9.tar.xz -f sed-4.9.tar.xz)",
+                        "sed-4.9.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.S7z.Windows7zExe@25.1.0 -s Release.Windows_x86 -d :)/7z.exe",
+                        "x",
+                        "-o.",
+                        "sed-4.9.tar"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-R", "sed-4.9/.", "."
+                    ],
+                    [
+                        "C:\\Windows\\System32\\attrib.exe",
+                        "-R",
+                        "sed-4.9\\*",
+                        "/S",
+                        "/D"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "sed-4.9", "sed-4.9.tar"
+                    ],
+                    // Windows_x86_64: configure, strip gnulib-tests (nanosleep conflicts with winpthread), build, install
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=x86_64-w64-mingw32",
+                        "CC=x86_64-w64-mingw32-gcc",
+                        "LD=x86_64-w64-mingw32-ld",
+                        "AR=x86_64-w64-mingw32-ar.exe",
+                        "RANLIB=x86_64-w64-mingw32-ranlib.exe",
+                        "WINDRES=x86_64-w64-mingw32-windres.exe",
+                        "--prefix=${SLOTABS.Release.Windows_x86_64}",
+                        "LIBS=-lbcrypt"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s/ gnulib-tests//\"",
+                        "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install-exec"
+                    ],
+                    // Windows_x86: configure, strip gnulib-tests, build, install
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=i686-w64-mingw32",
+                        "CC=i686-w64-mingw32-gcc",
+                        "LD=i686-w64-mingw32-ld.exe",
+                        "AR=i686-w64-mingw32-ar.exe",
+                        "RANLIB=i686-w64-mingw32-ranlib.exe",
+                        "WINDRES=i686-w64-mingw32-windres.exe",
+                        "--prefix=${SLOTABS.Release.Windows_x86}",
+                        "LIBS=-lbcrypt"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s/ gnulib-tests//\"",
+                        "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install-exec"
+                    ],
+                    // Windows_arm64: configure, strip gnulib-tests, build, install
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/sh.exe -d :)/bin/sh.exe",
+                        "./configure",
+                        "--disable-dependency-tracking", "--disable-nls",
+                        "--build=x86_64-w64-mingw32",
+                        "--host=aarch64-w64-mingw32",
+                        "CC=aarch64-w64-mingw32-gcc",
+                        "LD=aarch64-w64-mingw32-ld.exe",
+                        "AR=aarch64-w64-mingw32-ar.exe",
+                        "RANLIB=aarch64-w64-mingw32-ranlib.exe",
+                        "WINDRES=aarch64-w64-mingw32-windres.exe",
+                        "--prefix=${SLOTABS.Release.Windows_arm64}",
+                        "LIBS=-lbcrypt"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.execution_abi -e bin/sed.exe -d :)/bin/sed.exe",
+                        "-i",
+                        "\"s/ gnulib-tests//\"",
+                        "Makefile"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}",
+                        "$(--path=absnative get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.execution_abi -e bin/make.exe -d :)/bin/make.exe",
+                        "install-exec"
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "rm", "-rf", "${SLOT.request}/share"
+                    ]
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Windows_x86_64",
+                            "Release.Windows_x86",
+                            "Release.Windows_arm64"
+                        ],
+                        "paths": [
+                            "bin/sed.exe"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

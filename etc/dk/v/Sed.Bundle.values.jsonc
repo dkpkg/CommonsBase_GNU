@@ -36,6 +36,30 @@
                     "size": 833739
                 }
             ]
+        },
+        {
+            "id": "CommonsBase_GNU.Sed.Bundle@4.9.0",
+            "listing": {
+                "origins": [
+                    {
+                        "name": "gnu-sed",
+                        "mirrors": [
+                            "https://ftpmirror.gnu.org/sed",
+                            "https://ftp.gnu.org/gnu/sed"
+                        ]
+                    }
+                ]
+            },
+            "assets": [
+                {
+                    "origin": "gnu-sed",
+                    "path": "sed-4.9.tar.xz",
+                    "checksum": {
+                        "sha256": "6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181"
+                    },
+                    "size": 1397092
+                }
+            ]
         }
     ]
 }
