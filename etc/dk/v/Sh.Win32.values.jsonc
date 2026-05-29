@@ -1,12 +1,16 @@
 // BusyBox-w32 sh.exe extracted from the W64devkit 2.5.0 distribution.
 // Native Win32 — no MSYS2 or Cygwin DLL required.
+// Output:
+//   bin/
+//    sh.exe - just delegates to the larger busybox.exe
+//    busybox.exe
 //
 // Slots: Release.Windows_x86_64, Release.Windows_x86, Release.Windows_arm64
 //   (arm64 reuses the x86_64 binary; W64devkit has no arm64 build)
 //
-// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_x86_64 -d target/sh-win64
-// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_x86 -d target/sh-win32
-// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_arm64 -d target/sh-winarm64
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0 -s Release.Windows_x86_64 -d target/sh-win64
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0 -s Release.Windows_x86 -d target/sh-win32
+// Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0 -s Release.Windows_arm64 -d target/sh-winarm64
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -15,7 +19,7 @@
     },
     "forms": [
         {
-            "id": "CommonsBase_GNU.Sh.Win32@2.5.0-1",
+            "id": "CommonsBase_GNU.Sh.Win32@2.5.0",
             "function": {
                 // S7z runs on any execution ABI; no Wine needed.
                 "commands": [
@@ -40,33 +44,36 @@
                         "-opkg_x86",
                         "-y"
                     ],
-                    // Per-slot: mkdir + cp in separate commands each referencing only ONE slot
-                    // variable. When a slot is not requested, that slot variable expands to
-                    // empty and the command is skipped — which is the correct behaviour.
+                    // mkdir
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "mkdir", "-p", "${SLOT.Release.Windows_x86_64}/bin"
+                        "mkdir", "-p", "${SLOT.request}/bin"
                     ],
+                    // copy correct busybox.exe + sh.exe
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "cp", "-f", "pkg_x64/busybox.exe", "${SLOT.Release.Windows_x86_64}/bin/sh.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "mkdir", "-p", "${SLOT.Release.Windows_x86}/bin"
+                        "cp", "-f", "pkg_x64/busybox.exe", "${SLOT.Release.Windows_x86_64}/bin/busybox.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "cp", "-f", "pkg_x86/busybox.exe", "${SLOT.Release.Windows_x86}/bin/sh.exe"
                     ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "cp", "-f", "pkg_x86/busybox.exe", "${SLOT.Release.Windows_x86}/bin/busybox.exe"
+                    ],
                     // arm64: reuse x64 sh.exe (no arm64 W64devkit build)
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "mkdir", "-p", "${SLOT.Release.Windows_arm64}/bin"
+                        "cp", "-f", "pkg_x64/busybox.exe", "${SLOT.Release.Windows_arm64}/bin/sh.exe"
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s Release.execution_abi -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "cp", "-f", "pkg_x64/busybox.exe", "${SLOT.Release.Windows_arm64}/bin/sh.exe"
+                        "cp", "-f", "pkg_x64/busybox.exe", "${SLOT.Release.Windows_arm64}/bin/busybox.exe"
                     ]
                 ]
             },
@@ -79,6 +86,7 @@
                             "Release.Windows_arm64"
                         ],
                         "paths": [
+                            "bin/busybox.exe",
                             "bin/sh.exe"
                         ]
                     }
