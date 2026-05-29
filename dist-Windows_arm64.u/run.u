@@ -50,6 +50,12 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_arm64", value-id: "ola6vzlu6y5ehpbrexko5xvuqvk3awmiedbyv4of7ezjnubw337iq")\;
 
+## BusyBox-w32 Sh
+
+  $ get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sh.Win32-2.5.0
+  \test(pass)
+  \dk.object(abi: "Release.Windows_arm64", value-id: "?")\;
+
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Grep-3.12.0

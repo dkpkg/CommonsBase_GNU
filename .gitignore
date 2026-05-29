@@ -1,4 +1,5 @@
 act.distribute.secrets
+*.7z.exe
 dk-dist/
 etc/dk/i/values.unattested.json
 t/c/

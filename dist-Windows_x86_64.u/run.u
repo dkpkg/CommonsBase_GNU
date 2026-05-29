@@ -60,6 +60,12 @@
   \test(pass)
   \dk.object(abi: "Release.Windows_x86_64", value-id: "o6rbh4tmpnwzxmsr6xqoljhxb4b7izuhugfmcgbzruy4wlm2z7afa")\;
 
+## BusyBox-w32 Sh
+
+  $ get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sh.Win32-2.5.0
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "?")\;
+
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
