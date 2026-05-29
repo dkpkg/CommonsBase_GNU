@@ -59,3 +59,22 @@
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-TLS-3.8.12
   \test(pass)
   \dk.object(abi: "Release.Linux_x86_64", value-id: "ov5tryju5z7cdc5mf4ry3iwemuqwjeekn7srg3gtu3k52e45be5sq")\;
+
+## POSIX shell
+
+  $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Sh-0.1.0
+  \test(pass)
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ochntbfh7ehnpjq3ohswv7nezbjyxygy7a6erhceyddsuwk5b72ra")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
+  \test(pass)
+  \dk.target(abi: "Linux_x86_64")[?
+  ]\;
+
+## Unix Essentials
+
+  $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-UE
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
