@@ -26,20 +26,6 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
   ]\;
 
-## GNU Bash
-
-  $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bash-5.2.37
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ochntbfh7ehnpjq3ohswv7nezbjyxygy7a6erhceyddsuwk5b72ra")\;
-
-  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash.exe
-  \test(pass)
-  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 4.00 (console), (stripped to external PDB), 10 sections
-  ]
-  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 5.02 (console), (stripped to external PDB), 11 sections
-  ]\;
-
 ## Bison
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
@@ -70,12 +56,6 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "omuzo6vdskmm3n4wcu2vb5klif2ho5tuk4nug57wndi46yh2i4ldq")\;
 
-## BusyBox-w32 Sh
-
-  $ get-object CommonsBase_GNU.Sh.Win32@2.5.0-1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sh.Win32-2.5.0
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "?")\;
-
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0
@@ -99,3 +79,27 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "o6opg3dit7mdzmzn5spiwofjqwuzlweesm6ogkwvh6cghfiae7k5a")\;
+
+## POSIX shell
+
+  $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sh-0.1.0
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "owdoz35ng74ch3a7ex2vcg3f3cvj7hqkz3zs7g7lwpm2ra3lywibq")\;
+
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 4.00 (console), (stripped to external PDB), 8 sections
+  ]\;
+
+## Unix Essentials
+
+  $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-UE
+\test(pass)
+\dk.object(abi: "Release.Windows_x86", value-id: "oynkktuzbg4uelwlst26h4ry5vtyfsiwwpapd6xcirxhm3d45xhoa")\;
+
+$ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+>   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
+\test(pass)
+\dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 4 sections
+]\;
