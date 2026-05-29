@@ -1,0 +1,34 @@
+// GNU 5.2.37 bash's as a POSIX compliant /bin/sh
+{
+    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "schema_version": {
+        "major": 1,
+        "minor": 0
+    },
+    "forms": [
+        {
+            "id": "CommonsBase_GNU.Sh.Unix@5.2.37",
+            "precommands": {
+                "private": [
+                    "get-object CommonsBase_GNU.Bash@5.2.37 -s ${SLOTNAME.request} -m ./bin/sh.exe -f ${SLOT.request}/bin/sh -e 'bin/sh'"
+                ]
+            },
+            "outputs": {
+                "assets": [
+                    {
+                        "slots": [
+                            "Release.Linux_x86_64",
+                            "Release.Linux_x86",
+                            "Release.Linux_arm64",
+                            "Release.Darwin_x86_64",
+                            "Release.Darwin_arm64"
+                        ],
+                        "paths": [
+                            "bin/sh"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
