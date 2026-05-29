@@ -68,6 +68,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.9.0
   \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "omuzo6vdskmm3n4wcu2vb5klif2ho5tuk4nug57wndi46yh2i4ldq")\;
 
 ## GNU Grep
 
