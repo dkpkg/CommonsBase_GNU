@@ -73,7 +73,7 @@
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh
   \test(pass)
-  \dk.target(abi: "Linux_x86")[?
+  \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
   ]\;
 
 ## Unix Essentials
@@ -84,3 +84,6 @@
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp
+  \test(pass)
+  \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
+  ]\;
