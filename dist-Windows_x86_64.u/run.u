@@ -81,17 +81,17 @@
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
   \test(pass)
-  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 5.02 (console), (stripped to external PDB), 11 sections
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 5.02 (console), (stripped to external PDB), 10 sections
   ]\;
 
 ## Unix Essentials
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-UE
-\test(pass)
-\dk.object(abi: "Release.Windows_x86_64", value-id: "o7gxc5qc3rri3thqm63kor7nlm7t2fxkyueptyxcf5ampihyacjtq")\;
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "o7gxc5qc3rri3thqm63kor7nlm7t2fxkyueptyxcf5ampihyacjtq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
-\test(pass)
-\dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 5 sections
-]\;
+  \test(pass)
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 5 sections
+  ]\;

@@ -95,11 +95,11 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## Unix Essentials
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-UE
-\test(pass)
-\dk.object(abi: "Release.Windows_x86", value-id: "oynkktuzbg4uelwlst26h4ry5vtyfsiwwpapd6xcirxhm3d45xhoa")\;
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "oynkktuzbg4uelwlst26h4ry5vtyfsiwwpapd6xcirxhm3d45xhoa")\;
 
-$ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
->   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
-\test(pass)
-\dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 4 sections
-]\;
+  $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 4 sections
+  ]\;

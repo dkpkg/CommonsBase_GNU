@@ -64,10 +64,10 @@
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Sh-0.1.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "ochntbfh7ehnpjq3ohswv7nezbjyxygy7a6erhceyddsuwk5b72ra")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "o7alvk6g6nhouajhjiq4ebxnsyv2z2bdrdm7c2b2c6lx5vgglx2ha")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
+  >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh
   \test(pass)
   \dk.target(abi: "Linux_x86_64")[?
   ]\;
@@ -75,6 +75,8 @@
 ## Unix Essentials
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-UE
+  \test(pass)
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "obehgwy72uildplgcriua2y5zf7cjwi42eob3pvhyag5hizv3ucsa")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp
