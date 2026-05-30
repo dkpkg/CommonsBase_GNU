@@ -62,6 +62,8 @@
 
 ## Unix Essentials
 
+coreutils/uutils and POSIX shell
+
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-UE
   \test(pass)
   \dk.object(abi: "Release.Darwin_x86_64", value-id: "o7e2zotmp3nq2ruiyk2ce5iq2z4ppbi7j6b6c4rt2are5o6hu3kbq")\;

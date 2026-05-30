@@ -74,6 +74,8 @@
 
 ## Unix Essentials
 
+coreutils/uutils and POSIX shell
+
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-UE
   \test(pass)
   \dk.object(abi: "Release.Linux_x86_64", value-id: "obehgwy72uildplgcriua2y5zf7cjwi42eob3pvhyag5hizv3ucsa")\;
