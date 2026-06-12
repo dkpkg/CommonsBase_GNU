@@ -64,4 +64,4 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-UE
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk

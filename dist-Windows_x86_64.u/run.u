@@ -93,7 +93,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   \dk.object(abi: "Release.Windows_x86_64", value-id: "o7gxc5qc3rri3thqm63kor7nlm7t2fxkyueptyxcf5ampihyacjtq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp.exe
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk.exe
   \test(pass)
   \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 5 sections
   ]\;

@@ -81,7 +81,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   \dk.object(abi: "Release.Linux_x86_64", value-id: "obehgwy72uildplgcriua2y5zf7cjwi42eob3pvhyag5hizv3ucsa")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
-  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/mktemp
+  >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk
   \test(pass)
   \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB ${x?pie executable:shared object}, x86-64, version 1 (SYSV)
   ]\;
