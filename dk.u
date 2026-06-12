@@ -71,8 +71,8 @@
 
   % unified.asset { name="BuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
   'asset'
-  '11131'
-  'sha256:3f9825744b486bc5413806cccbae36a4d354e944765fba68c26d37884369a06d'
+  '10724'
+  'sha256:7f90b6a9008783eea2dd549f69467fc045c050c833b1dc7c438fd84650b2bb6c'
 
   % unified.asset { name="ConfigHW32Sed", file="etc/scripts/make-config-h-w32.sed" }
   'asset'
@@ -83,8 +83,8 @@
 
   % unified.asset { name="LlvmMingwPatch", file="assets/p/gawk-llvm-mingw-5.3.1.patch" }
   'asset'
-  '646'
-  'sha256:d9b16bd9b55f130109915daf31e7b10a8cfa52cadf95fbb94fc1cabd27946ce3'
+  '624'
+  'sha256:bdb256e5235a194b8e039bbc1090c029348dee59969bbaa3ebeea56a531dcafd'
 
   % unified.asset { name="MingwHostTriplet", dir="assets/table/mingw-host-triplet" }
   'asset'
@@ -100,8 +100,8 @@
 
   % unified.asset { name="FixConfigurePrefix", file="etc/scripts/fix-configure-prefix.sh" }
   'asset'
-  '450'
-  'sha256:843e3a92b63124517fc1abdc4dca9165cc7d9010e8f14034034022b3ebda0ba6'
+  '432'
+  'sha256:5254d32d8370894a7a6d87209609adad57e32c900a604c0a17a30c9528172180'
 
   % unified.asset { name="BisonDisablePerlDocs", file="etc/scripts/bison-disable-perl-docs.sed" }
   'asset'
@@ -110,5 +110,5 @@
 
   % unified.asset { name="BisonYaccCmd", file="etc/scripts/bison-yacc.cmd" }
   'asset'
-  '61'
-  'sha256:f5612e1dc738c6aebaaef45da9dea9e4c51a9fa3926ba4e3094866af42dc28be'
+  '58'
+  'sha256:787ddd8fa3a8d3620707a4c1283898f177d05cf0f17fc31e5f3ced042720d76b'
