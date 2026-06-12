@@ -59,7 +59,7 @@
 
 ## Unix Essentials
 
-coreutils/uutils and POSIX shell
+awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_arm64 -d ${RUNTIME}/Linux_arm64-UE
 

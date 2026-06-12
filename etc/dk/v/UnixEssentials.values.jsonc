@@ -2,7 +2,9 @@
 // bin/
 //  busybox.exe (Windows-only; required for sh.exe on Windows)
 //  sh[.exe]
-//  mktemp[.exe]
+//  awk[.exe]
+//  grep[.exe]
+//  sed[.exe]
 {
     "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
     "schema_version": {
@@ -16,17 +18,44 @@
                 "sequential": true,
                 "private": [
                     // bin/sh, Windows-only: bin/busybox.exe
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86 -d ${SLOT.Release.Windows_x86}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_arm64 -d ${SLOT.Release.Windows_arm64}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Darwin_arm64 -d ${SLOT.Release.Darwin_arm64}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Darwin_x86_64 -d ${SLOT.Release.Darwin_x86_64}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86_64 -d ${SLOT.Release.Linux_x86_64}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86 -d ${SLOT.Release.Linux_x86}",
-                    "get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_arm64 -d ${SLOT.Release.Linux_arm64}",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86_64 -d ${SLOT.Release.Windows_x86_64}",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86    -d ${SLOT.Release.Windows_x86}",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_arm64  -d ${SLOT.Release.Windows_arm64}",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Darwin_arm64   -d ${SLOT.Release.Darwin_arm64}  -e 'bin/sh'",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Darwin_x86_64  -d ${SLOT.Release.Darwin_x86_64} -e 'bin/sh'",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86_64   -d ${SLOT.Release.Linux_x86_64}  -e 'bin/sh'",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86      -d ${SLOT.Release.Linux_x86}     -e 'bin/sh'",
+                    "merge-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_arm64    -d ${SLOT.Release.Linux_arm64}   -e 'bin/sh'",
 
-                    // mktemp
-                    "merge-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.request} -m ./coreutils.exe -f ${SLOT.request}/bin/mktemp${.exe.execution} -e '*'"
+                    // bin/awk
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -m ./bin/awk.exe -f ${SLOT.Release.Windows_x86_64}/bin/awk.exe",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86    -m ./bin/awk.exe -f ${SLOT.Release.Windows_x86}/bin/awk.exe",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64  -m ./bin/awk.exe -f ${SLOT.Release.Windows_arm64}/bin/awk.exe",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64   -m ./bin/awk -f ${SLOT.Release.Darwin_arm64}/bin/awk  -e 'bin/awk'",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_x86_64  -m ./bin/awk -f ${SLOT.Release.Darwin_x86_64}/bin/awk -e 'bin/awk'",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_x86_64   -m ./bin/awk -f ${SLOT.Release.Linux_x86_64}/bin/awk  -e 'bin/awk'",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_x86      -m ./bin/awk -f ${SLOT.Release.Linux_x86}/bin/awk     -e 'bin/awk'",
+                    "get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_arm64    -m ./bin/awk -f ${SLOT.Release.Linux_arm64}/bin/awk   -e 'bin/awk'",
+
+                    // bin/grep
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Windows_x86_64 -m ./bin/grep.exe -f ${SLOT.Release.Windows_x86_64}/bin/grep.exe",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Windows_x86    -m ./bin/grep.exe -f ${SLOT.Release.Windows_x86}/bin/grep.exe",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Windows_arm64  -m ./bin/grep.exe -f ${SLOT.Release.Windows_arm64}/bin/grep.exe",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Darwin_arm64   -m ./bin/grep -f ${SLOT.Release.Darwin_arm64}/bin/grep  -e 'bin/grep'",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Darwin_x86_64  -m ./bin/grep -f ${SLOT.Release.Darwin_x86_64}/bin/grep -e 'bin/grep'",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_x86_64   -m ./bin/grep -f ${SLOT.Release.Linux_x86_64}/bin/grep  -e 'bin/grep'",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_x86      -m ./bin/grep -f ${SLOT.Release.Linux_x86}/bin/grep     -e 'bin/grep'",
+                    "get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_arm64    -m ./bin/grep -f ${SLOT.Release.Linux_arm64}/bin/grep   -e 'bin/grep'",
+
+                    // bin/sed
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86_64 -m ./bin/sed.exe -f ${SLOT.Release.Windows_x86_64}/bin/sed.exe",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86    -m ./bin/sed.exe -f ${SLOT.Release.Windows_x86}/bin/sed.exe",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_arm64  -m ./bin/sed.exe -f ${SLOT.Release.Windows_arm64}/bin/sed.exe",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Darwin_arm64   -m ./bin/sed -f ${SLOT.Release.Darwin_arm64}/bin/sed  -e 'bin/sed'",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Darwin_x86_64  -m ./bin/sed -f ${SLOT.Release.Darwin_x86_64}/bin/sed -e 'bin/sed'",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Linux_x86_64   -m ./bin/sed -f ${SLOT.Release.Linux_x86_64}/bin/sed  -e 'bin/sed'",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Linux_x86      -m ./bin/sed -f ${SLOT.Release.Linux_x86}/bin/sed     -e 'bin/sed'",
+                    "merge-object CommonsBase_GNU.Sed@4.9.0 -s Release.Linux_arm64    -m ./bin/sed -f ${SLOT.Release.Linux_arm64}/bin/sed   -e 'bin/sed'"
                 ]
             },
             "outputs": {
@@ -39,8 +68,10 @@
                         ],
                         "paths": [
                             "bin/busybox.exe",
+                            "bin/awk.exe",
+                            "bin/grep.exe",
                             "bin/sh.exe",
-                            "bin/mktemp.exe"
+                            "bin/sed.exe"
                         ]
                     },
                     {
@@ -52,8 +83,10 @@
                             "Release.Linux_arm64"
                         ],
                         "paths": [
+                            "bin/awk",
+                            "bin/grep",
                             "bin/sh",
-                            "bin/mktemp"
+                            "bin/sed"
                         ]
                     }
                 ]
