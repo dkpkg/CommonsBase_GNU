@@ -88,7 +88,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
 ## Unix Essentials
 
-coreutils/uutils and POSIX shell
+awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-UE
   \test(pass)
