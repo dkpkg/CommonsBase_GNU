@@ -82,7 +82,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-UE
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "oyww2itdsbqalynme6lwdmjrucppu7svepllmomheaian3zlt6wqq")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "ogk6kwpubmmdvlk3ln4h2w3l35f3z5h523lsnyfjlqumydmjfv2ra")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk

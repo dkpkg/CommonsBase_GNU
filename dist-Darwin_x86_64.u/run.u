@@ -66,10 +66,10 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Darwin_x86_64 -d ${RUNTIME}/Darwin_x86_64-UE
   \test(pass)
-  \dk.object(abi: "Release.Darwin_x86_64", value-id: "o7e2zotmp3nq2ruiyk2ce5iq2z4ppbi7j6b6c4rt2are5o6hu3kbq")\;
+  \dk.object(abi: "Release.Darwin_x86_64", value-id: "ovwn3bzecyycne65wl3p3io3kom7isnpjdsp7kdymqc5726jq24sq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk
   \test(pass)
-  \dk.target(abi: "Darwin_x86_64")[Mach-O 64-bit executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE|HAS_TLV_DESCRIPTORS>
+  \dk.target(abi: "Darwin_x86_64")[Mach-O 64-bit executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL>
   ]\;

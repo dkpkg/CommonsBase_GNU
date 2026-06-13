@@ -15,16 +15,41 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Awk@5.3....`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
-  \test(pass)
-  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
-  ]
-  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
-  ]\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose run-object CommonsBase_FileMagic.Fi...`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
 ## Bison
 
@@ -41,8 +66,22 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Make@4.4...`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86/command5.txt`.
+  ────╯
+
+  [exit 1]
 
 ## GNU Sed
 
@@ -65,20 +104,62 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "oiivnxqkmjmgjenf6j3wc4y23iui6b2x245z3rns7jvtctxq5pu5q")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Nettle@3...`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "okqvbc5qthtelcu6pj6a6lzrwdrgrkp25zepgsakaz5xgjfll5f2q")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.GMP@6.3....`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o6opg3dit7mdzmzn5spiwofjqwuzlweesm6ogkwvh6cghfiae7k5a")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.TLS@3.8....`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
 ## POSIX shell
 
@@ -97,11 +178,38 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-UE
-  \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "oynkktuzbg4uelwlst26h4ry5vtyfsiwwpapd6xcirxhm3d45xhoa")\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.UnixEss...`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk.exe
-  \test(pass)
-  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 4 sections
-  ]\;
+  [error 63937ccd]: Could not run unified shell command.
+
+      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
+      │
+   74 │╭┤                     [
+   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
+   77 │├┤                     ],
+      • │
+      • ╰╸ Could not run function successfully because the function exited with code 1.
+      •
+      │ Hint: Consider running the individual command using the command line: `dk0 --verbose run-object CommonsBase_FileMagic.Fi...`
+      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
+  ────╯
+
+  [exit 1]
