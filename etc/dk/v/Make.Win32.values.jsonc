@@ -46,34 +46,35 @@
                         "src/config.h.W32"
                     ],
 
-                    // create bin and include before linking directly into the final slot path
+                    // build with Windows ABI-specific cross-compiler (CROSSGCC).
+                    // use [env -u] to run for only one specific Windows slot
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86_64}", "CROSSGCC=x86_64-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_x86}", "CROSSGCC=i686-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+
+                    ],
+                    [
+                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
+                        "env", "-u", "${SLOT.Release.Windows_arm64}", "CROSSGCC=aarch64-w64-mingw32-gcc.exe",
+                        "cmd", "/c", "\"call build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+                    ],
+
+                    // create bin and include
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
                         "mkdir", "-p", "${SLOT.request}/bin", "${SLOT.request}/include"
                     ],
-
-                    // Build with Windows ABI-specific cross-compiler (CROSSGCC).
-                    // use [env -u] to run for only one specific Windows slot.
-                    // Set MAKE_EXE so the linking goes straight to the output slot;
-                    // we don't need an install/copy step which can sometimes trigger
-                    // Windows Defender (etc.) to block/delay the file copy.
+                    // copy GccRel/gnumake.exe
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "env", "-u", "${SLOT.Release.Windows_x86_64}", "CROSSGCC=x86_64-w64-mingw32-gcc.exe", "MAKE_EXE=${SLOT.request}${/}bin${/}make.exe",
-                        "cmd", "/c", "\"call .\\build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
+                        "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
                     ],
-                    [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "env", "-u", "${SLOT.Release.Windows_x86}", "CROSSGCC=i686-w64-mingw32-gcc.exe", "MAKE_EXE=${SLOT.request}${/}bin${/}make.exe",
-                        "cmd", "/c", "\"call .\\build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
-
-                    ],
-                    [
-                        "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "env", "-u", "${SLOT.Release.Windows_arm64}", "CROSSGCC=aarch64-w64-mingw32-gcc.exe", "MAKE_EXE=${SLOT.request}${/}bin${/}make.exe",
-                        "cmd", "/c", "\"call .\\build_w32.bat --without-guile gcc & exit /b %ERRORLEVEL%\""
-                    ],
-
                     // and gnumake.h
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
