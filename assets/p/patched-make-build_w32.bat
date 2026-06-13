@@ -168,6 +168,8 @@ echo No %COMPILER% found.
 exit 1
 
 :Build
+if "%MAKE_EXE%" == "" set "MAKE_EXE=%OUTDIR%\%MAKE%.exe"
+
 :: Clean the directory if it exists
 if exist %OUTDIR%\nul rmdir /S /Q %OUTDIR%
 
@@ -238,7 +240,7 @@ if "%DIRENT%" == "Y" call :Compile src\w32\compat\dirent
 call :Link
 
 echo.
-if exist %OUTDIR%\%MAKE%.exe goto Success
+if exist "%MAKE_EXE%" goto Success
 echo %OUTDIR% build FAILED!
 exit 1
 
@@ -289,14 +291,14 @@ goto :EOF
 
 :Link
 echo.
-echo - Linking %LNKOUT%/%MAKE%.exe
+echo - Linking %MAKE_EXE%
 if "%COMPILER%" == "gcc" goto GccLink
 if "%COMPILER%" == "tcc" goto TccLink
 
 :: MSVC Link
 echo %GUILELIBS% kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib >>%OUTDIR%\link.sc
 if "%VERBOSE%" == "Y" echo on
-call link.exe /NOLOGO /SUBSYSTEM:console /PDB:%LNKOUT%\%MAKE%.pdb %LINKOPTS% /OUT:%LNKOUT%\%MAKE%.exe @%LNKOUT%\link.sc
+call link.exe /NOLOGO /SUBSYSTEM:console /PDB:%LNKOUT%\%MAKE%.pdb %LINKOPTS% /OUT:"%MAKE_EXE%" @%LNKOUT%\link.sc
 @echo off
 goto :EOF
 
@@ -304,7 +306,7 @@ goto :EOF
 :: GCC Link
 if "%VERBOSE%" == "Y" echo on
 echo %GUILELIBS% -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 >>%OUTDIR%\link.sc
-call %GCCEXE% -mthreads -gdwarf-2 -g3 %OPTS% -o %LNKOUT%/%MAKE%.exe @%LNKOUT%/link.sc -Wl,--out-implib=%LNKOUT%/libgnumake-1.dll.a
+call %GCCEXE% -mthreads -gdwarf-2 -g3 %OPTS% -o "%MAKE_EXE%" @%LNKOUT%/link.sc -Wl,--out-implib=%LNKOUT%/libgnumake-1.dll.a
 @echo off
 goto :EOF
 
@@ -312,7 +314,7 @@ goto :EOF
 :: TCC Link
 if "%VERBOSE%" == "Y" echo on
 echo %GUILELIBS% -lkernel32 -luser32 -lgdi32 -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -lodbc32 -lodbccp32 >>%OUTDIR%\link.sc
-call %COMPILER% -mthreads %OPTS% -o %LNKOUT%/%MAKE%.exe @%LNKOUT%/link.sc 
+call %COMPILER% -mthreads %OPTS% -o "%MAKE_EXE%" @%LNKOUT%/link.sc 
 @echo off
 goto :EOF
 

@@ -71,8 +71,8 @@
 
   % unified.asset { name="BuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
   'asset'
-  '10724'
-  'sha256:7f90b6a9008783eea2dd549f69467fc045c050c833b1dc7c438fd84650b2bb6c'
+  '10745'
+  'sha256:3bf88092648b9cf46a9c2165d774d6eb91a2c24c3147c2433f234891f224103d'
 
   % unified.asset { name="ConfigHW32Sed", file="etc/scripts/make-config-h-w32.sed" }
   'asset'
