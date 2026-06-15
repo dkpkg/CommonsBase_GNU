@@ -9,7 +9,8 @@
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Awk-5.3.1
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oaxv73eglv5t6rkbrqc7j5g6p7mrzzdeixxjuwj4ikzk32rfzm3ra")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -28,7 +29,9 @@
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
+  ]\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -60,7 +63,8 @@
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Make-4.4.1
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oeosxhc6daru76k3rj65dvalat6duvp3htyxavfvj5j6due3ov5da")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -98,7 +102,8 @@
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Nettle-3.10.2
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "ozddfpmnbjsrwic25xlwnd3qurtmtdar4exijswg2blemn2sdxszq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -118,7 +123,8 @@
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-GMP-6.3.0
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "ohntyjnnvrm4zcyycc6uhkxhawllkvs2y626dw6tkgdjnupy7y42q")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -138,7 +144,8 @@
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-TLS-3.8.12
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "osjox6epq5admhz47xiitydckpdblgk3o5r75izpgfnvmva2fweza")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -172,7 +179,8 @@
 awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-UE
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oxmlegfnog66zhw3kj56julakxbdebvl3g57s4vvjtrjbedphfslq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -192,5 +200,5 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk.exe
   \test(pass)
-  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 5 sections
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
   ]\;

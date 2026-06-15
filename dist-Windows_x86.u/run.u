@@ -15,7 +15,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -34,7 +35,9 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -66,7 +69,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -104,7 +108,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "oiivnxqkmjmgjenf6j3wc4y23iui6b2x245z3rns7jvtctxq5pu5q")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -124,7 +129,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "okqvbc5qthtelcu6pj6a6lzrwdrgrkp25zepgsakaz5xgjfll5f2q")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -144,7 +150,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "o6opg3dit7mdzmzn5spiwofjqwuzlweesm6ogkwvh6cghfiae7k5a")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -178,7 +185,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-UE
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.object(abi: "Release.Windows_x86", value-id: "omi57bbdbmqzly42twepujyft3jayzfe3ahkftnfrudbvuzutidtq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -197,7 +205,9 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk.exe
-  [error 63937ccd]: Could not run unified shell command.
+  \test(pass)
+  \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
