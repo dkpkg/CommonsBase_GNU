@@ -6,7 +6,7 @@
 //  grep[.exe]
 //  sed[.exe]
 {
-    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "$schema": "https://diskuv.com/dk/schema/dk-value-1.0.json",
     "schema_version": {
         "major": 1,
         "minor": 0

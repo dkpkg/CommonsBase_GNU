@@ -12,7 +12,7 @@
 // Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0 -s Release.Windows_x86 -d target/sh-win32
 // Test: ./dk0 --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Sh.Win32@2.5.0 -s Release.Windows_arm64 -d target/sh-winarm64
 {
-    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "$schema": "https://diskuv.com/dk/schema/dk-value-1.0.json",
     "schema_version": {
         "major": 1,
         "minor": 0

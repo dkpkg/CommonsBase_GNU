@@ -3,7 +3,7 @@
 // Test: ./dk0 -x gnu-nettle:subpath: --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.execution_abi -d target/nettle
 // Test: ./dk0 -x gnu-nettle:subpath: --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Nettle@4.0.0 -s Release.execution_abi -d target/nettle
 {
-    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "$schema": "https://diskuv.com/dk/schema/dk-value-1.0.json",
     "schema_version": {
         "major": 1,
         "minor": 0

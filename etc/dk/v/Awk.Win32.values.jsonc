@@ -1,6 +1,6 @@
 // Test: Y:\source\dksdk-coder\_build\default\ext\MlFront\src\DkZero_Exec\Shell.exe -C Y:\source\CommonsBase_GNU --trust-local-package CommonsBase_LLVM --trust-local-package CommonsBase_GNU get-object CommonsBase_GNU.Awk.Win32@5.3.1 -s Release.Windows_x86_64 -d target/gawk-win32
 {
-    "$schema": "https://github.com/diskuv/dk/raw/refs/heads/V2_5/etc/jsonschema/dk-values.json",
+    "$schema": "https://diskuv.com/dk/schema/dk-value-1.0.json",
     "schema_version": {
         "major": 1,
         "minor": 0
