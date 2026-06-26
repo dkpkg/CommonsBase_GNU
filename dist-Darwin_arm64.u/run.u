@@ -4,7 +4,7 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Awk-5.3.1
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "owb7hj6b2c3pkmxc3aqd2fazvkmzdug7sq7zi5cdg5nxwxwy7tj7q")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "oxxhdcso2fgipaf4x24yk54szyyuecommmogir4zo5nzndcgvzvnq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk
@@ -16,43 +16,43 @@
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Bison-3.8.2
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "obsnjoq5smwafky5bftty4qhevwhtjz2abl3h7wsqnknkbzzh45qq")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "odyoxevdixjlmvyqg53c7nq7ldyda4e52ckf2pwk3jgi7cb6rgy7a")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "o74t52pa6wt27fes35vie36edoisewv5do3b5phrxkcd2nk243zna")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "obuxgir2xuxenlhybx4sdwl4lcupwvnje7doltkwyuby2pwubmjsa")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "oei2aqzzshgcnjinm4uf4eby3biue3xklnc3nfojcd5vcdxi76hsq")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "ov6xyknxeuo2s6j6obfjcww4sze3qdjbbaragtmgxwdsbme7uziqq")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "ochif23ehbpwcddvwg6bgx4p2e7zboqfr4i4fowqsgydlqfwgs65q")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "oxrdkegnfx2qd2cbhcjsri6ztpufmt2bvfhugelf6a2xxfn7tzvtq")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "onm2pd7wwcmder35exmjfgiow7drsh7ckyfopothbfz52arask3yq")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "oet4bgtyyxdtwxacbuk7u7gtm5x6rfy6awd66yuekybh3kvnkzhdq")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "oj5373bunhit4hqnjn6qti5ranutmjjwck7qal7vzap3w3nmhbzkq")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "oo6syaqk6st4xcemltppcbnqq4oiiatcnttr3znnsaqe5wqngdpsa")\;
 
 ## POSIX shell
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-Sh-0.1.0
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "o26gwtbrsluo56wvtwjlqdlxzmco7zv76kippuoe544oz3kfbclta")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "ourstikko6i3s62bfup2shnk2f3flyncoxtiu2sbj7oihus76mrza")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh
@@ -66,7 +66,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Darwin_arm64 -d ${RUNTIME}/Darwin_arm64-UE
   \test(pass)
-  \dk.object(abi: "Release.Darwin_arm64", value-id: "ofp4clcwrfwrnlltqx6674ecfz6poiyxctqk6zbuzmxekrgolrdea")\;
+  \dk.object(abi: "Release.Darwin_arm64", value-id: "ooaypsdtbk2eod52oiwasvmwmry7ttpn2dsu2dedqesbesceqjgua")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk

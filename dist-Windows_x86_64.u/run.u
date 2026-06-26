@@ -4,13 +4,13 @@
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "od7mbbxw4roxdtv3qewhvjjezw3n2i53d2xpirw4ond6p42wnqf3a")\;
 
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Awk-5.3.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oaxv73eglv5t6rkbrqc7j5g6p7mrzzdeixxjuwj4ikzk32rfzm3ra")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "oruzmrvrxoesl5sxchjfvohrnsw7lxjk7ir6uk4yrmyfkyk5nye7q")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -52,19 +52,19 @@
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bison-3.8.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ocrc4rbhngmi7hepcowmkf6xeznmvvdehorqsvm4w3hhhbwluzeja")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "o7wi3b5susszic2ee67pnow5y6n76t4sie7aroxyeh6lhbfk3fxrq")\;
 
 ## GNU M4
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-M4-1.4.20
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oq33k7prqmm3dfbxcym5vipvfco7d2fqavavldj554m4xqhhosdoa")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "ocuio4b3h663oabgmy3s3utmiub3sk42qs3uc2d2jtwnfwxw6il3a")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oeosxhc6daru76k3rj65dvalat6duvp3htyxavfvj5j6due3ov5da")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "otbe5qftcs6ccqutn6m7qulg6qtfxkakvjesie4bxidl5yxk7zkwq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -85,25 +85,25 @@
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.2.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "obhydbc2bz2h6ff7z7agpd27mprkgarda54zmlhkk6l6xtx6625tq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "onflcgtnimi52wgmlab5cauz2tz5o4exzzykwgqjn6vmaxdcv3s6a")\;
 
 ## GNU Sed 4.9.0
 
   $ get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Sed-4.9.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "o6rbh4tmpnwzxmsr6xqoljhxb4b7izuhugfmcgbzruy4wlm2z7afa")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "o55bohomnlwpmcdrbsljnvhvrvkvmdmr77r4iv3pmeqoznrxq2tea")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ovgzqooevp7v3jbnrgnpjq2wl4isjko4egztrj43syrmldey4dzcq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "opri55qyalhq5hzgle7bhuhihzhtakejxvmamdv7ailga72jfryua")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ozddfpmnbjsrwic25xlwnd3qurtmtdar4exijswg2blemn2sdxszq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "os22osxhusdvjahvtschx5ewy46jtl4mmv6s4whchkbdutn5d76iq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -124,7 +124,7 @@
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ohntyjnnvrm4zcyycc6uhkxhawllkvs2y626dw6tkgdjnupy7y42q")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "on5xsj5qle7gul5kfffexztkrdo2a2geyt3onc2nzxx3lwozsk3lq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -145,7 +145,7 @@
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "osjox6epq5admhz47xiitydckpdblgk3o5r75izpgfnvmva2fweza")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "owpoiduj6m2dxvo44hcmkmhjzowlrtag2ja7hntirw6neqwjcnhfq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -166,7 +166,7 @@
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "ou6cni3pcxrwwkdpy3jaydgybhrscm5boijft4fjs5ymrdjwg5bbq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "ogkwcerl5yipnsfdqtcf5lx6ut5vzl3cvy3pd4rlzgrer6wiaf7ka")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
@@ -180,7 +180,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86_64 -d ${RUNTIME}/Windows_x86_64-UE
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "oxmlegfnog66zhw3kj56julakxbdebvl3g57s4vvjtrjbedphfslq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "ohecza6pfxpowy7pb653hrg6ruk4q5euibf3epnkpjliyn5wzdwwq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │

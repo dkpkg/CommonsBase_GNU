@@ -6,13 +6,13 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "od7mbbxw4roxdtv3qewhvjjezw3n2i53d2xpirw4ond6p42wnqf3a")\;
 
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Awk-5.3.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "o2ystozhbcxhzsqj5mih37eamoytkaviv7toqrgqzeiuosnxekd6a")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "omm4tekm6rqlnyjqjpwbpn4xqrhftmr53cm3fdozm5kvywkofegbq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -54,13 +54,13 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Bison-3.8.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oia5djcqffty3qvbxsck3vrqbxlw5upcejnhcgq5ml3p7rvr27eja")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "ol55thoye2n4ud2wwod7ggz76ydsibljhutlwpgvm2bg4ixzfuuuq")\;
 
 ## GNU M4
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-M4-1.4.20
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "otxj5uemkr2jwzxcggrsus24cgfxiphcy5644na2f4dj2rse37vrq")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "ot3dvfuqtfp62o5lgfcyhk5e34cbsdmgfc7wt4kuldh5socj2jnma")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -81,7 +81,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oykoxvwbtq3uwwsatlplkokramemy2qvln53m43tjti4tvffuzkaa")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "oxn5ud6l5lpyc3vwj3gmais35f2re6nb56zhxvpac6oxli37dw2sq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -102,25 +102,25 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.2.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oehbkqcyg4b7yxftkutegawzk6z2gzpnalalpr2zqzejiriuuehaq")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "o23kmgotzxf7vkclnphn6oofxpuj6ifswgx3ic5zcajgijo4zxh6a")\;
 
 ## GNU Sed 4.9.0
 
   $ get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sed-4.9.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "ola6vzlu6y5ehpbrexko5xvuqvk3awmiedbyv4of7ezjnubw337iq")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "o3hz5bqeaayxyvcki4tjo7snw27db6ckol55j2r6ep7tvoz6ovp6q")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "o63o5ywci4nerkdlwk5d7bxvndrfvyfcgyxuearesdldmz3yyhbva")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "ommzq27jb5kdh4abnhpmawkplsttzhxwnflqgzgrsormykfvxrs3q")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oxjaoudj6h53yc2ktxs56u6uidnsiegpj57ogveb6ufqde3wz6e5q")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "ot3kcurjxk6xn7uvfhgird5gtlhf2qrs26nzuxc5pdl4wwlu7hcxa")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -141,7 +141,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "otc7o5tzdxrs3gvuwtpsfucklarwfvi4vjm4zdlf75x2rrsh5dq3q")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "oxe6buuq34vhi7o27aedhop3s4kxd4dpzrbmk2tgiomppwvanjzpa")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -162,7 +162,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "ohfcjklswwqsjsymwfvelddzacbh3ctrxiflvo5escez6o4rjjn4a")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "odkeluxjhuporugstfafs6ixuappc6vqy6b3ytkizkcytqm47fcjq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -183,7 +183,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-Sh-0.1.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oyepz4q2fcrd4zlpwfl7yx56vb5ucanxu6cb2qifst6hrg3ss2rqa")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "oip4gilwnbqpnxemrkleg47gszctuh4dx2no3exevfvbh4b77ugwq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
@@ -197,7 +197,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_arm64 -d ${RUNTIME}/Windows_arm64-UE
   \test(pass)
-  \dk.object(abi: "Release.Windows_arm64", value-id: "oohmdsfumet2ejdin6vgafhjpf4nsybbh45n76pt5cstlxgrjs53q")\;
+  \dk.object(abi: "Release.Windows_arm64", value-id: "ogpuzgx5qw6kldycf54654dkil4e5scje7xzseed2ahf57qkbjyvq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │

@@ -4,7 +4,7 @@
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Awk-5.3.1
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "oyn55jxzuygxauhhbjkkfah2ootblg2pg66xs4vqdh5c4vqilhdzq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "o26amkablqqtk43df4j2o7dbsqxznfs2w6e4bzrtu555fft3px75a")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk
@@ -16,7 +16,7 @@
 
   $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "oyhvwyswqjytkqlptwt2hkgzlbibrs25d2xf7vbug4oamznp3xjbq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oscxv2pglfhn46hmhalq24ylwzjvsqrvu4iyij4anszunkieas5ea")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash
@@ -28,43 +28,43 @@
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bison-3.8.2
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "onox6xj3y4ihsqvgs23s5vlvzhc5tx57ptmf4o6kj7zvvy52uzaca")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ov22sas3pp2otnz5lu2pydyeolevwqglkpyvgpb7mq3ei6awjywza")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep@3.12.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "otgukjxujvysigq3mdz33vsle4flpnewhgmzvmoaoa2aofcpwv7hq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ouqh7wlfjnuaatf5emye4offgg4lmvvtwyf4ulewb2mitcvkqmlca")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "ojcv4iv6njmvowclwssczga6gjr7wqkuab6kxnr3f7tj7vpjt4nta")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "os4hf6lljod4pnzyrmclvdkutnyzq3qgjnaflng6ittxy3pcv6rmq")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "ok7fxj73ux35lbxbyrjjjjhmtvbjdyemyhqcmuxi2rw5q63s7ryaq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oendj5hc5gxdi232glj7qghqioyosbwxtt5yppdyhwpkksgdecx4q")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "oarl2mo4uyqcrubypmhkspiecaovt5kld6epcwc7eyk3iz66dioqq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "o2muasjshvgg2fqo7hlgljph7j73m7yvg3v2aopxq2rw5uouhcqga")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "ov5tryju5z7cdc5mf4ry3iwemuqwjeekn7srg3gtu3k52e45be5sq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "om5ehluzm4cot55syzivbc5qwddq737ip5ppuj6nenc2cvtj3jf2a")\;
 
 ## POSIX shell
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Sh-0.1.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "o7alvk6g6nhouajhjiq4ebxnsyv2z2bdrdm7c2b2c6lx5vgglx2ha")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "or4zo6jcnb2w5u3xmz64zgan2md77jg4ayrebrlezufq4zbboaoea")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh
@@ -78,7 +78,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-UE
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "owr5owrenpppm5tecpy76m5lwdkwnqgtjxci4ckq2imyc523k3gnq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oti4cwdv2fkhagm4fhlfkzizibs7zsjf5rz4gsv3ykosna2k2luxa")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk

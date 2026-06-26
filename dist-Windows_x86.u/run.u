@@ -4,19 +4,19 @@
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86 -f ${RUNTIME}/Windows_x86-Toolchain.W64dev-2.5.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "odiengg4r3fjt4uao3l3tftiy7xxcx4v4y32td3eldv7cl75xcw4q")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ok5ezhvjth4xo6elaquw6sqav2w2onfpdm7abygudywfn67outeca")\;
 
 Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) build + CI machines.
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "okcsjtqtzpynjheh3d567lkv5vjpjmmhli5sjsxhqdj5imgvhlzrq")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "od7mbbxw4roxdtv3qewhvjjezw3n2i53d2xpirw4ond6p42wnqf3a")\;
 
 ## GNU Awk
 
   $ get-object CommonsBase_GNU.Awk@5.3.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Awk-5.3.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o6ogdnte3upolltwviy25rbcpa72jz6yjejgk32iw5rfrgchv7u4a")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "oipphprwoe4qmxqwbrgglr65icg6ujdsn3cbxxpmlcv34dxznigva")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -58,19 +58,19 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Bison@3.8.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Bison-3.8.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ouyjh6q2pmccn5s7g3yifizb4ccrq374ayqfadpa5u5aysecforla")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ovwndknzj2b5rwzer2webxdjijfx2oztadjna7dvvcaqyfyog7lka")\;
 
 ## GNU M4
 
   $ get-object CommonsBase_GNU.M4@1.4.20 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-M4-1.4.20
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o5ze7gxz47tcnm53hu2aoe55ajmlmqcvol2r72y3374isfjabgn2q")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "o7sunjnvh4hf2egsneipdydl5ldct52t6zxkbk5ar6jxxylhpbt6q")\;
 
 ## GNU Make
 
   $ get-object CommonsBase_GNU.Make@4.4.1 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Make-4.4.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ooqoit6fthiupfm2vuv5jdwiv2nmk6usnaycxlfovgdm76mqs7psa")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "otow6npakd2w5fh7kw42xmfc3a7dc3wregjlmwn2n4ioo4o2ssy7q")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -91,25 +91,25 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.2.1
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "obboaly6gwrsercd57xexqw7vbyyzznekvoad6tsiwmshzqzh64sq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "oyln64hwhxiy76lqknw6xlnmv63xow6hub6rfhgyey4vfqugbzcna")\;
 
 ## GNU Sed 4.9.0
 
   $ get-object CommonsBase_GNU.Sed@4.9.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.9.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "omuzo6vdskmm3n4wcu2vb5klif2ho5tuk4nug57wndi46yh2i4ldq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "o4eicib2nfkjpcmgkunmbbjaq4zzbdw3v3qq4ucanjv6bngufxliq")\;
 
 ## GNU Grep
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ohsdrjrylbj27kmerpux5birqhxrdfd4fxzbfwfc5amma6snruyoq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "oewzwv7roek57uasiqaq6ty3xbuzksjf2v6e6uxoilsb523oqfzma")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "oiivnxqkmjmgjenf6j3wc4y23iui6b2x245z3rns7jvtctxq5pu5q")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "odyml6dtp3e3tyiibw22xshs6gdvli2blhg6icynndkgeg6prtfzq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -130,7 +130,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "okqvbc5qthtelcu6pj6a6lzrwdrgrkp25zepgsakaz5xgjfll5f2q")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ovfba7icoewacwof46r42nbnivca5cdyv4q2fou2a3ptliedk5ulq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -151,7 +151,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o6opg3dit7mdzmzn5spiwofjqwuzlweesm6ogkwvh6cghfiae7k5a")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "o6hwvclkagy55swtuurujgoruvdr5zojtkikwwtj4tgw2m44dulua")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
@@ -172,7 +172,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Sh@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sh-0.1.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "owdoz35ng74ch3a7ex2vcg3f3cvj7hqkz3zs7g7lwpm2ra3lywibq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "ooctftzciwj3mpqz5f3izda74pyiqa44nodvvdq22gu4re2bhdmfa")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
@@ -186,7 +186,7 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
 
   $ get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-UE
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "omi57bbdbmqzly42twepujyft3jayzfe3ahkftnfrudbvuzutidtq")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "oipko5yemzezojr4y5pvcuo6xyhkxrybtxiounxoy4lwsoqb2y2bq")\;
 
       ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
       │
