@@ -1,4 +1,17 @@
 ﻿# CommonsBase_GNU
+
+## Overview
+
+GNU userland build tools (awk, bison, grep, make, GMP, Nettle, TLS …) packaged reproducibly for dk.
+
+`CommonsBase_GNU` provides the GNU command-line tools that other dk packages
+and your projects depend on, built once and content-addressed so every
+platform gets a byte-identical, checksummed result.
+
+## License
+
+GPL-3.0-or-later
+
 ## workspace
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_Std" }
