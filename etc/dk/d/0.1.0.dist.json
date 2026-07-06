@@ -1,0 +1,32 @@
+{
+  "continuations": {
+    "attestation": {
+      "openbsd_signify": {
+        "signature": "untrusted comment: signed by key ceb2c32a218fbc59\nRWTOssMqIY+8WRaCrZZQTNWI6z4BbKfh2bWqx42Ao/cM7xVYHxyXl8iIqNwL8q+MMtw1p3yb7E2Io+JsqgzPhMUQ9tblBvI8nAU=\n"
+      }
+    },
+    "continuations_to_sign": {
+      "0.2": {
+        "application": { "name": "dk0", "version": "2.4.2+rev-249" },
+        "openbsd_signify": {
+          "public_key": "untrusted comment: CommonsBase_GNU-0.2\nRWQgtC6vDodCyVJdzS5GzUTxLZ6YWzNE3l4++NdOGG9JTzquXfEbqNVu\n"
+        }
+      },
+      "1.0": {
+        "application": { "name": "dk0", "version": "2.4.2+rev-249" },
+        "openbsd_signify": {
+          "public_key": "untrusted comment: CommonsBase_GNU-1.0\nRWRDk4W+/9wP2rxcwsjA0OFJYFrqJkwmMjbXnFgvKoxYmS74OL0UU+h9\n"
+        }
+      }
+    }
+  },
+  "id": "CommonsBase_GNU@0.1.0",
+  "license": { "spdx": "Apache-2.0" },
+  "producer": {
+    "application": { "name": "dk0", "version": "2.4.2+rev-249" },
+    "github_slsa_v1_l2": { "repository": "dkpkg/CommonsBase_GNU" },
+    "openbsd_signify": {
+      "public_key": "untrusted comment: CommonsBase_GNU-0.1\nRWTOssMqIY+8Weugov2Iu48lx6q76RiWDIC5vw8jkdfpGNEkUb6SwLpK\n"
+    }
+  }
+}
