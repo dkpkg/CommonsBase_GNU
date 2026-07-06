@@ -18,64 +18,130 @@ GPL-3.0-or-later
   'import'
   'github-l2'
   { {
-      'CommonsBase_Std', '2.5.202605310255', {
-        'blake2b-256:00a0ae57382f532664e11aea28139f613d32495b71aa7307cf76c5fa1cdc8043',
-        'sha256:db4dd42533222dc9cd474b03268af1db20dbfb1f339ea62cfa22f78d05ea64e7',
-        'sha1:83fcd29c2ef4c17526155d4da1a475c3cee47f1b'
+      'CommonsBase_Std', '2.6.20260706021729', {
+        'blake2b-256:9d442eb18b3cce1667fbe8c3585825aafb3384aa6df825740cb6d30df41fde59',
+        'sha256:b8c8a247672604c9487de530cda33ac4e13bf586b6ec1cc47c4562fe879a4897',
+        'sha1:daa9de5e3ed097e8259f973455a722056d84cba6'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260705051043', {
+        'blake2b-256:156d1836ac816b113880ce282f686b35d9c75e3cb4d69523313f85983ba12d4a',
+        'sha256:105ff8e83d42da3aaa79f37540303f3b3db4cd237cecfd80739387c28c866564',
+        'sha1:f3e1dac5323d0dca4f7df6c77564051a99cd6dac'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260705103327', {
+        'blake2b-256:ef622d15f7fc08b9b30beb5fb767790c213f6e7d08aa266f17b6bae4b7a3f7c0',
+        'sha256:13cba7aa2844019b1acff5ee2ac929fb3cb9193fbfd684412ccc4563424a6d8c',
+        'sha1:44a9a04a3339a99b3c326907d69a689aa103f135'
       } } }
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM" }
   'import'
   'github-l2'
   { {
-      'CommonsBase_LLVM', '2.5.202605310255', {
-        'blake2b-256:a7d40d6fa1358b13d573162a705593502bd49f73734673f176103e8334278701',
-        'sha256:250aad1055e620a657ca878817c8c73e17ea72ecf4e216a1ebd32abe779f264d',
-        'sha1:eb46ccb13ca627aef37eae120571b00c3be6cb6e'
+      'CommonsBase_LLVM', '0.1.20260706064049', {
+        'blake2b-256:96b2b482db4652a60893713c652b3bb5be89a143f5e3e7ca6178c99071e0cb11',
+        'sha256:8f32bfb59d849ce62898f23e712c58538c294c37d4cd3cf501f2f66b5cbf5820',
+        'sha1:a59ef674dab40f1c6cc2d2110464784320ab19bd'
       } },
     {
-      'CommonsBase_Std', '2.5.202605310255', {
-        'blake2b-256:00a0ae57382f532664e11aea28139f613d32495b71aa7307cf76c5fa1cdc8043',
-        'sha256:db4dd42533222dc9cd474b03268af1db20dbfb1f339ea62cfa22f78d05ea64e7',
-        'sha1:83fcd29c2ef4c17526155d4da1a475c3cee47f1b'
+      'CommonsBase_Std', '2.6.20260705051043', {
+        'blake2b-256:156d1836ac816b113880ce282f686b35d9c75e3cb4d69523313f85983ba12d4a',
+        'sha256:105ff8e83d42da3aaa79f37540303f3b3db4cd237cecfd80739387c28c866564',
+        'sha1:f3e1dac5323d0dca4f7df6c77564051a99cd6dac'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260705103327', {
+        'blake2b-256:ef622d15f7fc08b9b30beb5fb767790c213f6e7d08aa266f17b6bae4b7a3f7c0',
+        'sha256:13cba7aa2844019b1acff5ee2ac929fb3cb9193fbfd684412ccc4563424a6d8c',
+        'sha1:44a9a04a3339a99b3c326907d69a689aa103f135'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260706021729', {
+        'blake2b-256:9d442eb18b3cce1667fbe8c3585825aafb3384aa6df825740cb6d30df41fde59',
+        'sha256:b8c8a247672604c9487de530cda33ac4e13bf586b6ec1cc47c4562fe879a4897',
+        'sha1:daa9de5e3ed097e8259f973455a722056d84cba6'
       } } }
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_FileMagic" }
   'import'
   'github-l2'
   { {
-      'CommonsBase_FileMagic', '2.5.202605310255', {
-        'blake2b-256:3e52706e65daa81dd69e6dfa5d93e8a592b5ce5abbd37cda41aee00fe0638e0c',
-        'sha256:564f610c9d7453d2be26c758a56a51b055b26dd1346df934152999d3903f4b4d',
-        'sha1:44398c39c5f2c0b962db20a346869cc280ffbb7d'
+      'CommonsBase_FileMagic', '2.5.202606262047', {
+        'blake2b-256:266b8435a34e20e3435bfb930b9e7eda7d3b3c0822139a3a6fcb0ecdb82bd700',
+        'sha256:6e83c3fb03c66920c23349ca4a49b5fb4eaa56b2e195b2ff40eb88593aa26e59',
+        'sha1:d058be16ddb29e50b4f510629e22f8476dbf551e'
       } },
     {
-      'CommonsBase_LLVM', '2.5.202605310255', {
-        'blake2b-256:a7d40d6fa1358b13d573162a705593502bd49f73734673f176103e8334278701',
-        'sha256:250aad1055e620a657ca878817c8c73e17ea72ecf4e216a1ebd32abe779f264d',
-        'sha1:eb46ccb13ca627aef37eae120571b00c3be6cb6e'
+      'CommonsBase_FileMagic', '2.5.202606260339', {
+        'blake2b-256:e493f5360697ab40a071b101bfb0a35392ea1675485b4d4592c10e950fe1cb09',
+        'sha256:bdfc012cd409dfcf83b94e5589be310e2659997632d71d86bfc35d64f6d0393c',
+        'sha1:42d6f05436b4361240a0f0ce1152edc46fc2f02b'
       } },
     {
-      'CommonsBase_Std', '2.5.202605310255', {
-        'blake2b-256:00a0ae57382f532664e11aea28139f613d32495b71aa7307cf76c5fa1cdc8043',
-        'sha256:db4dd42533222dc9cd474b03268af1db20dbfb1f339ea62cfa22f78d05ea64e7',
-        'sha1:83fcd29c2ef4c17526155d4da1a475c3cee47f1b'
+      'CommonsBase_LLVM', '2.5.202606260339', {
+        'blake2b-256:b07de5d4cda43075c4e71aa41cd8577953d282872d869803cd8bb13beb57c147',
+        'sha256:6615b5af558e9e08a7d4fdf150716253c4399587a567383cecf75fb55d9b8c89',
+        'sha1:e6f46f909276cae8cd04a74e0a9e1012f655834a'
+      } },
+    {
+      'CommonsBase_LLVM', '2.5.202606262035', {
+        'blake2b-256:be28d427463915d7d76cd77843c219ed9f3c090867d3504697faa10530b55ad4',
+        'sha256:e406a9f363bdbdbdb31d5412a29b85483c03c50096669b447a9034a5d76c673c',
+        'sha1:2fa025e836655a9c83f7272c8203e20f424232eb'
+      } },
+    {
+      'CommonsBase_Remote', '2.5.202606251324', {
+        'blake2b-256:b77d54a3c7da56fedbd5061b5136ccad82565fd08f98d1915a41dae618b45cbf',
+        'sha256:4bde4707cde42505eb22e3e13b9efdccae4729ebda35449fa5b22484acbc8b2f',
+        'sha1:42e12d7f93c28edea2d7e191cce000af68147d12'
+      } },
+    {
+      'CommonsBase_Remote', '2.5.202606262035', {
+        'blake2b-256:ddf3324c63d73e0f6496befb840c3ead6db52934048b64c52b6bd413d7d2c46e',
+        'sha256:f8173d95c31c1441efc5c9435861b2eea8e3ea96508c36db79ebd056243376e3',
+        'sha1:f1e88a95965f9c3e198c4fc44f8beb1e260c0fb9'
+      } },
+    {
+      'CommonsBase_Std', '2.5.202606240625', {
+        'blake2b-256:6450d810180892d71647fe63c2313d17df5ce23eef80e1050a13cf7ad4417b31',
+        'sha256:9eac4142bc0a80e5b51d3b89e83069672873ec628256afe849408ab64f954100',
+        'sha1:8c02d3bf95fe54717dd1798f292c6d6688a63faa'
+      } },
+    {
+      'CommonsBase_Std', '2.5.202606262031', {
+        'blake2b-256:900b27b1b73e76e5f1c7d95c8484b4457245ec430e05c89c443705622abaa6b4',
+        'sha256:7e4e8b645e75a415f78be7361f928a6be1cc092d133f13406e58f388dbf988df',
+        'sha1:757c997d4893f1c93e53df5578a4105c294a5713'
       } } }
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_Build" }
   'import'
   'github-l2'
   { {
-      'CommonsBase_Build', '2.5.202605310255', {
-        'blake2b-256:c6aca8f24658198cfa5793104a0491a1c7d383a2bc19971ced93282f3e083a67',
-        'sha256:cd5468932600c723c9a67da1687324c15ee19e9834799db2f2284e8f8cb2726e',
-        'sha1:74d11782c34595508e4c33864ce8fc522934af6d'
+      'CommonsBase_Build', '0.1.20260706043643', {
+        'blake2b-256:5f3c42024de1e30865deede991930d5cda4139b4a735d6cee62d69e37baa38ab',
+        'sha256:8d7ca5acb100099d914c15cc6a7b0d4b28e91fe9965f88b5402395a48493e702',
+        'sha1:7b3385d5e2e9ed16445c2a571877313dbe8cef65'
       } },
     {
-      'CommonsBase_Std', '2.5.202605310255', {
-        'blake2b-256:00a0ae57382f532664e11aea28139f613d32495b71aa7307cf76c5fa1cdc8043',
-        'sha256:db4dd42533222dc9cd474b03268af1db20dbfb1f339ea62cfa22f78d05ea64e7',
-        'sha1:83fcd29c2ef4c17526155d4da1a475c3cee47f1b'
+      'CommonsBase_Std', '2.6.20260705051043', {
+        'blake2b-256:156d1836ac816b113880ce282f686b35d9c75e3cb4d69523313f85983ba12d4a',
+        'sha256:105ff8e83d42da3aaa79f37540303f3b3db4cd237cecfd80739387c28c866564',
+        'sha1:f3e1dac5323d0dca4f7df6c77564051a99cd6dac'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260705103327', {
+        'blake2b-256:ef622d15f7fc08b9b30beb5fb767790c213f6e7d08aa266f17b6bae4b7a3f7c0',
+        'sha256:13cba7aa2844019b1acff5ee2ac929fb3cb9193fbfd684412ccc4563424a6d8c',
+        'sha1:44a9a04a3339a99b3c326907d69a689aa103f135'
+      } },
+    {
+      'CommonsBase_Std', '2.6.20260706021729', {
+        'blake2b-256:9d442eb18b3cce1667fbe8c3585825aafb3384aa6df825740cb6d30df41fde59',
+        'sha256:b8c8a247672604c9487de530cda33ac4e13bf586b6ec1cc47c4562fe879a4897',
+        'sha1:daa9de5e3ed097e8259f973455a722056d84cba6'
       } } }
 
 ## Assets
