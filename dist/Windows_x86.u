@@ -18,41 +18,13 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "oipphprwoe4qmxqwbrgglr65icg6ujdsn3cbxxpmlcv34dxznigva")\;
 
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Awk@5.3....`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
-
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Awk@5.3.1 -s Release.target_abi -d : -e file.exe)/bin/awk.exe
   \test(pass)
   \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
   ]\;
-
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose run-object CommonsBase_FileMagic.Fi...`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
 
 ## Bison
 
@@ -72,21 +44,6 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "otow6npakd2w5fh7kw42xmfc3a7dc3wregjlmwn2n4ioo4o2ssy7q")\;
 
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Make@4.4...`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86/command5.txt`.
-  ────╯
-
-  [exit 1]
-
 ## GNU Sed
 
   $ get-object CommonsBase_GNU.Sed@4.2.1+gnuwin32-20101228 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Sed-4.2.1
@@ -103,70 +60,25 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Grep.Win32@3.12.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Grep-3.12.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "oewzwv7roek57uasiqaq6ty3xbuzksjf2v6e6uxoilsb523oqfzma")\;
+  \dk.object(abi: "Release.Windows_x86", value-id: "oqdgtecexosgaxaqf5lzln7xezb2r3d3w56dfcfykagzs53g6sicq")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "odyml6dtp3e3tyiibw22xshs6gdvli2blhg6icynndkgeg6prtfzq")\;
-
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.Nettle@3...`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
+  \dk.object(abi: "Release.Windows_x86", value-id: "opwhdjsyj2q4beuurdpmtgndgjw6ogznryeje6pplmhbyuv64rpra")\;
 
 ## GMP
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "ovfba7icoewacwof46r42nbnivca5cdyv4q2fou2a3ptliedk5ulq")\;
-
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.GMP@6.3....`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
+  \dk.object(abi: "Release.Windows_x86", value-id: "oqqvonpedzg4zk5o25y3xxbeicgekp3ureg6axhql4g3yew7feyka")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Windows_x86 -d ${RUNTIME}/Windows_x86-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86", value-id: "o6hwvclkagy55swtuurujgoruvdr5zojtkikwwtj4tgw2m44dulua")\;
-
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.TLS@3.8....`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
+  \dk.object(abi: "Release.Windows_x86", value-id: "oazu52qcnnmm75ieaglwv35brv7zyymfcbzk7t2dca5ttvot7xl6q")\;
 
 ## POSIX shell
 
@@ -178,6 +90,8 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh.exe
   \test(pass)
   \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 4.00 (console), (stripped to external PDB), 8 sections
+  ]
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 5.02 (console), (stripped to external PDB), 10 sections
   ]\;
 
 ## Unix Essentials
@@ -188,38 +102,10 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   \test(pass)
   \dk.object(abi: "Release.Windows_x86", value-id: "oipko5yemzezojr4y5pvcuo6xyhkxrybtxiounxoy4lwsoqb2y2bq")\;
 
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose get-object CommonsBase_GNU.UnixEss...`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]
-
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk.exe
   \test(pass)
   \dk.target(abi: "Windows_x86")[PE32 executable for MS Windows 6.00 (console),, 13 sections
+  ]
+  \dk.target(abi: "Windows_x86_64")[PE32+ executable for MS Windows 6.00 (console),, 14 sections
   ]\;
-
-      ╭──▶ etc/dk/v/Make.Win32.values.jsonc:74.21-77.22
-      │
-   74 │╭┤                     [
-   75 ││                          "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-   76 ││                          "cp", "GccRel/gnumake.exe", "${SLOT.request}/bin/make.exe"
-   77 │├┤                     ],
-      • │
-      • ╰╸ Could not run function successfully because the function exited with code 1.
-      •
-      │ Hint: Consider running the individual command using the command line: `dk0 --verbose run-object CommonsBase_FileMagic.Fi...`
-      │ Hint: Check the logs `t/p/496/e4r4/l/Release.Windows_x86_64/stdout5.log`, `t/p/496/e4r4/l/Release.Windows_x86_64/stderr5.log` and `t/p/496/e4r4/l/Release.Windows_x86_64/command5.txt`.
-  ────╯
-
-  [exit 1]

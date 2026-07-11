@@ -144,7 +144,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.xz to .zip
-                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.TLS.Zip@3.8.12 tarmodver=CommonsBase_GNU.TLS.Bundle@3.8.12 tarassetpath=gnutls-3.8.12.tar.xz",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.TLS.Zip@3.8.12 tarmodver=CommonsBase_GNU.TLS.Bundle@3.8.12 tarassetpath=gnutls-3.8.12.tar.xz",
                     // extract zip to current folder, stripping toplevel gnutls-3.8.12/ folder
                     "install-object CommonsBase_GNU.TLS.Zip@3.8.12 -s Release.execution_abi -m ./output.zip -n 1 -d ."
                 ]
@@ -342,7 +342,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.xz to .zip
-                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.TLS.Zip@3.8.12 tarmodver=CommonsBase_GNU.TLS.Bundle@3.8.12 tarassetpath=gnutls-3.8.12.tar.xz",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.TLS.Zip@3.8.12 tarmodver=CommonsBase_GNU.TLS.Bundle@3.8.12 tarassetpath=gnutls-3.8.12.tar.xz",
                     // extract zip to current folder, stripping toplevel gnutls-3.8.12/ folder
                     "install-object CommonsBase_GNU.TLS.Zip@3.8.12 -s Release.execution_abi -m ./output.zip -n 1 -d ."
                 ]

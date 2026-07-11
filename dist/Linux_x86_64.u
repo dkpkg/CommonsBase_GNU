@@ -16,7 +16,7 @@
 
   $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "oscxv2pglfhn46hmhalq24ylwzjvsqrvu4iyij4anszunkieas5ea")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "om6b4p7qrurwq35s3s4nvtonygovnzldezg3zoxd4xouvw3efs5pa")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash
@@ -46,19 +46,19 @@
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "oendj5hc5gxdi232glj7qghqioyosbwxtt5yppdyhwpkksgdecx4q")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ohsrxdaospaqymvp2xt5spuoqpkwfv772jp4i46yh7bszqx4ci6uq")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "o2muasjshvgg2fqo7hlgljph7j73m7yvg3v2aopxq2rw5uouhcqga")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ogk2tforbldajstlkggyriydktjmf6xyl3h6csfx65u2ualsnc5iq")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "om5ehluzm4cot55syzivbc5qwddq737ip5ppuj6nenc2cvtj3jf2a")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "oeibmw6b2v42zh3zgntrym24iafd5yebxmm2gr37ifrpjneekarcq")\;
 
 ## POSIX shell
 

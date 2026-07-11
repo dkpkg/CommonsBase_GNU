@@ -18,7 +18,7 @@
 
   $ get-object CommonsBase_GNU.Bash@5.2.37 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Bash-5.2.37
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "oy6isbrbdp5xvyy4phuwahbn5v6nbiix3mthvnna6xlhob6yz6jea")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "oh3e3thugsjet6an6k7k3oitmisguiyh6clv7sxm34jxfbpdw6daq")\;
 
   $ run-object CommonsBase_FileMagic.File@7.8.50407 -s Release.execution_abi -m ./bin/file.exe -e bin/file.exe --
   >   -b $(get-object CommonsBase_GNU.Bash@5.2.37 -s Release.target_abi -d : -e file.exe)/bin/bash
@@ -50,19 +50,19 @@
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "o7lg4fpfkuryrd2scoify2jgidwqhviptorrldpynkzncy36nvcaq")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "o6nisci4mbdpbrceljckx67oghqcqj6z3dd3keqeslwm6edps2rla")\;
 
 ## Nettle
 
   $ get-object CommonsBase_GNU.Nettle@3.10.2 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-Nettle-3.10.2
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "o52bhfdfu5h73ii7j423uymxncrdppmoini5goxovwb2bo5gocjga")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "oapuxo2cxp5xwt4cvkwfq6goy3o32vuvp2wyz6vkazsorql3ljoba")\;
 
 ## GnuTLS
 
   $ get-object CommonsBase_GNU.TLS@3.8.12 -s Release.Linux_x86 -d ${RUNTIME}/Linux_x86-TLS-3.8.12
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86", value-id: "o4ud42jxunpoz57fovydek5rofviwhmodzrryda7lmkm2noezxsxq")\;
+  \dk.object(abi: "Release.Linux_x86", value-id: "o34ilujvrg2z4bk55iodnoscll2vmznbstrqwrusrqwglgjow4tcq")\;
 
 ## POSIX shell
 
@@ -74,6 +74,8 @@
   >   -b $(get-object CommonsBase_GNU.Sh@0.1.0 -s Release.target_abi -d : -e file.exe)/bin/sh
   \test(pass)
   \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
+  ]
+  \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
   ]\;
 
 ## Unix Essentials
@@ -88,4 +90,6 @@ awk, grep, sed and POSIX shell (future: find and curl or wget)
   >   -b $(get-object CommonsBase_GNU.UnixEssentials@0.1.0 -s Release.target_abi -d : -e 'bin/*')/bin/awk
   \test(pass)
   \dk.target(abi: "Linux_x86")[ELF 32-bit LSB executable, Intel i386, version 1 (SYSV)
+  ]
+  \dk.target(abi: "Linux_x86_64")[ELF 64-bit LSB executable, x86-64, version 1 (SYSV)
   ]\;

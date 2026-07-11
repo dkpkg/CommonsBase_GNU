@@ -244,7 +244,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.xz to .zip
-                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@3.10.2 tarmodver=CommonsBase_GNU.Nettle.Bundle@3.10.2 tarassetpath=nettle-3.10.2.tar.gz",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@3.10.2 tarmodver=CommonsBase_GNU.Nettle.Bundle@3.10.2 tarassetpath=nettle-3.10.2.tar.gz",
                     // extract zip to current folder, stripping toplevel nettle-4.0/ folder
                     "install-object CommonsBase_GNU.Nettle.Zip@3.10.2 -s Release.execution_abi -m ./output.zip -n 1 -d . -e 'install-sh'"
                 ]
@@ -444,7 +444,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.xz to .zip
-                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@3.10.2 tarmodver=CommonsBase_GNU.Nettle.Bundle@3.10.2 tarassetpath=nettle-3.10.2.tar.gz",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@3.10.2 tarmodver=CommonsBase_GNU.Nettle.Bundle@3.10.2 tarassetpath=nettle-3.10.2.tar.gz",
                     // extract zip to current folder, stripping toplevel nettle-4.0/ folder
                     "install-object CommonsBase_GNU.Nettle.Zip@3.10.2 -s Release.execution_abi -m ./output.zip -n 1 -d . -e 'install-sh'"
                 ]
@@ -748,7 +748,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.xz to .zip
-                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@4.0.0 tarmodver=CommonsBase_GNU.Nettle.Bundle@4.0.0 tarassetpath=nettle-4.0.tar.gz",
+                    "post-object CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.Nettle.Zip@4.0.0 tarmodver=CommonsBase_GNU.Nettle.Bundle@4.0.0 tarassetpath=nettle-4.0.tar.gz",
                     // extract zip to current folder, stripping toplevel nettle-4.0/ folder
                     "install-object CommonsBase_GNU.Nettle.Zip@4.0.0 -s Release.execution_abi -m ./output.zip -n 1 -d ."
                 ]

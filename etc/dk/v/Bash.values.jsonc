@@ -13,7 +13,7 @@
                 "sequential": true,
                 "private": [
                     // convert the .tar.gz to .zip
-                    "run-rule CommonsBase_Std.Extract.F_TarToZip@0.1.0 -f ignored.zip modver=CommonsBase_GNU.Bash.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=bash-5.2.37.tar.gz",
+                    "run-rule CommonsBase_Std.Extract.F_TarToZip@0.1.1 -f ignored.zip modver=CommonsBase_GNU.Bash.Zip@5.2.37 tarmodver=CommonsBase_GNU.Bash.Bundle@5.2.37 tarassetpath=bash-5.2.37.tar.gz",
                     // extract zip to current folder, stripping toplevel bash-5.2.37/ folder
                     "merge-object CommonsBase_GNU.Bash.Zip@5.2.37 -s Release.execution_abi -m ./output.zip -n 1 -d . -e 'build-aux/*' -e 'examples/loadables/*' -e 'support/*' -e 'install-sh'"
                 ]
