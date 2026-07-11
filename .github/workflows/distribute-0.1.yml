@@ -88,8 +88,8 @@ jobs:
             pubkey: ${{ secrets.distribute_0_1_pubkey }}
             seckey: ${{ secrets.distribute_0_1_seckey }}
             options: -nosysinc
-            # store: none for the first 0.1 release (fresh build, no stale restore); flip to release afterward
-            store: none
+            # The first 0.1 release used store: none (fresh build, no stale restore).
+            store: release
             distscript: ${{ matrix.distscript }}
             execution-abi: ${{ matrix.execution-abi }}
             target-abi: ${{ matrix.target-abi }}
