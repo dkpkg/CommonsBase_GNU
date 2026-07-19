@@ -46,7 +46,7 @@
 
   $ get-object CommonsBase_GNU.GMP@6.3.0 -s Release.Linux_x86_64 -d ${RUNTIME}/Linux_x86_64-GMP-6.3.0
   \test(pass)
-  \dk.object(abi: "Release.Linux_x86_64", value-id: "orhrl326tm65issjlksoaldcatk6xe3yqznwb6o2ry32znxujottq")\;
+  \dk.object(abi: "Release.Linux_x86_64", value-id: "ohsrxdaospaqymvp2xt5spuoqpkwfv772jp4i46yh7bszqx4ci6uq")\;
 
 ## Nettle
 
