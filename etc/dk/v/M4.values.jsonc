@@ -44,7 +44,7 @@
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
-                        "cp", "-R", "-p", "m4-1.4.20/.", "."
+                        "cp", "-R", "--preserve=timestamps", "m4-1.4.20/.", "."
                     ],
                     [
                         "$(get-object CommonsBase_Std.Coreutils@0.6.0 -s ${SLOTNAME.Release.execution_abi} -m ./coreutils.exe -f coreutils.exe -e '*')",
