@@ -38,22 +38,31 @@
                         "\"CC=clang -arch arm64\"", 
                         "--prefix=${SLOTABS.Release.Darwin_arm64}"
                     ],
+                    // LDFLAGS=-static on the Linux slots: make(1) uses no
+                    // dlopen or NSS, so a fully static binary is safe, and it
+                    // makes the bare Linux slots portable across libcs -- the
+                    // same execution tool runs on glibc distros and musl hosts
+                    // (ex. alpine), like Coreutils (static-pie rust), S7z,
+                    // Toybox, and FileMagic.File (-static) already do.
                     [
                         "/bin/sh", "./configure", "--disable-dependency-tracking", "--disable-nls",
                         "--host=x86_64-linux-gnu",
-                        "\"CC=gcc -m64\"", 
+                        "\"CC=gcc -m64\"",
+                        "\"LDFLAGS=-static\"",
                         "--prefix=${SLOTABS.Release.Linux_x86_64}"
                     ],
                     [
                         "/bin/sh", "./configure", "--disable-dependency-tracking", "--disable-nls",
                         "--host=i686-linux-gnu",
-                        "\"CC=gcc -m32\"", 
+                        "\"CC=gcc -m32\"",
+                        "\"LDFLAGS=-static\"",
                         "--prefix=${SLOTABS.Release.Linux_x86}"
                     ],
                     [
                         "/bin/sh", "./configure", "--disable-dependency-tracking", "--disable-nls",
                         "--host=aarch64-linux-gnu",
-                        "\"CC=gcc -march=armv8-a\"", 
+                        "\"CC=gcc -march=armv8-a\"",
+                        "\"LDFLAGS=-static\"",
                         "--prefix=${SLOTABS.Release.Linux_arm64}"
                     ],
 
