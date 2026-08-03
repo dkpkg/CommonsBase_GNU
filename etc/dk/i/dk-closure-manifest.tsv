@@ -1,0 +1,5 @@
+# dk closure manifest v1: library	version	values_file_sha256	source
+CommonsBase_LLVM	0.1.20260723061853	bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b	etc/dk/i/CommonsBase_FileMagic.0.1.20260723064047.values.json
+CommonsBase_Std	2.6.20260718222208	ec03493d6f73aa962b9df0be8ccf19be607c7cd28bb89aa2d1de3a882ad33024	etc/dk/i/CommonsBase_Build.0.1.20260718232516.values.json
+CommonsBase_Std	2.6.20260723055125	972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60	etc/dk/i/CommonsBase_FileMagic.0.1.20260723064047.values.json
+CommonsBase_Std	2.6.20260723055125	972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60	etc/dk/i/CommonsBase_LLVM.0.1.20260723061853.values.json

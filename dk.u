@@ -15,115 +15,63 @@ GPL-3.0-or-later
 ## workspace
   %% actual_version("2.4.2.308")
   'actual_version'
-  '2.4.2.279'
+  '2.4.2.308'
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_Std" }
-  'import'
-  'github-l2'
-  { {
-      'CommonsBase_Std', '2.6.20260723055125', {
-        'blake2b-256:e98f3024a71bc5b6b22ca624a2c0b0a8dff5c8346d2e1396c137f2a380505285',
-        'sha256:972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60',
-        'sha1:7b7908b4a94dadf04d4b85b5223ea660370fd9ec'
-      } } }
-  %% import { type="github-l2", repo="dkpkg/CommonsBase_FileMagic" }
-  'import'
-  'github-l2'
-  { {
-      'CommonsBase_FileMagic', '0.1.20260723064047', {
-        'blake2b-256:d730843f830dad46227b8163adc400dc84327e502e9ed5bbb8b36c780b4b5d6c',
-        'sha256:db96de9d371ce0514963d41f31756884826998efdaa2c17497486ea8c57106ad',
-        'sha1:ad4eeb33893e59edd043ff5fe6d631a7ca01b598'
-      } },
-    {
-      'CommonsBase_LLVM', '0.1.20260723061853', {
-        'blake2b-256:2add42b9202f0ecbaa1253326b2bbc6d182a3434f375d1548b1a58164b7ddac9',
-        'sha256:bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b',
-        'sha1:4bdb5076dbbf032a569f262d16327473cbfdc3a1'
-      } },
-    {
-      'CommonsBase_Std', '2.6.20260723055125', {
-        'blake2b-256:e98f3024a71bc5b6b22ca624a2c0b0a8dff5c8346d2e1396c137f2a380505285',
-        'sha256:972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60',
-        'sha1:7b7908b4a94dadf04d4b85b5223ea660370fd9ec'
-      } } }
+  \dk.import(type: "github-l2", library: "CommonsBase_Std",
+    version: "2.6.20260803005941",
+    checksum: (blake2b-256: "e15c926d858a3df2203d0590c8497dc976506e6284f1e8b1c4df252315d4a1c1",
+      sha256: "995e15f8b408833528b53a756110b7bf22fdecab573ff38ddd04a1ff98312c5f",
+      sha1: "eb722e05d92956c3cf30fe69cd4ab80f76ef2521"))\;
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_FileMagic", tag="0.1.20260723064047" }
+  \dk.import(type: "github-l2", library: "CommonsBase_FileMagic",
+    version: "0.1.20260723064047",
+    checksum: (blake2b-256: "d730843f830dad46227b8163adc400dc84327e502e9ed5bbb8b36c780b4b5d6c",
+      sha256: "db96de9d371ce0514963d41f31756884826998efdaa2c17497486ea8c57106ad",
+      sha1: "ad4eeb33893e59edd043ff5fe6d631a7ca01b598"))\;
 
-  %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM" }
-  'import'
-  'github-l2'
-  { {
-      'CommonsBase_LLVM', '0.1.20260723061853', {
-        'blake2b-256:2add42b9202f0ecbaa1253326b2bbc6d182a3434f375d1548b1a58164b7ddac9',
-        'sha256:bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b',
-        'sha1:4bdb5076dbbf032a569f262d16327473cbfdc3a1'
-      } },
-    {
-      'CommonsBase_Std', '2.6.20260723055125', {
-        'blake2b-256:e98f3024a71bc5b6b22ca624a2c0b0a8dff5c8346d2e1396c137f2a380505285',
-        'sha256:972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60',
-        'sha1:7b7908b4a94dadf04d4b85b5223ea660370fd9ec'
-      } } }
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM", tag="0.1.20260723061853" }
+  \dk.import(type: "github-l2", library: "CommonsBase_LLVM",
+    version: "0.1.20260723061853",
+    checksum: (blake2b-256: "2add42b9202f0ecbaa1253326b2bbc6d182a3434f375d1548b1a58164b7ddac9",
+      sha256: "bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b",
+      sha1: "4bdb5076dbbf032a569f262d16327473cbfdc3a1"))\;
 
-  %% import { type="github-l2", repo="dkpkg/CommonsBase_Build" }
-  'import'
-  'github-l2'
-  { {
-      'CommonsBase_Build', '0.1.20260718232516', {
-        'blake2b-256:cb34eae2806a11382fcc8466c4b083993f34d6854fc49bb2d92f3cf05d201cc0',
-        'sha256:f48d91a5fad0af891c79d2e56d5a9d68f45677d240565099aaf8dd947af591ec',
-        'sha1:abd205268d9a7ca456f22b3425404e0f8ea06dff'
-      } },
-    {
-      'CommonsBase_Std', '2.6.20260718222208', {
-        'blake2b-256:d28c9e22c422e6c8ab4083eb1be597292dec46276de308106f0798633b82fc20',
-        'sha256:ec03493d6f73aa962b9df0be8ccf19be607c7cd28bb89aa2d1de3a882ad33024',
-        'sha1:c6eef19dd6c1fdd133c4e4ced6c545e08af628f4'
-      } } }
+  %% import { type="github-l2", repo="dkpkg/CommonsBase_Build", tag="0.1.20260718232516" }
+  \dk.import(type: "github-l2", library: "CommonsBase_Build",
+    version: "0.1.20260718232516",
+    checksum: (blake2b-256: "cb34eae2806a11382fcc8466c4b083993f34d6854fc49bb2d92f3cf05d201cc0",
+      sha256: "f48d91a5fad0af891c79d2e56d5a9d68f45677d240565099aaf8dd947af591ec",
+      sha1: "abd205268d9a7ca456f22b3425404e0f8ea06dff"))\;
 
 ## Assets
 
 ### CommonsBase_GNU.Make.Apparatus@4.4.1
 
   % unified.asset { name="BuildW32Bat", file="assets/p/patched-make-build_w32.bat" }
-  'asset'
-  '11131'
-  'sha256:3f9825744b486bc5413806cccbae36a4d354e944765fba68c26d37884369a06d'
+  \dk.asset(byteSize: "11131", checksum: (sha256: "3f9825744b486bc5413806cccbae36a4d354e944765fba68c26d37884369a06d"))\;
 
   % unified.asset { name="ConfigHW32Sed", file="etc/scripts/make-config-h-w32.sed" }
-  'asset'
-  '52'
-  'sha256:f3243a2769a61d92d5f14fb345ea201c16af8f9f66a13e8198f6a96ad6a37cc8'
+  \dk.asset(byteSize: "52", checksum: (sha256: "f3243a2769a61d92d5f14fb345ea201c16af8f9f66a13e8198f6a96ad6a37cc8"))\;
 
 ### CommonsBase_GNU.Awk.Apparatus@5.3.1
 
   % unified.asset { name="LlvmMingwPatch", file="assets/p/gawk-llvm-mingw-5.3.1.patch" }
-  'asset'
-  '624'
-  'sha256:bdb256e5235a194b8e039bbc1090c029348dee59969bbaa3ebeea56a531dcafd'
+  \dk.asset(byteSize: "624", checksum: (sha256: "bdb256e5235a194b8e039bbc1090c029348dee59969bbaa3ebeea56a531dcafd"))\;
 
   % unified.asset { name="MingwHostTriplet", dir="assets/table/mingw-host-triplet" }
-  'asset'
-  '3050'
-  { 'sha256:b9c62daa77f9f33a14e83195f8d82b8e9ebd2f5dd38cd67c391ac9877ad97343' }
+  \dk.asset(byteSize: "3050", checksum: (sha256: "b9c62daa77f9f33a14e83195f8d82b8e9ebd2f5dd38cd67c391ac9877ad97343"))\;
 
 ### CommonsBase_GNU.Build.Apparatus@1.0.0
 
   % unified.asset { name="LibtoolOldPostinstall", file="etc/scripts/libtool-old-postinstall.sed" }
-  'asset'
-  '113'
-  'sha256:3ba670e7a9a54e8594a7342a6eb87f7704b673bd679928ff2e5b2173d81013ac'
+  \dk.asset(byteSize: "113", checksum: (sha256: "3ba670e7a9a54e8594a7342a6eb87f7704b673bd679928ff2e5b2173d81013ac"))\;
 
   % unified.asset { name="FixConfigurePrefix", file="etc/scripts/fix-configure-prefix.sh" }
-  'asset'
-  '432'
-  'sha256:5254d32d8370894a7a6d87209609adad57e32c900a604c0a17a30c9528172180'
+  \dk.asset(byteSize: "432", checksum: (sha256: "5254d32d8370894a7a6d87209609adad57e32c900a604c0a17a30c9528172180"))\;
 
   % unified.asset { name="BisonDisablePerlDocs", file="etc/scripts/bison-disable-perl-docs.sed" }
-  'asset'
-  '62'
-  'sha256:88ea4a16e06fe6a26d98381231a520257e199084eaa0325248d8c2b438e36b8a'
+  \dk.asset(byteSize: "62", checksum: (sha256: "88ea4a16e06fe6a26d98381231a520257e199084eaa0325248d8c2b438e36b8a"))\;
 
   % unified.asset { name="BisonYaccCmd", file="etc/scripts/bison-yacc.cmd" }
-  'asset'
-  '58'
-  'sha256:787ddd8fa3a8d3620707a4c1283898f177d05cf0f17fc31e5f3ced042720d76b'
+  \dk.asset(byteSize: "58", checksum: (sha256: "787ddd8fa3a8d3620707a4c1283898f177d05cf0f17fc31e5f3ced042720d76b"))\;
