@@ -10,7 +10,7 @@ Release.Windows_x86_64 will be used as Release.execution_abi on normal (64-bit) 
 
   $ get-object CommonsBase_GNU.Toolchain.W64dev@2.5.0 -s Release.Windows_x86_64 -f ${RUNTIME}/Windows_x86_64-Toolchain.W64dev-2.5.0.zip
   \test(pass)
-  \dk.object(abi: "Release.Windows_x86_64", value-id: "od7mbbxw4roxdtv3qewhvjjezw3n2i53d2xpirw4ond6p42wnqf3a")\;
+  \dk.object(abi: "Release.Windows_x86_64", value-id: "o5rbgfpzik5t3jlklmupffpumiu4tiklnii4d5vyhy5fmkp4zlica")\;
 
 ## GNU Awk
 
