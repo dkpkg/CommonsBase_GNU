@@ -1,5 +1,9 @@
 # dk closure manifest v1: library	version	values_file_sha256	source
+CommonsBase_Build	0.1.20260718232516	b894642bd11e8571f980c7300d818216e1461245503798d6ce836fe53c7633de	etc/dk/i/CommonsBase_Build.0.1.20260718232516.values.json
+CommonsBase_FileMagic	0.1.20260723064047	4bc698cc4170f8f60fc2dc8506c1921f624de2868a53fde9bc3b748bf8387c4d	etc/dk/i/CommonsBase_FileMagic.0.1.20260723064047.values.json
+CommonsBase_LLVM	0.1.20260723061853	1fb1aa4e9ffac2425c41ec27a95b42a7f401204d5298b074218c0848c3b7ab9a	etc/dk/i/CommonsBase_LLVM.0.1.20260723061853.values.json
 CommonsBase_LLVM	0.1.20260723061853	bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b	etc/dk/i/CommonsBase_FileMagic.0.1.20260723064047.values.json
 CommonsBase_Std	2.6.20260718222208	ec03493d6f73aa962b9df0be8ccf19be607c7cd28bb89aa2d1de3a882ad33024	etc/dk/i/CommonsBase_Build.0.1.20260718232516.values.json
 CommonsBase_Std	2.6.20260723055125	972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60	etc/dk/i/CommonsBase_FileMagic.0.1.20260723064047.values.json
 CommonsBase_Std	2.6.20260723055125	972d2bf05f2a369731458c78f692eb0763d872a10718ebfc3cc28de53be6bf60	etc/dk/i/CommonsBase_LLVM.0.1.20260723061853.values.json
+CommonsBase_Std	2.6.20260913085659	25224920a4b704b3693afe5343ce05c5cd2c0d9e19ce1641511707fb5af59887	etc/dk/i/CommonsBase_Std.2.6.20260913085659.values.json

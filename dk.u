@@ -15,34 +15,34 @@ GPL-3.0-or-later
 ## workspace
   %% actual_version("2.4.3.9")
   'actual_version'
-  '2.4.2.308'
+  '2.4.3.9'
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_Std" }
   \dk.import(type: "github-l2", library: "CommonsBase_Std",
-    version: "2.6.20260803005941",
-    checksum: (blake2b-256: "e15c926d858a3df2203d0590c8497dc976506e6284f1e8b1c4df252315d4a1c1",
-      sha256: "995e15f8b408833528b53a756110b7bf22fdecab573ff38ddd04a1ff98312c5f",
-      sha1: "eb722e05d92956c3cf30fe69cd4ab80f76ef2521"))\;
+    version: "2.6.20260913085659",
+    checksum: (blake2b-256: "8d601ad9945d5aae4afaa980e922f6d7bcb32a4effd0e3c12d03bf6c3b98839d",
+      sha256: "25224920a4b704b3693afe5343ce05c5cd2c0d9e19ce1641511707fb5af59887",
+      sha1: "f7dab451a2d2860aff9bdff09530b6de464255aa"))\;
   %% import { type="github-l2", repo="dkpkg/CommonsBase_FileMagic", tag="0.1.20260723064047" }
   \dk.import(type: "github-l2", library: "CommonsBase_FileMagic",
     version: "0.1.20260723064047",
-    checksum: (blake2b-256: "d730843f830dad46227b8163adc400dc84327e502e9ed5bbb8b36c780b4b5d6c",
-      sha256: "db96de9d371ce0514963d41f31756884826998efdaa2c17497486ea8c57106ad",
-      sha1: "ad4eeb33893e59edd043ff5fe6d631a7ca01b598"))\;
+    checksum: (blake2b-256: "9b882860e1202647e5c166c06493154aa7ec4fa6fbf66af8185e99d7231c19e6",
+      sha256: "4bc698cc4170f8f60fc2dc8506c1921f624de2868a53fde9bc3b748bf8387c4d",
+      sha1: "c77035a0bb5d57311f57ff02c861af4b609eecc8"))\;
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_LLVM", tag="0.1.20260723061853" }
   \dk.import(type: "github-l2", library: "CommonsBase_LLVM",
     version: "0.1.20260723061853",
-    checksum: (blake2b-256: "2add42b9202f0ecbaa1253326b2bbc6d182a3434f375d1548b1a58164b7ddac9",
-      sha256: "bc04736f7a5897fa598b8a8d8988835814b2ad009e75a01f04ebbcc34c3b820b",
-      sha1: "4bdb5076dbbf032a569f262d16327473cbfdc3a1"))\;
+    checksum: (blake2b-256: "ec6ab58e3ea913c4fad630e6db6780de74e2c2ddd1246b7ffdf3372b26d6995c",
+      sha256: "1fb1aa4e9ffac2425c41ec27a95b42a7f401204d5298b074218c0848c3b7ab9a",
+      sha1: "a2efa4fe16ea178cdba7b329ec26de89686f011e"))\;
 
   %% import { type="github-l2", repo="dkpkg/CommonsBase_Build", tag="0.1.20260718232516" }
   \dk.import(type: "github-l2", library: "CommonsBase_Build",
     version: "0.1.20260718232516",
-    checksum: (blake2b-256: "cb34eae2806a11382fcc8466c4b083993f34d6854fc49bb2d92f3cf05d201cc0",
-      sha256: "f48d91a5fad0af891c79d2e56d5a9d68f45677d240565099aaf8dd947af591ec",
-      sha1: "abd205268d9a7ca456f22b3425404e0f8ea06dff"))\;
+    checksum: (blake2b-256: "df2dc776f330194cadec351ca2c073839c9be760161864c0e9c0220e7268d95d",
+      sha256: "b894642bd11e8571f980c7300d818216e1461245503798d6ce836fe53c7633de",
+      sha1: "4c6eb4b12e6b3d6a6dffdfd3bb51f796b403d418"))\;
 
 ## Assets
 
@@ -74,4 +74,4 @@ GPL-3.0-or-later
   \dk.asset(byteSize: "62", checksum: (sha256: "88ea4a16e06fe6a26d98381231a520257e199084eaa0325248d8c2b438e36b8a"))\;
 
   % unified.asset { name="BisonYaccCmd", file="etc/scripts/bison-yacc.cmd" }
-  \dk.asset(byteSize: "58", checksum: (sha256: "787ddd8fa3a8d3620707a4c1283898f177d05cf0f17fc31e5f3ced042720d76b"))\;
+  \dk.asset(byteSize: "61", checksum: (sha256: "f5612e1dc738c6aebaaef45da9dea9e4c51a9fa3926ba4e3094866af42dc28be"))\;
